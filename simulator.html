@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>केमिस्ट्री सिमुलेटर - मोल संकल्पना कैलकुलेटर</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .simulator-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            color: #1e293b;
+            backdrop-filter: blur(10px);
+            border: 2px solid #3b82f6;
+        }
+
+        .sim-header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 15px;
+        }
+
+        .sim-card {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #475569;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-size: 1rem;
+            background: white;
+            transition: border-color 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-calculate {
+            width: 100%;
+            padding: 15px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-calculate:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .result-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f0fdf4;
+            border: 2px solid #22c55e;
+            border-radius: 12px;
+            display: none;
+        }
+
+        .result-text {
+            font-size: 1.2rem;
+            color: #166534;
+            line-height: 1.6;
+        }
+
+        .formula-display {
+            background: #1e293b;
+            color: #38bdf8;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="container">
+        <div class="simulator-container">
+            <a href="index.html" class="back-btn">← मुख्य पृष्ठ पर वापस जाएँ</a>
+
+            <div class="sim-header">
+                <h1 style="color: #3b82f6; margin-bottom: 5px;">केमिस्ट्री सिमुलेटर</h1>
+                <p style="color: #64748b; font-weight: 500;">मोल संकल्पना कैलकुलेटर (Mole Concept Calculator)</p>
+            </div>
+
+            <div class="sim-card">
+                <div class="form-group">
+                    <label>तत्व/यौगिक का मोलर द्रव्यमान (Molar Mass - g/mol):</label>
+                    <input type="number" id="molarMass" placeholder="उदा. H₂O के लिए 18, O₂ के लिए 32" step="0.01">
+                </div>
+
+                <div class="form-group">
+                    <label>दिया गया द्रव्यमान (Given Mass - grams):</label>
+                    <input type="number" id="givenMass" placeholder="उदा. 36" step="0.01">
+                </div>
+
+                <button class="btn-calculate" onclick="calculateMoles()">गणना करें (Calculate)</button>
+            </div>
+
+            <div id="resultBox" class="result-box">
+                <div class="result-text" id="resultText"></div>
+                <div class="formula-display">मोल (n) = द्रव्यमान (w) / मोलर द्रव्यमान (M)</div>
+                <div style="margin-top: 15px; font-size: 0.9rem; color: #475569;">
+                    * कणों की संख्या = मोल × 6.022 × 10²³
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; padding: 20px; border-left: 4px solid #f59e0b; background: #fffbeb;">
+                <p style="margin: 0; font-weight: bold; color: #b45309;">सीखें:</p>
+                <p style="margin: 5px 0 0 0; color: #d97706;">मोल संकल्पना हमें परमाणु स्तर पर कणों की गिनती करने की अनुमति देती है। 1 मोल हमेशा 6.022 × 10²³ कणों के बराबर होता है।</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateMoles() {
+            const molarMass = parseFloat(document.getElementById('molarMass').value);
+            const mass = parseFloat(document.getElementById('givenMass').value);
+            const resultBox = document.getElementById('resultBox');
+            const resultText = document.getElementById('resultText');
+
+            if (!molarMass || !mass || molarMass <= 0 || mass <= 0) {
+                alert('कृपया वैध धनात्मक मान दर्ज करें।');
+                return;
+            }
+
+            const moles = mass / molarMass;
+            const particles = moles * 6.02214076e23;
+
+            resultBox.style.display = 'block';
+            resultText.innerHTML = `
+                <strong>गणना का परिणाम:</strong><br><br>
+                1. मोलों की संख्या: <strong>${moles.toFixed(4)} mol</strong><br>
+                2. कुल कणों की संख्या: <strong>${particles.toExponential(3)}</strong> (परमाणु/अणु)
+            `;
+
+            // Scroll to result
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
