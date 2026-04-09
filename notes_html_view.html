@@ -3,145 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>नोट्स - प्रीमियम HTML व्यू</title>
+    <title>प्रीमियम नोट्स व्यू - रसायन विज्ञान</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        body {
+            background: #022c22; /* Specific dark green background for viewing */
+        }
         .page-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
             background: white;
             color: #1a202c;
-            padding: 60px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            padding: 80px;
+            border-radius: 40px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+            position: relative;
         }
-        .nav-back {
-            margin-bottom: 20px;
-            display: inline-block;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .loading {
-            text-align: center;
-            padding: 100px;
-            font-size: 1.5rem;
-        }
-
-        /* Action Bar for Copy/Print - Changed to absolute to scroll with content */
-        .action-bar {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            z-index: 1100;
-        }
-
-        .action-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            border: 2px solid #3b82f6;
-            background: #1e293b;
-            color: white;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .action-btn:hover {
-            transform: scale(1.1);
-            background: #3b82f6;
-        }
-
-        .btn-copy.success {
-            background: #059669;
-            border-color: #10b981;
+        
+        /* Hide scrollbar for cleaner look during presentations */
+        ::-webkit-scrollbar {
+            display: none;
         }
 
         @media print {
             .bg-animation,
-            .floating-home-btn,
-            .action-bar {
+            .floating-sidebar {
                 display: none !important;
             }
             body {
                 background: white !important;
-                margin: 0;
-                padding: 0;
-            }
-            .container {
-                padding: 0;
-                margin: 0;
             }
             .page-container {
                 width: 100% !important;
                 max-width: none !important;
                 box-shadow: none !important;
                 margin: 0 !important;
-                padding: 20px !important;
+                padding: 40px !important;
                 border-radius: 0 !important;
-                background: white !important;
             }
         }
     </style>
 </head>
 <body>
     <div class="bg-animation"></div>
-    <div class="container" style="position: relative;">
-        <!-- Floating Home Button -->
-        <a href="index.html" class="floating-home-btn" style="position: fixed; bottom: 30px; left: 30px; z-index: 1000; background: #1e293b; color: white; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 20px rgba(0,0,0,0.3); border: 2px solid #3b82f6; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🏠</a>
 
-        <div class="page-container" style="position: relative;">
-            <div class="action-bar">
-                <button id="floatingCopyBtn" class="action-btn btn-copy" onclick="copyEntireContent()" title="Copy for Google Docs">📋</button>
-                <button class="action-btn" onclick="window.print()" title="Print / Save as PDF">🖨️</button>
-            </div>
+    <!-- Premium Floating Sidebar -->
+    <div class="floating-sidebar" id="mainSidebar">
+        <a href="index.html" class="sidebar-btn" title="Home">🏠</a>
+        <button id="floatingCopyBtn" class="sidebar-btn" onclick="copyEntireContent()" title="Copy for Google Docs">📋</button>
+        <button class="sidebar-btn" onclick="window.print()" title="Print / Save as PDF">🖨️</button>
+    </div>
 
+    <div class="container">
+        <div class="page-container">
             <div id="notes-content">
-                <div class="loading">नोट्स लोड हो रहे हैं... (50 पन्ने)</div>
+                <div style="text-align: center; padding: 100px; font-size: 1.5rem; color: #64748b;">
+                    ✨ प्रीमियम सामग्री लोड हो रही है...
+                </div>
             </div>
         </div>
     </div>
 
+    <script src="js/simulators.js"></script>
     <script>
+        // Sidebar Hide on Scroll Logic
+        let lastScrollY = window.scrollY;
+        const sidebar = document.getElementById('mainSidebar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                sidebar.classList.add('hidden');
+            } else {
+                sidebar.classList.remove('hidden');
+            }
+            lastScrollY = window.scrollY;
+        });
+
         async function copyEntireContent() {
             const btn = document.getElementById('floatingCopyBtn');
             const target = document.getElementById('notes-content');
 
-            // Clone the content to modify it for copying
+            // Clone content and handle absolute image paths
             const clone = target.cloneNode(true);
-
-            // CRITICAL: Convert all relative image paths to Absolute URLs
-            // This ensures Google Docs can find the images on your public GitHub Pages
             const images = clone.querySelectorAll('img');
             images.forEach(img => {
-                // img.src in JS automatically returns the full absolute URL
                 img.setAttribute('src', img.src);
             });
+
+            // Remove interactive script tags from copy for cleaner paste in Docs
+            const scripts = clone.querySelectorAll('script');
+            scripts.forEach(s => s.remove());
 
             const content = clone.innerHTML;
 
             try {
-                // Ensure images use absolute URLs for docs sync
                 const blob = new Blob([content], { type: 'text/html' });
                 const item = new ClipboardItem({ 'text/html': blob });
                 await navigator.clipboard.write([item]);
 
-                btn.innerText = '✅';
                 btn.classList.add('success');
+                btn.innerHTML = '✅';
 
                 setTimeout(() => {
-                    btn.innerText = '📋';
                     btn.classList.remove('success');
+                    btn.innerHTML = '📋';
                 }, 3000);
             } catch (err) {
-                alert('Copy failed: ' + err);
+                alert('Copy failed. Please try again.');
             }
         }
 
@@ -149,30 +120,31 @@
             const urlParams = new URLSearchParams(window.location.search);
             const id = urlParams.get('id');
 
-            if (id && parseInt(id) >= 1 && parseInt(id) <= 9) {
-                // Fetch the specialized 50-page Copy Master content for the selected chapter
+            if (id) {
                 try {
                     const response = await fetch(`copy_master_ch${id}.html`);
-                    if (!response.ok) throw new Error('File not found');
+                    if (!response.ok) throw new Error();
 
                     const html = await response.text();
-
-                    // Extract only the content inside #contentToCopy
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(html, 'text/html');
                     const content = doc.getElementById('contentToCopy');
 
                     if (content) {
                         document.getElementById('notes-content').innerHTML = content.innerHTML;
-                        document.title = "नोट्स - चैप्टर " + id;
+                        document.title = "Chapter " + id + " - Premium Notes";
+                        
+                        // Execute internal scripts if any (for simulator logic)
+                        const scripts = document.getElementById('notes-content').getElementsByTagName('script');
+                        for (let n = 0; n < scripts.length; n++) {
+                            eval(scripts[n].innerText);
+                        }
                     } else {
-                        document.getElementById('notes-content').innerHTML = "<p>त्रुटि: नोट्स प्राप्त नहीं हो सके।</p>";
+                        document.getElementById('notes-content').innerHTML = "<p>Content Master not found.</p>";
                     }
                 } catch (err) {
-                    document.getElementById('notes-content').innerHTML = `<p>त्रुटि: चैप्टर ${id} के नोट्स अभी उपलब्ध नहीं हैं।</p>`;
+                    document.getElementById('notes-content').innerHTML = `<h3>Chapter ${id} Coming Soon!</h3>`;
                 }
-            } else {
-                document.getElementById('notes-content').innerHTML = "<h3>चैप्टर " + (id || "") + " के लिए प्रीमियम HTML व्यू जल्द ही आ रहा है!</h3><p>कृपया अभी के लिए अन्य चैप्टर्स को आज़माएँ।</p>";
             }
         });
     </script>
