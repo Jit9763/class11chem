@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: Some Basic Concepts of Chemistry - Part 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; padding-bottom: 100px; }
+        .part-container { padding: 60px 40px; line-height: 1.8; font-size: 1.5rem; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-top: 5px solid #059669; }
+        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 5vw; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; box-shadow: 0 20px 40px rgba(6, 78, 59, 0.2); }
+        .header-banner h1 { font-size: 4rem; margin: 0 0 15px 0; font-weight: 900; }
+        .header-banner p { font-size: 1.8rem; margin: 0; color: #a7f3d0; font-weight: 600; }
+        h2 { color: #064e3b; font-size: 3rem; border-left: 15px solid #059669; padding-left: 30px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 20px; padding-bottom: 20px; border-radius: 0 30px 30px 0; margin-bottom: 50px; margin-top: 0; }
+        h3 { color: #065f46; font-size: 2.3rem; border-bottom: 4px solid #d1fae5; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
+        h4 { font-size: 1.8rem; margin-top: 0; }
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-top: 2px solid #e2e8f0; z-index: 1000; box-shadow: 0 -10px 20px rgba(0,0,0,0.05); }
+        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3); display: flex; align-items: center; gap: 10px; }
+        .nav-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(5, 150, 105, 0.4); }
+        .nav-home { background: #334155; box-shadow: 0 5px 15px rgba(51, 65, 85, 0.3); }
+        .nav-home:hover { background: #1e293b; box-shadow: 0 10px 20px rgba(51, 65, 85, 0.4); }
+        
+        table { width: 100%; border-collapse: collapse; font-size: 1.2rem; }
+        th, td { padding: 15px; border: 1px solid #e2e8f0; text-align: left; }
+        th { background: #1e293b; color: white; }
+        tr:nth-child(even) { background-color: #f8fafc; }
+        
+        @media (max-width: 800px) {
+            html { font-size: 11px !important; }
+            .part-container { padding: 40px 20px !important; margin: 20px; border-radius: 20px; }
+            .header-banner h1 { font-size: 3rem !important; }
+            h2 { font-size: 2.2rem !important; border-left-width: 10px; padding-left: 20px; }
+            .nav-btn { padding: 12px 20px; font-size: 1.1rem; }
+            .table-wrap { overflow-x: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>Chapter 1: Basic Concepts of Chemistry</h1>
+        <p>Premium English Edition</p>
+    </div>
+
+    <div class="part-container">
+        <h2>Part 3: Measurement, Units & Laboratory Tools</h2>
+
+        <div style="margin-bottom: 70px;">
+            <h3>3.1 Measurement of Physical Quantities</h3>
+
+            <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 50px;">
+                <div style="padding: 30px; background: #fffcf0; border-radius: 30px; border-left: 10px solid #f59e0b;">
+                    <h4 style="color: #92400e; font-size: 1.6rem;">🔹 Physical Quantity</h4>
+                    <p>Quantities which can be <strong>measured or weighed</strong> are called physical quantities.</p>
+                    <p style="font-size: 1.1rem; color: #78350f;"><strong>Ex:</strong> Time, Work, Mass, Length, Volume, etc.</p>
+                </div>
+                <div style="padding: 30px; background: #f0f9ff; border-radius: 30px; border-left: 10px solid #0ea5e9;">
+                    <h4 style="color: #0369a1; font-size: 1.6rem;">🔹 Unit</h4>
+                    <p>The fixed <strong>Standard</strong> selected to measure a physical quantity is called its Unit.</p>
+                </div>
+            </div>
+
+            <!-- SYSTEMS OF UNITS -->
+            <div style="margin-bottom: 60px;">
+                <h4 style="color: #065f46; font-size: 1.8rem; margin-bottom: 25px;">📏 Systems of Units:</h4>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                    <div style="padding: 25px; border: 2px solid #e2e8f0; border-radius: 25px; background: white;">
+                        <div style="color: #dc2626; font-weight: 900; font-size: 1.3rem; margin-bottom: 10px;">1. MKS System</div>
+                        <ul style="padding-left: 20px; line-height: 1.6;">
+                            <li>Length: <strong>Meter</strong></li>
+                            <li>Mass: <strong>Kilogram</strong></li>
+                            <li>Time: <strong>Second</strong></li>
+                        </ul>
+                    </div>
+                    <div style="padding: 25px; border: 2px solid #e2e8f0; border-radius: 25px; background: white;">
+                        <div style="color: #2563eb; font-weight: 900; font-size: 1.3rem; margin-bottom: 10px;">2. CGS System</div>
+                        <ul style="padding-left: 20px; line-height: 1.6;">
+                            <li>Length: <strong>Centimeter</strong></li>
+                            <li>Mass: <strong>Gram</strong></li>
+                            <li>Time: <strong>Second</strong></li>
+                        </ul>
+                    </div>
+                    <div style="padding: 25px; border: 2px solid #e2e8f0; border-radius: 25px; background: white;">
+                        <div style="color: #059669; font-weight: 900; font-size: 1.3rem; margin-bottom: 10px;">3. FPS System</div>
+                        <ul style="padding-left: 20px; line-height: 1.6;">
+                            <li>Length: <strong>Foot</strong></li>
+                            <li>Mass: <strong>Pound</strong></li>
+                            <li>Time: <strong>Second</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding: 40px; background: #0f172a; color: white; border-radius: 40px; border-left: 15px solid #38bdf8; margin-bottom: 60px;">
+                <h4 style="color: #38bdf8; font-size: 1.8rem;">🌍 SI System (The International System of Units)</h4>
+                <p style="font-size: 1.2rem; line-height: 1.8;">It is the international standard system of units, effectively a modernized version of the <strong>MKS System</strong>.</p>
+                <div style="display: flex; gap: 40px; margin-top: 20px; flex-wrap: wrap;">
+                    <div style="color: #bae6fd;">✔ 7 Base Units</div>
+                    <div style="color: #bae6fd;">✔ Derived Units</div>
+                    <div style="color: #bae6fd;">✔ Supplementary Units</div>
+                </div>
+            </div>
+
+            <h3>3.2 SI Base Units</h3>
+            <p>The SI system has seven <strong>Base Units</strong> for seven fundamental physical quantities. All other units are derived from these.</p>
+
+            <div class="table-wrap" style="border-radius: 12px; overflow: hidden; border: 2px solid #e2e8f0; margin-top: 30px;">
+                <table>
+                    <thead style="background: #064e3b;">
+                        <tr>
+                            <th>Fundamental Quantity</th>
+                            <th>Quantity Symbol</th>
+                            <th>SI Unit Name</th>
+                            <th>Unit Symbol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1. Length</td><td>l</td><td>Meter</td><td>m</td></tr>
+                        <tr><td>2. Mass</td><td>m</td><td>Kilogram</td><td>kg</td></tr>
+                        <tr><td>3. Time</td><td>t</td><td>Second</td><td>s</td></tr>
+                        <tr><td>4. Electric Current</td><td>I</td><td>Ampere</td><td>A</td></tr>
+                        <tr><td>5. Thermodynamic Temp</td><td>T</td><td>Kelvin</td><td>K</td></tr>
+                        <tr><td>6. Amount of Substance</td><td>n</td><td>Mole</td><td>mol</td></tr>
+                        <tr><td>7. Luminous Intensity</td><td>I / I<sub>v</sub></td><td>Candela</td><td>cd</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 70px;">
+            <h3>3.3 SI Derived Units</h3>
+            <p>Units which are obtained by multiplying or dividing the base physical units are called derived units.</p>
+
+            <div class="table-wrap" style="border-radius: 12px; overflow: hidden; border: 2px solid #e2e8f0;">
+                <table>
+                    <thead>
+                        <tr><th>S.N.</th><th>Physical Quantity</th><th>Unit Name</th><th>Symbol</th><th>SI Base Equivalence</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Pressure (P)</td><td>Pascal</td><td>Pa</td><td>N/m²</td></tr>
+                        <tr><td>2</td><td>Area (A)</td><td>Square Meter</td><td>m²</td><td>m²</td></tr>
+                        <tr><td>3</td><td>Volume (V)</td><td>Cubic Meter</td><td>m³</td><td>m³</td></tr>
+                        <tr><td>4</td><td>Density (d)</td><td>Kilogram per cubic meter</td><td>kg/m³</td><td>kg m⁻³</td></tr>
+                        <tr><td>5</td><td>Velocity (v)</td><td>Meter per second</td><td>m/s</td><td>m s⁻¹</td></tr>
+                        <tr><td>6</td><td>Acceleration (a)</td><td>Meter per second²</td><td>m/s²</td><td>m s⁻²</td></tr>
+                        <tr><td>7</td><td>Force (F)</td><td>Newton</td><td>N</td><td>kg m/s²</td></tr>
+                        <tr><td>8</td><td>Work / Energy</td><td>Joule</td><td>J</td><td>kg m²/s²</td></tr>
+                        <tr><td>9</td><td>Power (P)</td><td>Watt</td><td>W</td><td>J/s (kg m²/s³)</td></tr>
+                        <tr><td>10</td><td>Frequency (f)</td><td>Hertz</td><td>Hz</td><td>s⁻¹</td></tr>
+                        <tr><td>11</td><td>Electric Charge (q)</td><td>Coulomb</td><td>C</td><td>A s</td></tr>
+                        <tr><td>12</td><td>Electric Potential (V)</td><td>Volt</td><td>V</td><td>kg m² s⁻³ A⁻¹</td></tr>
+                        <tr><td>13</td><td>Electric Resistance (R)</td><td>Ohm</td><td>Ω</td><td>kg m² s⁻³ A⁻²</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 2019 UPDATE -->
+        <div style="margin-bottom: 80px; background: #fff7ed; border: 3px solid #f59e0b; padding: 40px; border-radius: 40px; position: relative;">
+            <div style="position: absolute; top: -10px; right: -10px; background: #f59e0b; color: white; padding: 10px 30px; font-weight: 900; transform: rotate(15deg); font-size: 0.9rem;">2019 UPDATE</div>
+            <h3 style="color: #92400e; margin-top: 0; font-size: 2.2rem; border-bottom: none;">🚀 Modern Redefinition of SI Units</h3>
+            <p>Effective May 20, 2019, all 7 base units were redefined mathematically based on exact constant values of 'Natural Constants'.</p>
+            <ul style="font-weight: bold; color: #78350f;">
+                <li>kg (Kilogram) → Based on Planck's Constant (h)</li>
+                <li>A (Ampere) → Based on Elementary Charge (e)</li>
+                <li>K (Kelvin) → Based on Boltzmann Constant (k)</li>
+                <li>mol (Mole) → Based on Avogadro Constant (N<sub>A</sub>)</li>
+            </ul>
+        </div>
+
+        <h3>3.4 Standard Definitions of Base Units</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+            <div style="padding: 25px; background: white; border: 1px solid #e2e8f0; border-radius: 20px; border-left: 10px solid #0ea5e9;">
+                <h4 style="color: #0369a1; font-size: 1.4rem;">1. Length (Meter):</h4>
+                <p>The length of the path travelled by light in a vacuum during a time interval of <strong>1/299,792,458</strong> of a second.</p>
+            </div>
+            <div style="padding: 25px; background: white; border: 1px solid #e2e8f0; border-radius: 20px; border-left: 10px solid #0ea5e9;">
+                <h4 style="color: #0369a1; font-size: 1.4rem;">2. Mass (Kilogram):</h4>
+                <p>The mass of one liter of pure water at <strong>4°C</strong> is considered 1 kg. Now tied to Planck's constant.</p>
+            </div>
+            <div style="padding: 25px; background: white; border: 1px solid #e2e8f0; border-radius: 20px; border-left: 10px solid #0ea5e9;">
+                <h4 style="color: #0369a1; font-size: 1.4rem;">3. Time (Second):</h4>
+                <p>The duration of <strong>9,192,631,770</strong> periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the Cesium-133 atom.</p>
+            </div>
+        </div>
+
+        <h3 style="margin-top: 50px;">3.5 Prefixes used in the SI System</h3>
+        <div class="table-wrap" style="border-radius: 12px; overflow: hidden; border: 2px solid #e2e8f0; margin-bottom: 60px;">
+            <table>
+                <thead>
+                    <tr><th>Multiple</th><th>Prefix</th><th>Symbol</th><th>Multiple</th><th>Prefix</th><th>Symbol</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>10⁻¹⁵</td><td>femto</td><td>f</td><td>10¹</td><td>deca</td><td>da</td></tr>
+                    <tr><td>10⁻¹²</td><td>pico</td><td>p</td><td>10²</td><td>hecto</td><td>h</td></tr>
+                    <tr><td>10⁻⁹</td><td>nano</td><td>n</td><td>10³</td><td>kilo</td><td>k</td></tr>
+                    <tr><td>10⁻⁶</td><td>micro</td><td>μ</td><td>10⁶</td><td>mega</td><td>M</td></tr>
+                    <tr><td>10⁻³</td><td>milli</td><td>m</td><td>10⁹</td><td>giga</td><td>G</td></tr>
+                    <tr><td>10⁻²</td><td>centi</td><td>c</td><td>10¹²</td><td>tera</td><td>T</td></tr>
+                    <tr><td>10⁻¹</td><td>deci</td><td>d</td><td>10¹⁵</td><td>peta</td><td>P</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- LAB GLASSWARE SIMULATOR -->
+        <div style="margin-bottom: 120px; width: 100%; z-index: 50;">
+            <h3>3.6 Laboratory Measurement Simulator (Pro):</h3>
+            <div style="background: linear-gradient(135deg, #0f172a 0%, #020617 100%); padding: 60px; border-radius: 50px; border: 5px solid #38bdf8; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; margin: 0 auto; box-shadow: 0 40px 80px rgba(0,0,0,0.4);">
+                
+                <!-- Viewport -->
+                <div style="background: rgba(255,255,255,0.02); border-radius: 30px; padding: 20px; border: 1px solid rgba(56, 189, 248, 0.2); position: relative; height: 600px; display: flex; align-items: flex-end; justify-content: space-around; overflow: hidden;">
+                    <!-- Burette -->
+                    <div class="glass-container" id="tool-burette" style="width: 40px; height: 500px; position: relative; display: none;">
+                        <div style="width: 30px; height: 480px; margin: auto; background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.1)); border: 1px solid rgba(255,255,255,0.3); border-radius: 5px; position: relative; overflow: hidden;">
+                            <div id="liq-burette" style="position: absolute; bottom: 0; width: 100%; height: 0%; background: rgba(56, 189, 248, 0.5); transition: height 0.5s;"></div>
+                        </div>
+                        <p style="color: #38bdf8; font-weight: 800; font-size: 1rem; text-align: center;">BURETTE</p>
+                    </div>
+
+                    <!-- Cylinder -->
+                    <div class="glass-container" id="tool-cylinder" style="width: 140px; height: 450px; position: relative; display: flex; flex-direction: column;">
+                        <div style="width: 100px; height: 400px; margin: auto; background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.1)); border: 2px solid rgba(255,255,255,0.3); border-radius: 10px 10px 5px 5px; position: relative; overflow: hidden;">
+                            <div id="liq-cylinder" style="position: absolute; bottom: 0; width: 100%; height: 0%; background: linear-gradient(to right, rgba(14, 165, 233, 0.4), rgba(14, 165, 233, 0.7)); transition: height 1s; border-radius: 50% / 5% 5% 0 0;"></div>
+                        </div>
+                        <p style="color: #38bdf8; font-weight: 800; font-size: 1rem; text-align: center; margin-top: 15px;">CYLINDER</p>
+                    </div>
+
+                    <!-- Flask -->
+                    <div class="glass-container" id="tool-flask" style="width: 250px; height: 500px; position: relative; display: none; align-items: center; justify-content: center;">
+                        <div style="position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center;">
+                            <div style="width: 35px; height: 220px; background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.1)); border: 2px solid rgba(255,255,255,0.3); border-bottom: none; border-radius: 10px 10px 0 0; position: relative;">
+                                <div style="position: absolute; top: 60px; width: 100%; height: 2px; background: #ef4444;"></div>
+                            </div>
+                            <div style="width: 240px; height: 240px; background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.4), rgba(255,255,255,0.1)); border: 2px solid rgba(255,255,255,0.3); border-radius: 50% 50% 45% 45%; margin-top: -40px; position: relative; overflow: hidden;">
+                                <div id="liq-flask" style="position: absolute; bottom: 0; width: 100%; height: 0%; background: linear-gradient(to top, rgba(14, 165, 233, 0.6), rgba(14, 165, 233, 0.4)); transition: height 1s;"></div>
+                            </div>
+                            <p style="color: #38bdf8; font-weight: 800; font-size: 1.2rem; text-align: center; margin-top: 15px;">VOL. FLASK</p>
+                        </div>
+                    </div>
+
+                    <div id="vol-display" style="position: absolute; top: 10px; right: 10px; background: #000; padding: 10px; border-radius: 10px; border: 2px solid #334155; color: #4ade80; font-family: monospace; font-size: 1.5rem; font-weight: bold;">
+                        <span id="vol-reading">0.00</span> mL
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 30px;">
+                        <h4 style="color: #38bdf8; margin-top:0;">⚙️ Controls</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <button onclick="switchLabTool('cylinder')" class="sim-btn active">Cylinder (100mL)</button>
+                            <button onclick="switchLabTool('burette')" class="sim-btn">Burette (50mL)</button>
+                            <button onclick="switchLabTool('flask')" class="sim-btn">Flask (1000mL)</button>
+                        </div>
+                        <label style="color: white; display: block; margin-top: 20px; font-weight: bold;">Fill Liquid:</label>
+                        <input type="range" id="fill-lvl" min="0" max="100" value="0" style="width: 100%;" oninput="changeFill(this.value)">
+                    </div>
+                </div>
+                
+                <style>
+                    .sim-btn { padding: 15px; background: #1e293b; color: white; border: 2px solid #334155; border-radius: 10px; cursor: pointer; transition: 0.3s; font-weight: bold; }
+                    .sim-btn:hover { background: #38bdf8; color: #0f172a; }
+                    .sim-btn.active { background: #38bdf8; color: #000; }
+                </style>
+                <script>
+                    var selTool = 'cylinder';
+                    var caps = { cylinder: 100, burette: 50, flask: 1000 };
+                    function switchLabTool(id) {
+                        document.querySelectorAll('.sim-btn').forEach(b => {
+                            b.classList.remove('active');
+                            if(b.innerText.toLowerCase().includes(id)) b.classList.add('active');
+                        });
+                        ['tool-cylinder', 'tool-burette', 'tool-flask'].forEach(t => document.getElementById(t).style.display='none');
+                        var el = document.getElementById('tool-' + id);
+                        el.style.display = (id==='cylinder'?'flex':'block');
+                        selTool = id;
+                        changeFill(document.getElementById('fill-lvl').value);
+                    }
+                    function changeFill(val) {
+                        var l = document.getElementById('liq-' + selTool);
+                        if(l) l.style.height = val + '%';
+                        var vol = (val * caps[selTool]/100).toFixed(2);
+                        document.getElementById('vol-reading').innerText = vol;
+                    }
+                    switchLabTool('cylinder');
+                </script>
+            </div>
+        </div>
+
+        <!-- MASS & WEIGHT -->
+        <h3 style="margin-top: 100px;">3.7 Mass and Weight</h3>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 80px;">
+            <div style="background: white; padding: 40px; border-radius: 30px; border-left: 15px solid #059669; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <h4 style="color: #059669; margin-top:0;">⚖️ Mass</h4>
+                <ul style="line-height: 2;">
+                    <li>Amount of matter present in a substance is called mass.</li>
+                    <li>The mass of a substance is <strong>Constant</strong> everywhere.</li>
+                    <li>SI Unit: <strong>Kilogram (kg)</strong></li>
+                    <div style="background: #f0fdf4; padding: 15px; border-radius: 15px; text-align: center; font-weight: bold; font-size: 1.5rem; margin-top: 10px;">1 kg = 1000 g</div>
+                </ul>
+            </div>
+            <div style="background: white; padding: 40px; border-radius: 30px; border-left: 15px solid #f59e0b; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <h4 style="color: #b45309; margin-top:0;">🌍 Weight</h4>
+                <ul style="line-height: 2;">
+                    <li>The gravitational force exerted on an object is its weight.</li>
+                    <li>Weight may vary from one place to another due to gravity changes.</li>
+                    <li>Formula: <span style="font-weight:bold; background: #fffbeb; padding: 5px 15px; border-radius: 10px;">W = m × g</span></li>
+                    <li>SI Unit: <strong>Newton (N)</strong></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- VOLUME & DENSITY -->
+        <h3>3.8 Volume & Density</h3>
+        <div style="background: #f0f9ff; padding: 40px; border-radius: 30px; border: 2px solid #bae6fd; margin-bottom: 30px;">
+            <h4 style="color: #0369a1; margin-top:0;">🧊 Volume</h4>
+            <p>The total space occupied by a substance is its volume. SI unit is <strong>m³</strong>. In chemistry labs, volume is often measured in <strong>Liters (L)</strong>.</p>
+            <div style="text-align: center; font-weight: bold; margin-top: 15px;">1 L = 1000 mL = 1000 cm³ | 1 m³ = 1000 L</div>
+        </div>
+
+        <div style="background: #fffbeb; padding: 40px; border-radius: 30px; border: 2px solid #fde68a; margin-bottom: 80px;">
+            <h4 style="color: #b45309; margin-top:0;">💧 Density</h4>
+            <p>Density is defined as the <strong>mass per unit volume</strong> of a substance. It measures how tightly packed the particles are.</p>
+            <div style="text-align: center; font-size: 2.5rem; font-weight: bold; color: #92400e; margin: 20px 0;">d = m / V</div>
+            <ul style="line-height:2;">
+                <li>It is an intensive property (does not depend on amount).</li>
+                <li>SI Unit: <strong>kg/m³</strong></li>
+                <li>Lab Unit: <strong>g/cm³</strong></li>
+            </ul>
+        </div>
+
+        <!-- TEMPERATURE -->
+        <h3 style="margin-top: 80px;">3.9 Temperature Converter Simulator</h3>
+        <div style="padding: 60px; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: 50px; color: white;">
+            <p style="text-align: center; font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px;">Understand the relationship between Celsius, Fahrenheit and Kelvin scales.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px;">
+                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; text-align: center; border-bottom: 8px solid #38bdf8;">
+                    <div style="color: #38bdf8; font-weight: bold;">Celsius (°C)</div>
+                    <input type="number" id="inp-c" placeholder="0" style="width: 100%; background: transparent; border: none; border-bottom: 2px solid white; color: white; font-size: 2.5rem; text-align: center; margin-top: 15px;" oninput="updateTemp('C')">
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; text-align: center; border-bottom: 8px solid #f59e0b;">
+                    <div style="color: #f59e0b; font-weight: bold;">Fahrenheit (°F)</div>
+                    <input type="number" id="inp-f" placeholder="32" style="width: 100%; background: transparent; border: none; border-bottom: 2px solid white; color: white; font-size: 2.5rem; text-align: center; margin-top: 15px;" oninput="updateTemp('F')">
+                </div>
+                <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; text-align: center; border-bottom: 8px solid #f87171;">
+                    <div style="color: #f87171; font-weight: bold;">Kelvin (K)</div>
+                    <input type="number" id="inp-k" placeholder="273.15" style="width: 100%; background: transparent; border: none; border-bottom: 2px solid white; color: white; font-size: 2.5rem; text-align: center; margin-top: 15px;" oninput="updateTemp('K')">
+                </div>
+            </div>
+            
+            <div style="text-align: center; font-size: 1.2rem;">
+                <p><strong>Formulas:</strong> °F = 9/5(°C) + 32 &nbsp;|&nbsp; K = °C + 273.15</p>
+                <p style="color: #a7f3d0;"><em>Note: The Kelvin scale does not use the degree (°) symbol.</em></p>
+            </div>
+            
+            <script>
+                function updateTemp(src) {
+                    const c = document.getElementById('inp-c');
+                    const f = document.getElementById('inp-f');
+                    const k = document.getElementById('inp-k');
+                    if(src === 'C') {
+                        f.value = ((c.value * 9/5) + 32).toFixed(2);
+                        k.value = (parseFloat(c.value || 0) + 273.15).toFixed(2);
+                    } else if(src === 'F') {
+                        let cVal = ((f.value - 32) * 5/9);
+                        c.value = cVal.toFixed(2);
+                        k.value = (cVal + 273.15).toFixed(2);
+                    } else if(src === 'K') {
+                        let cVal = k.value - 273.15;
+                        c.value = cVal.toFixed(2);
+                        f.value = ((cVal * 9/5) + 32).toFixed(2);
+                    }
+                }
+            </script>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION BAR -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn nav-home">🏠 Main Hub</a>
+        <div style="display: flex; gap: 15px;">
+            <a href="ch1_part2.html" class="nav-btn">⬅️ Previous</a>
+            <a href="ch1_part4.html" class="nav-btn">Next Part ➡️</a>
+        </div>
+    </div>
+
+</body>
+</html>

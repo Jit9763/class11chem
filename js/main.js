@@ -39,7 +39,10 @@ function renderChapters(data) {
     
     let mobileBtn = '';
     if(chapter.id === 1) {
-      mobileBtn = `<button class="btn-secondary" onclick="window.open('ch1_mobile.html', '_blank')" style="background: linear-gradient(135deg, #10b981, #059669); border-color: #34d399; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">📱 For Students (Mobile View)</button>`;
+      mobileBtn = `
+        <button class="btn-secondary" onclick="window.open('ch1_mobile.html', '_blank')" style="background: linear-gradient(135deg, #10b981, #059669); border-color: #34d399; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;">📱 For Students (Mobile View)</button>
+        <button class="btn-secondary" onclick="window.open('ch1eng/ch1_part1.html', '_blank')" style="background: linear-gradient(135deg, #3b82f6, #2563eb); border-color: #60a5fa; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">🇬🇧 English Version</button>
+      `;
     }
 
     card.innerHTML = `

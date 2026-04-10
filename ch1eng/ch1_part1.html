@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: Some Basic Concepts of Chemistry - Part 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; padding-bottom: 100px; }
+        .part-container { padding: 60px 40px; line-height: 1.8; font-size: 1.5rem; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-top: 5px solid #059669; }
+        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 5vw; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; box-shadow: 0 20px 40px rgba(6, 78, 59, 0.2); }
+        .header-banner h1 { font-size: 4rem; margin: 0 0 15px 0; font-weight: 900; }
+        .header-banner p { font-size: 1.8rem; margin: 0; color: #a7f3d0; font-weight: 600; }
+        h2 { color: #064e3b; font-size: 3rem; border-left: 15px solid #059669; padding-left: 30px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 20px; padding-bottom: 20px; border-radius: 0 30px 30px 0; margin-bottom: 50px; margin-top: 0; }
+        h3 { color: #065f46; font-size: 2.3rem; border-bottom: 4px solid #d1fae5; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
+        h4 { font-size: 1.8rem; margin-top: 0; }
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-top: 2px solid #e2e8f0; z-index: 1000; box-shadow: 0 -10px 20px rgba(0,0,0,0.05); }
+        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3); display: flex; align-items: center; gap: 10px; }
+        .nav-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(5, 150, 105, 0.4); }
+        .nav-btn.disabled { background: #cbd5e1; box-shadow: none; pointer-events: none; color: #94a3b8; }
+        .nav-home { background: #334155; box-shadow: 0 5px 15px rgba(51, 65, 85, 0.3); }
+        .nav-home:hover { background: #1e293b; box-shadow: 0 10px 20px rgba(51, 65, 85, 0.4); }
+        
+        .content-block { margin-bottom: 60px; }
+        ul { line-height: 2; margin-top: 15px; }
+        li { margin-bottom: 10px; }
+        
+        @media (max-width: 800px) {
+            html { font-size: 11px !important; }
+            .part-container { padding: 40px 20px !important; margin: 20px; border-radius: 20px; }
+            .header-banner h1 { font-size: 3rem !important; }
+            h2 { font-size: 2.2rem !important; border-left-width: 10px; padding-left: 20px; }
+            .nav-btn { padding: 12px 20px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>Chapter 1: Basic Concepts of Chemistry</h1>
+        <p>Premium English Edition</p>
+    </div>
+
+    <div class="part-container">
+        <h2>Part 1: Detailed Introduction and Applications of Chemistry</h2>
+
+        <div class="content-block">
+            <h3>1.1 Science</h3>
+            <p style="text-indent: 40px;">The systematic and organized knowledge of nature is called <strong>Science</strong>. Science has various branches such as Physics, Chemistry, Biology, Geology, etc.</p>
+        </div>
+
+        <div class="content-block">
+            <h3>1.2 Chemistry</h3>
+            <p style="text-indent: 40px;">The branch of science that deals with the study of the composition, structure, properties of matter, and its <strong>interactions</strong> is called Chemistry. Chemistry is often referred to as the "Central Science" because it interconnects Physics, Biology, and Geology.</p>
+
+            <div style="background: #f8fafc; padding: 40px; border-radius: 30px; border: 2px solid #e2e8f0; margin-top: 40px; border-left: 12px solid #065f46;">
+                <strong style="color: #065f46; font-size: 1.6rem; display: block; margin-bottom: 15px;">📜 Origin of the Word & Historical Context:</strong>
+                <p style="margin-bottom: 15px;">The word 'Chemistry' originated from the ancient Egyptian word <strong>'Chemia'</strong>, which means <strong>'Black Color'</strong>. Due to the black color of the fertile soil in Egypt, this ancient knowledge was known as 'Chemia'.</p>
+                <p style="margin-bottom: 15px;"><strong>The Concept of Chemitaking:</strong> In ancient times, the art of mixing metals like copper, gold, and silver with other substances to create 'Alloys' was called <strong>Chemitaking</strong>. This art eventually evolved into modern Chemistry.</p>
+                <p style="margin: 0; font-style: italic; color: #64748b;">(Note: Robert Boyle is considered one of the founders of modern chemistry, while Antoine Lavoisier is known as the 'Father of Modern Chemistry'.)</p>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>1.3 Major Branches of Chemistry:</h3>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 20px;">
+                <div style="padding: 20px; background: #ecfdf5; border-radius: 15px;">1. <strong>Inorganic Chemistry:</strong> Study of inorganic compounds, focusing on elements other than carbon.</div>
+                <div style="padding: 20px; background: #ecfdf5; border-radius: 15px;">2. <strong>Organic Chemistry:</strong> Study of carbon-containing compounds and their derivatives.</div>
+                <div style="padding: 20px; background: #ecfdf5; border-radius: 15px;">3. <strong>Physical Chemistry:</strong> Study of physical properties of matter and chemical thermodynamics/kinetics.</div>
+                <div style="padding: 20px; background: #ecfdf5; border-radius: 15px;">4. <strong>Analytical Chemistry:</strong> Qualitative and quantitative analysis of substances.</div>
+                <div style="padding: 20px; background: #ecfdf5; border-radius: 15px; border-left: 6px solid #059669;">
+                    <strong>5. Biochemistry:</strong> Study of chemical processes occurring in living organisms, such as Photosynthesis and Respiration in plants and animals.
+                </div>
+                <div style="padding: 20px; background: #ecfdf5; border-radius: 15px; border-left: 6px solid #059669;">
+                    <strong>6. Nuclear Chemistry:</strong> Study of radioactive isotopes, nuclear fission, and atomic energy.
+                </div>
+                <div style="padding: 20px; background: #ecfdf5; border-radius: 15px; border-left: 6px solid #059669;">
+                    <strong>7. Medicinal Chemistry:</strong> Science of synthesizing new drugs for the treatment of severe diseases.
+                </div>
+                <div style="padding: 20px; background: #ecfdf5; border-radius: 15px; border-left: 6px solid #059669;">
+                    <strong>8. Environmental Chemistry:</strong> Study of control measures for air, water, and soil pollution, and environmental conservation.
+                </div>
+                <div style="padding: 20px; background: #ecfdf5; border-radius: 15px; border-left: 6px solid #059669;">
+                    <strong>9. Industrial Chemistry:</strong> Technology and processes for large-scale production of chemicals.
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h3>1.4 Applications of Chemistry in Various Fields:</h3>
+
+            <div style="display: grid; grid-template-columns: 1fr; gap: 30px;">
+                <!-- Agro -->
+                <div style="padding: 30px; background: #f0fdf4; border-radius: 30px; border-top: 8px solid #22c55e;">
+                    <h4 style="color: #166534;">1. In the Field of Agriculture:</h4>
+                    <ul>
+                        <li>Production of chemical fertilizers (Urea, NPK).</li>
+                        <li>Manufacturing of various insecticides, fungicides, and <strong>Pesticides</strong> to protect crops.</li>
+                    </ul>
+                </div>
+
+                <!-- Industrial -->
+                <div style="padding: 30px; background: #f8fafc; border-radius: 30px; border-top: 8px solid #334155;">
+                    <h4 style="color: #1e293b;">2. Industrial Impact:</h4>
+                    <p>The development of industries such as cement, paper, leather, dye, glass, paint, soap, detergents, synthetic fibers, metal extraction, photography, and petroleum refining heavily relies on chemistry. It acts as the backbone of modern economy.</p>
+                </div>
+
+                <!-- Healthcare -->
+                <div style="padding: 30px; background: #fff1f2; border-radius: 30px; border-top: 8px solid #f43f5e;">
+                    <h4 style="color: #9f1239;">3. Health and Medicinal Revolution:</h4>
+                    <ul>
+                        <li><strong>Cancer Treatment:</strong> Life-saving drugs used for cancer therapy include <strong>Cisplatin</strong> and <strong>Taxol</strong>.</li>
+                        <li><strong>AIDS:</strong> Successful creation of drugs like <strong>Azidothymidine (AZT)</strong> to provide relief to AIDS patients.</li>
+                        <li><strong>Thyroid Treatment:</strong> Use of radioactive isotopes like Iodine-131 (I-131) in diagnosing and treating thyroid disorders.</li>
+                        <li>Contribution of ether and chloroform used for Anaesthesia in surgical procedures.</li>
+                    </ul>
+                </div>
+
+                <!-- Defense -->
+                <div style="padding: 30px; background: #1a1a1a; color: #f87171; border-radius: 30px; border-top: 8px solid #dc2626;">
+                    <h4 style="color: #ef4444;">4. National Defense and Warfare:</h4>
+                    <p>Chemistry has played a crucial role in national security. This includes the development of powerful explosives:</p>
+                    <ul>
+                        <li>High-capacity explosives like <strong>TNT (Trinitrotoluene)</strong> and Dynamite.</li>
+                        <li>The complex structure and mechanics behind the Atomic Bomb and Hydrogen Bomb.</li>
+                        <li><strong>Poisonous Gases:</strong> Mustard Gas used during World War I, and Chloropicrin used as Tear Gas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- NEET/JEE CATALYST BOX -->
+            <div style="margin-top: 50px; background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: #6ee7b7; padding: 40px; border-radius: 35px; border: 4px solid #10b981; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+                <h3 style="margin-top: 0; border: none; color: white; display: flex; align-items: center; gap: 15px;">🚀 NEET/JEE Catalyst Notes: Part 1</h3>
+                <ul style="line-height: 1.8; font-size: 1.3rem;">
+                    <li><strong>Cisplatin:</strong> [Pt(NH₃)₂Cl₂] - Primarily used in the treatment of testicular and ovarian cancer.</li>
+                    <li><strong>AZT (Azidothymidine):</strong> Also known as 'Zidovudine'. It inhibits the replication of the HIV/AIDS virus.</li>
+                    <li><strong>Iodine-131:</strong> This isotope is used in treating thyroid cancer as well as diagnosing Goitre.</li>
+                    <li><strong>Mnemonics:</strong> Remember <strong>'C-T-M'</strong> (Chemistry, Technology, Medicine) - Modern healthcare is impossible without chemistry.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION BAR -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn nav-home">🏠 Main Hub</a>
+        <div style="display: flex; gap: 15px;">
+            <a href="#" class="nav-btn disabled" aria-disabled="true">⬅️ Previous</a>
+            <a href="ch1_part2.html" class="nav-btn">Next Part ➡️</a>
+        </div>
+    </div>
+
+</body>
+</html>
