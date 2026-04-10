@@ -122,7 +122,9 @@
 
             if (id) {
                 try {
-                    const response = await fetch(`copy_master_ch${id}.html`);
+                    // Add timestamp to bypass GitHub Pages/Browser CDN Cache
+                    const timestamp = new Date().getTime();
+                    const response = await fetch(`copy_master_ch${id}.html?v=${timestamp}`);
                     if (!response.ok) throw new Error();
 
                     const html = await response.text();
