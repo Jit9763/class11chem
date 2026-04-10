@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: Some Basic Concepts of Chemistry - Part 11</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; padding-bottom: 100px; }
+        .part-container { padding: 60px 40px; line-height: 1.8; font-size: 1.5rem; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.04); border-top: 5px solid #059669; }
+        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 10px; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; }
+        .header-banner h1 { font-size: 3.5rem; margin: 0; font-weight: 900; }
+        h2 { color: #064e3b; font-size: 3rem; border-left: 15px solid #059669; padding-left: 30px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 20px; padding-bottom: 20px; border-radius: 0 30px 30px 0; margin-bottom: 50px; margin-top: 0; }
+        h3 { color: #065f46; font-size: 2.3rem; border-bottom: 4px solid #d1fae5; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
+        .step-box { display: flex; gap: 20px; align-items: center; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; margin-bottom: 10px; }
+        .step-num { background: #38bdf8; color: #020617; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 50%; font-weight: 900; flex-shrink: 0; }
+        .analogy-box { background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 100%); padding: 40px; border-radius: 30px; border-left: 10px solid #f97316; margin-bottom: 50px; }
+        .reaction-box { text-align: center; font-size: 2rem; font-family: monospace; font-weight: bold; background: #f8fafc; padding: 30px; border-radius: 20px; border: 2px dashed #cbd5e1; margin: 30px 0; }
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-top: 2px solid #e2e8f0; z-index: 1000; }
+        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: 0.3s; margin-left: 10px;}
+        .nav-home { background: #334155; }
+        @media (max-width: 800px) {
+            .part-container { padding: 40px 20px; margin: 20px; }
+            .header-banner h1 { font-size: 2.2rem; }
+            h2 { font-size: 2rem; }
+            .nav-btn { padding: 12px 20px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>Stoichiometry & Limiting Reagent</h1>
+    </div>
+
+    <div class="part-container">
+        <h2>Part 11: Stoichiometry & Limiting Reagent</h2>
+
+        <!-- STOICHIOMETRY -->
+        <div style="margin-bottom: 80px;">
+            <h3>11.1 Chemical Stoichiometry</h3>
+            <p>Stoichiometry deals with the calculation of masses (or volumes) of reactants and products involved in a chemical reaction. The word comes from Greek <em>stoicheion</em> (element) and <em>metron</em> (measure).</p>
+            
+            <div style="padding: 40px; background: #1e293b; color: white; border-radius: 30px; margin-top: 40px;">
+                <h4 style="color: #38bdf8; margin-top: 0;">💡 4 Rules to Solve Stoichiometry Problems:</h4>
+                <div class="step-box"><span class="step-num">1</span><span>Write the **Balanced Chemical Equation**.</span></div>
+                <div class="step-box"><span class="step-num">2</span><span>Convert given mass/volume into **Moles**.</span></div>
+                <div class="step-box"><span class="step-num">3</span><span>Use the **Coefficients** ratio to find moles of the unknown substance.</span></div>
+                <div class="step-box"><span class="step-num">4</span><span>Convert those moles back into mass or volume.</span></div>
+            </div>
+
+            <h4 style="margin-top: 50px;">Example: Combustion of Methane</h4>
+            <div class="reaction-box">CH₄(g) + 2O₂(g) ⟶ CO₂(g) + 2H₂O(g)</div>
+            <p><strong>Question:</strong> How much water (in grams) is produced by the combustion of 16g of methane?</p>
+            <div style="background: #f0fdf4; border: 2px solid #10b981; padding: 30px; border-radius: 20px;">
+                <strong>Solution:</strong> <br>
+                1. 16g CH₄ = 1 mole. <br>
+                2. According to equation, 1 mole CH₄ gives 2 moles H₂O. <br>
+                3. Mass of 1 mole H₂O = 18g. <br>
+                4. Mass of 2 moles H₂O = 2 × 18 = **36g**.
+            </div>
+        </div>
+
+        <!-- LIMITING REAGENT -->
+        <div style="margin-bottom: 80px;">
+            <h3>11.2 Limiting Reagent</h3>
+            <div class="analogy-box">
+                <h4 style="color: #c2410c; margin-top: 0;">🥪 The Sandwich Analogy</h4>
+                <p>If you need 2 slices of bread + 1 slice of cheese to make 1 sandwich: <br>
+                If you have **10 bread slices** (can make 5 sandwiches) but only **2 cheese slices**, you can only make 2 sandwiches. <br>
+                The **Cheese** is the **Limiting Reagent** because it runs out first and limits the production.</p>
+            </div>
+
+            <div style="background: #f8fafc; padding: 40px; border-radius: 30px; border-left: 10px solid #ef4444;">
+                <p><strong>Definition:</strong> The reactant that is completely consumed first in a reaction is called the **Limiting Reagent**. It determines the amount of product formed.</p>
+            </div>
+
+            <h4 style="margin-top: 50px;">Example: 2 moles H₂ + 2 moles O₂</h4>
+            <div class="reaction-box">2H₂(g) + O₂(g) ⟶ 2H₂O(l)</div>
+            <p>According to the equation, 2 moles of H₂ require only 1 mole of O₂. <br>
+            If we start with 2 moles of each, the H₂ will be completely used up, while 1 mole of O₂ will remain unreacted. <br>
+            <strong>H₂ is the Limiting Reagent.</strong></p>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn nav-home">🏠 Main Hub</a>
+        <div style="display: flex;">
+            <a href="ch1_part10.html" class="nav-btn">⬅️ Previous</a>
+            <a href="ch1_part12.html" class="nav-btn">Next Part ➡️</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: Some Basic Concepts of Chemistry - Part 10</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; padding-bottom: 100px; }
+        .part-container { padding: 60px 40px; line-height: 1.8; font-size: 1.5rem; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.04); border-top: 5px solid #059669; }
+        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 10px; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; }
+        .header-banner h1 { font-size: 3.5rem; margin: 0; font-weight: 900; }
+        h2 { color: #064e3b; font-size: 3rem; border-left: 15px solid #059669; padding-left: 30px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 20px; padding-bottom: 20px; border-radius: 0 30px 30px 0; margin-bottom: 50px; margin-top: 0; }
+        h3 { color: #065f46; font-size: 2.3rem; border-bottom: 4px solid #d1fae5; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
+        .formula-card { background: #059669; color: white; padding: 40px; border-radius: 40px; margin: 40px 0; text-align: center; }
+        .step-card { background: white; padding: 30px; border-radius: 30px; border: 1px solid #e2e8f0; margin-bottom: 20px; border-left: 10px solid #059669; }
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-top: 2px solid #e2e8f0; z-index: 1000; }
+        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: 0.3s; margin-left: 10px; }
+        .nav-home { background: #334155; }
+        .table-wrap { overflow-x: auto; margin: 30px 0; border-radius: 20px; border: 2px solid #e2e8f0; }
+        table { width: 100%; border-collapse: collapse; text-align: center; }
+        th { background: #0f172a; color: white; padding: 20px; }
+        td { padding: 15px; border-bottom: 1px solid #e2e8f0; }
+        @media (max-width: 800px) {
+            .part-container { padding: 40px 20px; margin: 20px; }
+            .header-banner h1 { font-size: 2.5rem; }
+            h2 { font-size: 2.2rem; }
+            .nav-btn { padding: 12px 20px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>Percentage Composition & Formulas</h1>
+    </div>
+
+    <div class="part-container">
+        <h2>Part 10: Percentage Composition & Formulas</h2>
+
+        <!-- PERCENTAGE COMPOSITION -->
+        <div style="margin-bottom: 80px;">
+            <h3>10.1 Percentage Composition</h3>
+            <p style="text-indent: 40px;">Percentage composition is the percentage by mass of each element in a compound. It is vital for identifying unknown substances.</p>
+            
+            <div class="formula-card">
+                <div style="font-size: 1.8rem; margin-bottom: 15px;">Mass % of an Element =</div>
+                <div style="font-size: 2.2rem; font-weight: bold;">
+                    (Mass of that element in compound) / (Molar mass of compound) × 100
+                </div>
+            </div>
+
+            <div style="background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 30px; padding: 30px;">
+                <h4 style="margin-top: 0; color: #0f172a;">Example: % of Na and Cl in NaCl</h4>
+                <p>Molar mass of NaCl = 23 (Na) + 35.5 (Cl) = 58.5 g/mol</p>
+                <ul style="list-style: none; padding: 0;">
+                    <li>🔹 **Mass % of Na** = (23 / 58.5) × 100 = **39.31 %**</li>
+                    <li>🔹 **Mass % of Cl** = (35.5 / 58.5) × 100 = **60.69 %**</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- EMPIRICAL & MOLECULAR FORMULAS -->
+        <div style="margin-bottom: 80px;">
+            <h3>10.2 Empirical & Molecular Formulas</h3>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 40px;">
+                <div class="step-card" style="border-color: #f59e0b;">
+                    <h4 style="color: #b45309; margin-top: 0;">📌 Empirical Formula</h4>
+                    <p>The simplest whole-number ratio of various atoms present in a compound.</p>
+                </div>
+                <div class="step-card" style="border-color: #3b82f6;">
+                    <h4 style="color: #1d4ed8; margin-top: 0;">📌 Molecular Formula</h4>
+                    <p>The actual number of atoms of various elements present in a molecule of a compound.</p>
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Compound</th><th>Molecular Formula</th><th>Empirical Formula</th></tr></thead>
+                    <tbody>
+                        <tr><td>Glucose</td><td style="color: #0284c7;">C₆H₁₂O₆</td><td style="color: #059669;">CH₂O</td></tr>
+                        <tr><td>Benzene</td><td style="color: #0284c7;">C₆H₆</td><td style="color: #059669;">CH</td></tr>
+                        <tr><td>Ethyne</td><td style="color: #0284c7;">C₂H₂</td><td style="color: #059669;">CH</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="background: #fffbeb; padding: 40px; border-radius: 40px; border: 3px dashed #d97706; text-align: center;">
+                <h4 style="color: #92400e; margin-top: 0;">Relationship:</h4>
+                <div style="font-size: 2.2rem; font-weight: 900; color: #b45309;">Molecular Formula = n × Empirical Formula</div>
+                <p style="margin-top: 15px;">Where <strong>n = (Molecular Mass) / (Empirical Formula Mass)</strong></p>
+            </div>
+        </div>
+
+        <!-- SOLVED PROBLEM -->
+        <div style="margin-top: 50px;">
+            <h3>Solved Problem: Determination of Formula</h3>
+            <div style="background: #f0fdf4; border: 2px solid #059669; border-radius: 40px; padding: 40px;">
+                <p><strong>Q: A compound contains 4.07% H, 24.27% C and 71.65% Cl. Its molar mass is 98.96 g. Find its formula.</strong></p>
+                <div style="margin-top: 20px; line-height: 2;">
+                    <strong>Step 1:</strong> In 100g, we have 4.07g H, 24.27g C, 71.65g Cl. <br>
+                    <strong>Step 2:</strong> Moles: H = 4.04, C = 2.02, Cl = 2.02. <br>
+                    <strong>Step 3:</strong> Divide by smallest value (2.02): H=2, C=1, Cl=1. <br>
+                    <strong>Step 4:</strong> **Empirical Formula = CH₂Cl** <br>
+                    <strong>Step 5:</strong> Empirical Mass = 49.48 g. <br>
+                    <strong>Step 6:</strong> n = 98.96 / 49.48 = **2**. <br>
+                    <strong>Final: Molecular Formula = (CH₂Cl) × 2 = C₂H₄Cl₂</strong>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn nav-home">🏠 Main Hub</a>
+        <div style="display: flex;">
+            <a href="ch1_part9.html" class="nav-btn">⬅️ Previous</a>
+            <a href="ch1_part11.html" class="nav-btn">Next Part ➡️</a>
+        </div>
+    </div>
+
+</body>
+</html>
