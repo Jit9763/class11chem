@@ -36,12 +36,19 @@ function renderChapters(data) {
   data.forEach(chapter => {
     const card = document.createElement('div');
     card.className = 'chapter-card';
+    
+    let mobileBtn = '';
+    if(chapter.id === 1) {
+      mobileBtn = `<button class="btn-secondary" onclick="window.open('ch1_mobile.html', '_blank')" style="background: linear-gradient(135deg, #10b981, #059669); border-color: #34d399; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">📱 For Students (Mobile View)</button>`;
+    }
+
     card.innerHTML = `
       <div class="chapter-num">${String(chapter.id).padStart(2, '0')}</div>
       <h3 class="chapter-title">${chapter.title}</h3>
       <div class="chapter-actions" style="display:flex; gap:10px; flex-direction: column; margin-top:20px; position:relative; z-index:10;">
         <button class="btn-primary" onclick="window.open('notes_html_view.html?id=${chapter.id}', '_blank')">🌍 संपूर्ण नोट्स देखें (Premium HTML)</button>
         <button class="btn-secondary" onclick="window.open('qa_view.html?id=${chapter.id}', '_blank')" style="background: #8b5cf6; border-color: #7c3aed;">❓ प्रश्न-उत्तर (Master Q&A)</button>
+        ${mobileBtn}
       </div>
     `;
     grid.appendChild(card);
