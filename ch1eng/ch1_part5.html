@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: Some Basic Concepts of Chemistry - Part 5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; padding-bottom: 100px; }
+        .part-container { padding: 60px 40px; line-height: 1.8; font-size: 1.5rem; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.04); border-top: 5px solid #059669; }
+        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 10px; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; }
+        .header-banner h1 { font-size: 3.5rem; margin: 0; font-weight: 900; }
+        h2 { color: #064e3b; font-size: 3rem; border-left: 15px solid #059669; padding-left: 30px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 20px; padding-bottom: 20px; border-radius: 0 30px 30px 0; margin-bottom: 50px; margin-top: 0; }
+        h3 { color: #065f46; font-size: 2.3rem; border-bottom: 4px solid #d1fae5; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
+        .factor-card { background: #f8fafc; padding: 25px; border-radius: 20px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .solved-ex { background: #f0fdf4; border: 2px solid #059669; border-radius: 40px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .solved-ex h4 { color: #065f46; margin-top: 0; font-size: 1.8rem; border-bottom: 2px solid #059669; padding-bottom: 10px; margin-bottom: 25px; }
+        .ans-box { color: #059669; font-size: 1.8rem; border: 3px solid #059669; padding: 5px 20px; display: inline-block; margin-top: 15px; border-radius: 10px; font-weight: 900; background: white; }
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-top: 2px solid #e2e8f0; z-index: 1000; }
+        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: 0.3s; box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3); }
+        .nav-home { background: #334155; }
+        
+        @media (max-width: 800px) {
+            .part-container { padding: 40px 20px; margin: 20px; }
+            .header-banner h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; border-left-width: 10px; }
+            .nav-btn { padding: 12px 20px; font-size: 1.1rem; }
+            .factor-card { flex-direction: column; text-align: center; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>Dimensional Analysis</h1>
+    </div>
+
+    <div class="part-container">
+        <h2>Part 5: Dimensional Analysis</h2>
+
+        <div style="margin-bottom: 60px;">
+            <h3>Definition & Principle</h3>
+            <p style="line-height: 2; text-indent: 40px;">
+                When calculating, often units must be converted from one system to another. The method used to accomplish this is called **Factor Label Method** or **Unit Factor Method** or **Dimensional Analysis**.
+            </p>
+            <div style="background: #f0fdf4; padding: 30px; border-radius: 30px; border-left: 12px solid #059669; margin-top: 30px;">
+                <strong>💡 Note:</strong> This method relies on multipying the given value by a 'Unit Factor' (a ratio that equals 1) so that the unwanted units cancel out.
+            </div>
+        </div>
+
+        <!-- CONVERSION FACTORS -->
+        <div style="margin-bottom: 80px;">
+            <h3>Important Conversion Factors</h3>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+                <div class="factor-card"><span>1 Calorie (Cal)</span><span style="color: #059669; font-weight: 900;">= 4.186 J</span></div>
+                <div class="factor-card"><span>1 Angstrom (Å)</span><span style="color: #059669; font-weight: 900;">= 10⁻¹⁰ m</span></div>
+                <div class="factor-card"><span>1 Dyne</span><span style="color: #059669; font-weight: 900;">= 10⁻⁵ N</span></div>
+                <div class="factor-card"><span>1 Micron (μm)</span><span style="color: #059669; font-weight: 900;">= 10⁻⁶ m</span></div>
+                <div class="factor-card"><span>1 Erg</span><span style="color: #059669; font-weight: 900;">= 10⁻⁷ J</span></div>
+                <div class="factor-card"><span>1 Nanometer (nm)</span><span style="color: #059669; font-weight: 900;">= 10⁻⁹ m</span></div>
+            </div>
+        </div>
+
+        <!-- SOLVED EXAMPLES -->
+        <div style="margin-top: 50px;">
+            <h3>Solved Examples (Numerical)</h3>
+            
+            <div class="solved-ex">
+                <h4>Example 1: Å to pm conversion</h4>
+                <p><strong>Q: Convert 0.50 Å into picometers (pm).</strong></p>
+                <div style="background: white; padding: 25px; border-radius: 20px; font-family: 'Courier New', monospace;">
+                    1 Å = 10⁻¹⁰ m <br>
+                    1 pm = 10⁻¹² m <br>
+                    0.50 Å = (0.50 × 10⁻¹⁰ m) × (1 pm / 10⁻¹² m) <br>
+                    = 0.50 × 10² pm <br>
+                    <div class="ans-box">Ans: 50 pm</div>
+                </div>
+            </div>
+
+            <div class="solved-ex">
+                <h4>Example 2: Inch to cm conversion</h4>
+                <p><strong>Q: A piece of metal is 3 inches long. What is its length in cm?</strong></p>
+                <div style="background: white; padding: 25px; border-radius: 20px; font-family: 'Courier New', monospace;">
+                    1 inch = 2.54 cm <br>
+                    Unit Factor = (2.54 cm / 1 inch) <br>
+                    3 inches = 3 × 2.54 cm <br>
+                    <div class="ans-box">Ans: 7.62 cm</div>
+                </div>
+            </div>
+
+            <div class="solved-ex">
+                <h4>Example 3: Litre to m³ conversion</h4>
+                <p><strong>Q: A jug contains 2L of milk. Calculate its volume in m³.</strong></p>
+                <div style="background: white; padding: 25px; border-radius: 20px; font-family: 'Courier New', monospace;">
+                    1 L = 1000 cm³ <br>
+                    1 m³ = 10⁶ cm³ <br>
+                    Unit Factor = (1 m³ / 10⁶ cm³) <br>
+                    2L = 2000 cm³ × (1 m³ / 10⁶ cm³) <br>
+                    = 2 × 10⁻³ m³ <br>
+                    <div class="ans-box">Ans: 2 × 10⁻³ m³</div>
+                </div>
+            </div>
+
+            <div class="solved-ex">
+                <h4>Example 4: Time conversion</h4>
+                <p><strong>Q: How many seconds are there in 2 days?</strong></p>
+                <div style="background: white; padding: 25px; border-radius: 20px; font-family: 'Courier New', monospace;">
+                    2 days × (24 h / 1 day) × (60 min / 1 h) × (60 s / 1 min) <br>
+                    = 2 × 24 × 60 × 60 seconds <br>
+                    <div class="ans-box">Ans: 1,72,800 s</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn nav-home">🏠 Main Hub</a>
+        <div style="display: flex; gap: 15px;">
+            <a href="ch1_part4.html" class="nav-btn">⬅️ Previous</a>
+            <a href="ch1_part6.html" class="nav-btn">Next Part ➡️</a>
+        </div>
+    </div>
+
+</body>
+</html>

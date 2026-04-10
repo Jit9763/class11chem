@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: Some Basic Concepts of Chemistry - Part 4</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; padding-bottom: 100px; }
+        .part-container { padding: 60px 40px; line-height: 1.8; font-size: 1.5rem; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.04); border-top: 5px solid #059669; }
+        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 10px; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; }
+        .header-banner h1 { font-size: 3.5rem; margin: 0; font-weight: 900; }
+        h2 { color: #064e3b; font-size: 3rem; border-left: 15px solid #059669; padding-left: 30px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 20px; padding-bottom: 20px; border-radius: 0 30px 30px 0; margin-bottom: 50px; margin-top: 0; }
+        h3 { color: #065f46; font-size: 2.3rem; border-bottom: 4px solid #d1fae5; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
+        .rule-card { background: white; padding: 30px; border-radius: 30px; border: 1px solid #e2e8f0; position: relative; margin-bottom: 20px; }
+        .rule-tag { position: absolute; top: -15px; left: 20px; background: #059669; color: white; padding: 5px 15px; border-radius: 10px; font-weight: 900; }
+        .example-box { background: #f8fafc; padding: 15px; border-radius: 15px; margin-top: 15px; font-family: monospace; }
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-top: 2px solid #e2e8f0; z-index: 1000; }
+        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: 0.3s; box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3); }
+        .nav-home { background: #334155; }
+        
+        /* Mobile adjustments */
+        @media (max-width: 800px) {
+            .part-container { padding: 40px 20px; margin: 20px; }
+            .header-banner h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; border-left-width: 10px; }
+            .nav-btn { padding: 12px 20px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>Uncertainty in Measurement</h1>
+    </div>
+
+    <div class="part-container">
+        <h2>Part 4: Uncertainty in Measurement</h2>
+
+        <!-- 4.1 SCIENTIFIC NOTATION -->
+        <div style="margin-bottom: 80px;">
+            <h3>4.1 Scientific Notation</h3>
+            <p style="margin-bottom: 30px;">
+                In chemistry, we deal with extremely large or tiny numbers. To make them readable, we use **Scientific Notation**, expressed as **N × 10ⁿ**.
+            </p>
+            <div style="background: #f8fafc; padding: 40px; border-radius: 30px; display: grid; grid-template-columns: 1fr; gap: 30px;">
+                <div style="border-left: 8px solid #059669; padding-left: 25px;">
+                    <p style="color: #64748b; font-size: 0.9rem; text-transform: uppercase;">Example: Avogadro No.</p>
+                    <div style="font-size: 2.2rem; font-weight: 950; color: #065f46;">6.022 × 10²³</div>
+                </div>
+                <div style="border-left: 8px solid #059669; padding-left: 25px;">
+                    <p style="color: #64748b; font-size: 0.9rem; text-transform: uppercase;">Example: Mass of H-atom</p>
+                    <div style="font-size: 2.2rem; font-weight: 950; color: #065f46;">1.66 × 10⁻²⁴ g</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.2 SIGNIFICANT FIGURES -->
+        <div style="margin-bottom: 80px;">
+            <h3>4.2 Significant Figures</h3>
+            <p style="margin-top:20px; font-weight: 800; color: #059669;">"Significant figures are meaningful digits which are known with certainty plus one which is estimated or uncertain."</p>
+
+            <h4 style="margin-top: 50px; color: #065f46; font-size: 1.8rem;">📏 Rules for Determining Significant Figures:</h4>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px;">
+                <div class="rule-card">
+                    <div class="rule-tag">Rule 1</div>
+                    <p>All <strong>non-zero</strong> digits are significant.</p>
+                    <div class="example-box">2478 → <strong>4</strong> <br> 34125 → <strong>5</strong></div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-tag">Rule 2</div>
+                    <p>Zeros <strong>between</strong> two non-zero digits are significant.</p>
+                    <div class="example-box">2024 → <strong>4</strong> <br> 90205 → <strong>5</strong></div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-tag">Rule 3</div>
+                    <p>Zeros to the <strong>left</strong> of the first non-zero digit are NOT significant.</p>
+                    <div class="example-box">0.00486 → <strong>3</strong> <br> 0.01 → <strong>1</strong></div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-tag">Rule 4</div>
+                    <p>In numbers without a decimal, trailing zeros are usually NOT significant.</p>
+                    <div class="example-box">4500 → <strong>2</strong> <br> 2050 → <strong>3</strong></div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-tag">Rule 5</div>
+                    <p>Trailing zeros in a number with a <strong>decimal</strong> are significant.</p>
+                    <div class="example-box">2.00 → <strong>3</strong> <br> 1230.0 → <strong>5</strong></div>
+                </div>
+                <div class="rule-card">
+                    <div class="rule-tag">Rule 6</div>
+                    <p><strong>Counting</strong> numbers have infinite (∞) significant figures.</p>
+                    <div class="example-box">2 balls → <strong>∞</strong> <br> 50 eggs → <strong>∞</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.3 ROUNDING OFF -->
+        <div style="margin-bottom: 80px; padding: 50px; background: #fff7ed; border-radius: 40px; border: 3px solid #f59e0b;">
+            <h3 style="color: #92400e; font-size: 2.3rem; margin-top: 0; border-bottom: none;">➡️ Rounding Off</h3>
+            <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 20px;">
+                <p><strong>1. If the last digit < 5:</strong> Preceding digit remains unchanged. (Ex: 12.862 → 12.86)</p>
+                <p><strong>2. If the last digit > 5:</strong> Preceding digit increases by 1. (Ex: 12.868 → 12.87)</p>
+                <p><strong>3. If the last digit is exactly 5:</strong> If preceding digit is <strong>Even</strong>, keep it same. If <strong>Odd</strong>, add 1. <br> (Ex: 4.25 → 4.2 | 27.75 → 27.8)</p>
+            </div>
+        </div>
+
+        <!-- SIG FIG CALCULATOR LAB -->
+        <div style="margin-top: 60px; padding: 60px; background: linear-gradient(135deg, #064e3b 0%, #022c22 100%); border-radius: 50px; color: white; border: 6px solid #34d399; box-shadow: 0 40px 100px rgba(6, 78, 59, 0.4);">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h3 style="color: #34d399; font-size: 2.5rem; margin-bottom: 10px; border-bottom: none;">🧪 Live SigFig Calculator</h3>
+                <p style="opacity: 0.8;">Type any number to count its significant figures instantly.</p>
+            </div>
+
+            <div style="max-width: 600px; margin: auto; text-align: center;">
+                <input type="text" id="sf-input" placeholder="e.g., 0.00450" style="width: 100%; padding: 25px; background: rgba(255,255,255,0.05); border: 3px solid #34d399; border-radius: 20px; color: white; font-size: 2.5rem; text-align: center; outline: none;" oninput="calcSF()">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 30px;">
+                        <small>Significant Figures</small>
+                        <div id="sf-result" style="font-size: 4rem; font-weight: 900; color: #34d399;">0</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 30px;">
+                        <small>Scientific Notation</small>
+                        <div id="sf-sci" style="font-size: 1.4rem; font-weight: 800; color: #38bdf8; margin-top: 15px;">-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function calcSF() {
+                const input = document.getElementById('sf-input').value.trim();
+                const res = document.getElementById('sf-result');
+                const sci = document.getElementById('sf-sci');
+                
+                if (!input || isNaN(input)) { res.innerText = '0'; sci.innerText = '-'; return; }
+
+                let s = input.replace(/^-/, '');
+                let count = 0;
+                
+                if (s.includes('.')) {
+                    let core = s.replace(/^0+\.?0*/, '');
+                    count = core === "" ? 0 : core.replace('.', '').length;
+                } else {
+                    let trimmed = s.replace(/^0+/, '');
+                    if (trimmed === "") count = 0;
+                    else {
+                        let lastNonZero = -1;
+                        for(let i=trimmed.length-1; i>=0; i--) if(trimmed[i] !== '0') { lastNonZero = i; break; }
+                        count = lastNonZero === -1 ? 0 : lastNonZero + 1;
+                    }
+                }
+                res.innerText = count;
+                const num = parseFloat(input);
+                if (num === 0) sci.innerText = '0';
+                else {
+                    let n = Math.floor(Math.log10(Math.abs(num)));
+                    let sig = (num / Math.pow(10, n)).toFixed(count - 1 < 0 ? 0 : count - 1);
+                    sci.innerHTML = sig + ' × 10<sup>' + n + '</sup>';
+                }
+            }
+        </script>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn nav-home">🏠 Main Hub</a>
+        <div style="display: flex; gap: 15px;">
+            <a href="ch1_part3.html" class="nav-btn">⬅️ Previous</a>
+            <a href="ch1_part5.html" class="nav-btn">Next Part ➡️</a>
+        </div>
+    </div>
+
+</body>
+</html>
