@@ -1028,7 +1028,7 @@
                                 3.5 प्रयोगशाला मापन सिमुलेटर (Projector Mode Pro):</h3>
 
                             <div
-                                style="background: linear-gradient(135deg, #0f172a 0%, #020617 100%); padding: 80px; border-radius: 80px; border: 8px solid #38bdf8; box-shadow: 0 60px 120px rgba(0,0,0,0.6); display: grid; grid-template-columns: 2fr 1fr; gap: 80px; margin: 0 5vw;">
+                                style="background: linear-gradient(135deg, #0f172a 0%, #020617 100%); padding: 80px; border-radius: 80px; border: 8px solid #38bdf8; box-shadow: 0 60px 120px rgba(0,0,0,0.6); display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; margin: 0 2vw;">
 
                                 <!-- SIMULATOR VIEWPORT -->
                                 <div
@@ -1183,8 +1183,7 @@
                                         <h4 style="color: #38bdf8; margin-top:0; font-size: 1.8rem;">⚙️ प्रयोगशाला
                                             नियंत्रण (Controls):</h4>
 
-                                        <div
-                                            style="display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 35px;">
+                                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 35px;">
                                             <button onclick="switchTool('cylinder')" class="sim-btn">Cylinder
                                                 (100mL)</button>
                                             <button onclick="switchTool('burette')" class="sim-btn">Burette
@@ -1246,8 +1245,8 @@
                             </style>
 
                             <script>
-                                let currentTool = 'cylinder';
-                                let capacities = { cylinder: 100, burette: 50, pipette: 25, flask: 1000 };
+                                var currentTool = 'cylinder';
+                                var capacities = { cylinder: 100, burette: 50, pipette: 25, flask: 1000 };
 
                                 function switchTool(toolId) {
                                     // Update button visuals using classes
@@ -1262,7 +1261,7 @@
                                         document.getElementById(id).style.display = 'none';
                                     });
 
-                                    const target = document.getElementById('tool-' + toolId);
+                                    var target = document.getElementById('tool-' + toolId);
                                     target.style.display = (toolId === 'flask' || toolId === 'cylinder') ? 'flex' : 'block';
                                     if (toolId === 'cylinder') target.style.flexDirection = 'column';
 
@@ -1272,17 +1271,17 @@
                                 }
 
                                 function updateFill(val) {
-                                    const liq = document.getElementById('liq-' + currentTool);
+                                    var liq = document.getElementById('liq-' + currentTool);
                                     if (liq) liq.style.height = val + '%';
 
                                     // Update Reading
-                                    let realVol = (val * capacities[currentTool] / 100).toFixed(2);
+                                    var realVol = (val * capacities[currentTool] / 100).toFixed(2);
                                     document.getElementById('vol-reading').innerText = realVol + ' mL';
 
                                     // Update magnified view
-                                    const mag = document.getElementById('mag-view');
-                                    const magLiq = document.getElementById('mag-liq');
-                                    const parallaxTip = document.getElementById('parallax-tip');
+                                    var mag = document.getElementById('mag-view');
+                                    var magLiq = document.getElementById('mag-liq');
+                                    var parallaxTip = document.getElementById('parallax-tip');
 
                                     if (val > 2 && val < 98) {
                                         mag.style.visibility = 'visible';
@@ -1295,8 +1294,8 @@
                                 }
 
                                 function updateToolInfo(id) {
-                                    const names = { cylinder: 'Cylinder', burette: 'Burette', pipette: 'Pipette', flask: 'Volumetric Flask' };
-                                    const descs = {
+                                    var names = { cylinder: 'Cylinder', burette: 'Burette', pipette: 'Pipette', flask: 'Volumetric Flask' };
+                                    var descs = {
                                         cylinder: 'द्रव्यों के त्वरित मापन के लिए। 100mL तक की मार्किंग।',
                                         burette: 'टाइट्रेशन के लिए। 0-50 mL के सटिक निशान (उल्टी गिनती)।',
                                         pipette: 'निश्चित आयतन सटिकता से मापने के लिए।',
@@ -2241,4 +2240,5 @@
 </body>
 
 </html>
+
 
