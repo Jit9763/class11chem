@@ -3,98 +3,472 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Chapter 1: Some Basic Concepts of Chemistry - Part 7</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <title>Chapter 1: Part 7 - Dalton's Atomic Theory (डाल्टन का परमाणु सिद्धांत)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; padding-bottom: 100px; }
-        .part-container { padding: 60px 40px; line-height: 1.8; font-size: 1.5rem; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.04); border-top: 5px solid #059669; }
-        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 10px; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; }
-        .header-banner h1 { font-size: 3.5rem; margin: 0; font-weight: 900; }
-        h2 { color: #064e3b; font-size: 3rem; border-left: 15px solid #059669; padding-left: 30px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 20px; padding-bottom: 20px; border-radius: 0 30px 30px 0; margin-bottom: 50px; margin-top: 0; }
-        h3 { color: #065f46; font-size: 2.3rem; border-bottom: 4px solid #d1fae5; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
-        .tenet-card { padding: 25px; background: #f0fdf4; border-radius: 20px; border-left: 10px solid #059669; display: flex; align-items: start; gap: 20px; margin-bottom: 20px; }
-        .tenet-num { font-size: 1.8rem; font-weight: 900; color: #059669; }
-        .limitation-box { margin-top: 100px; padding: 50px; background: #fff1f2; border: 4px solid #fb7185; border-radius: 50px; box-shadow: 0 30px 60px rgba(251, 113, 133, 0.1); }
-        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-top: 2px solid #e2e8f0; z-index: 1000; }
-        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: 0.3s; margin-left: 10px; }
-        .nav-home { background: #334155; }
-        
+        :root {
+            --primary: #059669;
+            --primary-dark: #064e3b;
+            --secondary: #38bdf8;
+            --accent: #fb7185;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --font-main: #000000; /* High contrast black for projector */
+        }
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Outfit', sans-serif; 
+            background: var(--slate-50); 
+            color: var(--font-main); 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 600; /* Projector friendly boldness */
+        }
+
+        .header-banner { 
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #065f46 100%); 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-radius: 0 0 60px 60px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .premium-badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .header-banner h1 { 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            margin: 0; 
+            font-weight: 950; 
+            line-height: 1.1;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .part-container { 
+            width: 100%;
+            max-width: 100vw;
+            padding: 80px 6vw; 
+            box-sizing: border-box;
+            background: white; 
+            margin-top: -40px;
+            border-radius: 60px 60px 0 0;
+            box-shadow: 0 -20px 60px rgba(0,0,0,0.1);
+        }
+
+        h2 { 
+            color: var(--primary-dark); 
+            font-size: clamp(2rem, 5.5vw, 3.5rem); 
+            border-left: 20px solid var(--primary); 
+            padding: 25px 40px; 
+            background: linear-gradient(to right, #f0fdf4, transparent); 
+            border-radius: 0 40px 40px 0; 
+            margin: 0 0 60px 0;
+            line-height: 1.2;
+            font-weight: 900;
+        }
+
+        h3 { 
+            color: var(--primary); 
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem); 
+            border-bottom: 6px solid #d1fae5; 
+            display: inline-block; 
+            padding-bottom: 15px; 
+            margin: 80px 0 40px 0; 
+            font-weight: 900;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 50px;
+            padding: 50px;
+            border: 3px solid var(--slate-100);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        .tenet-card {
+            background: #f0fdf4;
+            padding: 40px;
+            border-radius: 35px;
+            border-left: 15px solid var(--primary);
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 30px;
+            font-size: 1.6rem;
+            line-height: 1.7;
+            font-weight: 700;
+        }
+
+        .tenet-num {
+            font-size: 2.5rem;
+            font-weight: 950;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .limitation-box {
+            background: #fff1f2;
+            padding: 60px;
+            border-radius: 60px;
+            border: 5px solid var(--accent);
+            margin-top: 100px;
+            box-shadow: 0 40px 80px rgba(251, 113, 133, 0.1);
+        }
+
+        .limitation-box h3 {
+            color: #be123c;
+            border-bottom-color: #fecdd3;
+            margin-top: 0;
+        }
+
+        /* --- MATH FRACTION SYSTEM --- */
+        .math-frac {
+            display: inline-flex;
+            flex-direction: column;
+            vertical-align: middle;
+            text-align: center;
+            font-weight: 850;
+            margin: 0 15px;
+            line-height: 1;
+        }
+        .math-num {
+            border-bottom: 3px solid currentColor;
+            padding: 0 15px 5px 15px;
+        }
+        .math-den {
+            padding: 5px 15px 0 15px;
+        }
+
+        /* --- FORMULA BOXES (IMAGE STYLE) --- */
+        .formula-card-blue {
+            background: #eff6ff;
+            border: 3px solid #bfdbfe;
+            border-radius: 35px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 40px 0;
+            color: #1e40af;
+            font-size: 1.8rem;
+        }
+
+        .formula-card-orange {
+            background: #fff7ed;
+            border: 3px solid #fed7aa;
+            border-radius: 35px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin: 40px 0;
+            color: #9a3412;
+            font-size: 1.8rem;
+        }
+
+        .eq-label {
+            position: absolute;
+            right: 40px;
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+
+        .derivation-step {
+            font-size: 1.7rem;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            line-height: 2;
+        }
+
+        .step-marker {
+            color: #3b82f6;
+            margin-right: 15px;
+            font-size: 1.4rem;
+        }
+
+        .final-result-box {
+            background: #064e3b;
+            color: #10b981;
+            padding: 60px;
+            border-radius: 50px;
+            text-align: center;
+            border: 5px solid #10b981;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+            margin: 80px 0;
+        }
+
+        .final-result-box .formula {
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            font-weight: 950;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        .nav-buttons { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 60px 5vw; 
+            background: var(--slate-900); 
+            border-radius: 60px 60px 0 0;
+            margin-top: 100px;
+        }
+
+        .nav-btn { 
+            background: var(--primary); 
+            color: white; 
+            padding: 22px 50px; 
+            border-radius: 100px; 
+            text-decoration: none; 
+            font-weight: 900; 
+            font-size: 1.4rem; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 15px 30px rgba(5, 150, 105, 0.3);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(5, 150, 105, 0.5);
+        }
+
+        .nav-home { background: var(--slate-800); }
+
+        .hindi-note {
+            color: #4b5563;
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-top: 15px;
+            display: block;
+            border-left: 5px solid #d1d5db;
+            padding-left: 20px;
+        }
+
         @media (max-width: 800px) {
-            .part-container { padding: 40px 20px; margin: 20px; }
-            .header-banner h1 { font-size: 2.5rem; }
-            h2 { font-size: 2.2rem; border-left-width: 10px; }
-            .nav-btn { padding: 12px 20px; font-size: 1.1rem; }
+            .part-container { padding: 50px 25px; }
+            .tenet-card { padding: 30px; }
+            .eq-label { position: static; margin-top: 20px; width: 100%; text-align: right; }
+            .formula-card-blue, .formula-card-orange { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
     <div class="header-banner">
-        <h1>Dalton's Atomic Theory</h1>
+        <div class="premium-badge">Premium Projector Edition</div>
+        <h1>Dalton's Atomic Theory<br><span style="font-size: 0.5em; opacity: 0.8; font-weight: 800;">डाल्टन का परमाणु सिद्धांत</span></h1>
     </div>
 
     <div class="part-container">
-        <h2>Part 7: Dalton's Atomic Theory</h2>
+        <!-- DALTON SECTION START -->
+        <h2>Part 7: Dalton's Atomic Theory (डाल्टन का परमाणु सिद्धांत)</h2>
 
-        <div style="margin-bottom: 50px;">
-            <p style="text-indent: 40px; line-height: 2;">
-                In 1808, <strong>John Dalton</strong> published "A New System of Chemical Philosophy" in which he proposed the atomic theory. This theory was based on the laws of chemical combination.
+        <div class="content-card">
+            <p style="line-height: 2; font-size: 1.8rem; font-weight: 700;">
+                In <strong>1808</strong>, British chemist <strong>John Dalton</strong> proposed his atomic theory, which serves as a fundamental cornerstone of modern chemistry. This theory was based on the <strong>Laws of Chemical Combination</strong>.
+                <span class="hindi-note">सन 1808 में जॉन डाल्टन ने अपना परमाणु सिद्धांत दिया, जो रासायनिक संयोजन के नियमों पर आधारित था।</span>
             </p>
         </div>
 
-        <!-- MAIN TENETS -->
-        <h3 style="border-bottom: none;">Main Points of Dalton’s Theory:</h3>
-        <div style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 60px;">
+        <h3>Postulates of Dalton's Theory (सिद्धांत के मुख्य बिंदु)</h3>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
             <div class="tenet-card">
                 <span class="tenet-num">❶</span>
-                <p>Matter consists of indivisible particles called <strong>Atoms</strong>.</p>
+                <div>
+                    <strong>Matter consists of indivisible particles called Atoms.</strong>
+                    <span class="hindi-note">पदार्थ अविभाज्य सूक्ष्म कणों से बना है, जिन्हें परमाणु (Atoms) कहते हैं।</span>
+                </div>
             </div>
-            <div class="tenet-card">
-                <span class="tenet-num">❷</span>
-                <p>All atoms of a given element have **identical** properties, including identical mass.</p>
+            <div class="tenet-card" style="background: #f0f9ff; border-left-color: #0ea5e9;">
+                <span class="tenet-num" style="color: #0ea5e9;">❷</span>
+                <div>
+                    <strong>All atoms of a given element are identical in mass and properties.</strong>
+                    <span class="hindi-note">एक ही तत्व के सभी परमाणु समान (द्रव्यमान और गुणों में) होते हैं।</span>
+                </div>
             </div>
             <div class="tenet-card">
                 <span class="tenet-num">❸</span>
-                <p>Atoms of different elements differ in mass.</p>
+                <div>
+                    <strong>Atoms of different elements have different masses and properties.</strong>
+                    <span class="hindi-note">भिन्न-भिन्न तत्वों के परमाणुओं के गुणधर्म तथा द्रव्यमान भिन्न-भिन्न होते हैं।</span>
+                </div>
             </div>
-            <div class="tenet-card">
-                <span class="tenet-num">❹</span>
-                <p>Compounds are formed when atoms of different elements combine in a **fixed ratio**.</p>
+            <div class="tenet-card" style="background: #f0f9ff; border-left-color: #0ea5e9;">
+                <span class="tenet-num" style="color: #0ea5e9;">❹</span>
+                <div>
+                    <strong>Atoms are the smallest units that take part in chemical reactions.</strong>
+                    <span class="hindi-note">परमाणु, पदार्थ की सबसे छोटी इकाई है जो रासायनिक संयोग में भाग लेती है।</span>
+                </div>
             </div>
             <div class="tenet-card">
                 <span class="tenet-num">❺</span>
-                <p>Chemical reactions involve reorganization of atoms. These are neither created nor destroyed in a chemical reaction.</p>
+                <div>
+                    <strong>Atoms combine in simple whole-number ratios to form Compounds.</strong>
+                    <span class="hindi-note">दो या अधिक तत्वों के परमाणु सरल अनुपात में संयोग करते हैं तथा बनने वाले पदार्थ को अणु (Molecule) कहा जाता है।</span>
+                </div>
+            </div>
+            <div class="tenet-card" style="background: #f0f9ff; border-left-color: #0ea5e9;">
+                <span class="tenet-num" style="color: #0ea5e9;">❻</span>
+                <div>
+                    <strong>Atoms can neither be created nor destroyed in a reaction.</strong>
+                    <span class="hindi-note">रासायनिक परिवर्तन में परमाणु न तो उत्पन्न किए जा सकते हैं तथा न ही नष्ट किए जा सकते हैं।</span>
+                </div>
             </div>
         </div>
 
-        <!-- VAPOR DENSITY RELATION -->
-        <h3>Relating Vapor Density & Molecular Weight</h3>
-        <div style="background: #f8fafc; padding: 40px; border-radius: 30px; border: 2px solid #e2e8f0; margin-bottom: 60px;">
-            <p><strong>Vapor Density:</strong> The ratio of the weight of a certain volume of a gas to the weight of an equal volume of hydrogen under the same conditions.</p>
-            <div style="background: #064e3b; color: white; padding: 40px; border-radius: 30px; text-align: center; margin: 30px 0;">
-                <div style="font-size: 2.5rem; font-weight: 900;">Molecular Weight = 2 × Vapor Density</div>
-            </div>
-            <p><em>Note: This is derived using Avogadro’s Hypothesis and the fact that Hydrogen is diatomic (H₂).</em></p>
-        </div>
-
-        <!-- LIMITATIONS -->
-        <div class="limitation-box">
-            <h3 style="color: #be123c; border-bottom: 4px solid #fecdd3; margin-top: 0;">Limitations of Dalton’s Theory:</h3>
-            <ul style="line-height: 2; padding-left: 20px;">
-                <li style="margin-bottom: 20px;">❌ It could not explain Gay Lussac’s Law of gaseous volumes.</li>
-                <li style="margin-bottom: 20px;">❌ It failed to explain why atoms of different elements differ in mass and valency.</li>
-                <li>❌ <strong>Isotopes & Isobars:</strong> Dalton stated all atoms of an element are same, but later discovery of **isotopes** (atoms of same element with different mass) proved this wrong.</li>
+        <!-- LIMITATIONS (MOVED BEFORE 7.5 AS PER REQUEST) -->
+        <div class="limitation-box" id="dalton-limitations">
+            <h3>Limitations (सिद्धांत की सीमाएं)</h3>
+            <ul style="line-height: 2.2; font-size: 1.6rem; padding-left: 20px; font-weight: 700;">
+                <li style="margin-bottom: 30px;">
+                    <strong>Gay-Lussac’s Law:</strong> It could not explain the law of gaseous volumes.
+                    <br><span class="hindi-note">यह सिद्धांत गे-लूसैक के गैसीय आयतनों के नियम की व्याख्या नहीं करता।</span>
+                </li>
+                <li style="margin-bottom: 30px;">
+                    <strong>Isotopes & Isobars:</strong> It failed to explain why atoms of the same element can have different masses (Isotopes).
+                    <br><span class="hindi-note">यह समस्थानिकों (Isotopes) और संभारिकों (Isobars) की व्याख्या नहीं करता।</span>
+                </li>
+                <li>
+                    <strong>Atomic Structure:</strong> It didn't explain why atoms of different elements differ in size and volume.
+                    <br><span class="hindi-note">भिन्न तत्वों के परमाणुओं के आयतन में अंतर की व्याख्या नहीं की जा सकी।</span>
+                </li>
             </ul>
         </div>
 
+        <!-- PART 7.5: VAPOR DENSITY (MOVED AFTER LIMITATIONS) -->
+        <div id="part-7-5">
+            <h2 style="margin-top: 150px;">Part 7.5: Vapor Density & Molecular Weight<br><span style="font-size: 0.6em; opacity: 0.7;">वाष्प घनत्व और अणुभार में सम्बन्ध</span></h2>
+            
+            <div class="content-card">
+                <h3>1. Atomicity (परमाणुकता)</h3>
+                <p style="font-size: 1.7rem; font-weight: 700;">The number of atoms present in one molecule of a gas is called its <strong>Atomicity</strong>.</p>
+                <span class="hindi-note">किसी गैस के एक अणु में उपस्थित परमाणुओं की संख्या को उसकी परमाणुकता कहते हैं।</span>
+            </div>
+
+            <div class="content-card">
+                <h3>2. Vapor Density (वाष्प घनत्व)</h3>
+                <p style="font-size: 1.7rem; font-weight: 700;">Vapor Density (V.D.) is the ratio of weights of equal volumes of Gas and Hydrogen.</p>
+                <span class="hindi-note">ताप और दाब की समान परिस्थितियों में गैस के निश्चित आयतन का भार तथा हाइड्रोजन के समान आयतन के भार के अनुपात को वाष्प घनत्व कहते हैं।</span>
+                
+                <div class="formula-card-blue" style="border-style: dashed; background: #f8fafc; color: var(--slate-800);">
+                    V.D. = 
+                    <div class="math-frac">
+                        <span class="math-num">Weight of certain volume of gas</span>
+                        <span class="math-den">Weight of same volume of Hydrogen</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 id="derivation-start">Derivation (उपपत्ति)</h3>
+            <div class="content-card" style="background: #fdfdfd;">
+                <div class="derivation-step">
+                    <span class="step-marker">⬥</span> 
+                    According to Avogadro's Hypothesis, if volume contains <strong>'n'</strong> molecules:
+                </div>
+                
+                <div class="formula-card-blue" style="border: 1px dashed #3b82f6;">
+                    V.D. = 
+                    <div class="math-frac">
+                        <span class="math-num">Weight of 'n' molecules of gas</span>
+                        <span class="math-den">Weight of 'n' molecules of H₂</span>
+                    </div>
+                </div>
+
+                <div class="derivation-step">
+                    <span class="step-marker">⬥</span> 
+                    For <strong>n = 1</strong> molecule:
+                </div>
+
+                <div class="formula-card-blue" style="border: 1px dashed #3b82f6;">
+                    V.D. = 
+                    <div class="math-frac">
+                        <span class="math-num">Weight of 1 molecule of gas</span>
+                        <span class="math-den">Weight of 1 molecule of H₂</span>
+                    </div>
+                </div>
+
+                <div class="derivation-step">
+                    <span class="step-marker">⬥</span> 
+                    Since Hydrogen is <strong>diatomic</strong> (1 Molecule H₂ = 2 Atoms H):
+                </div>
+
+                <div class="formula-card-blue">
+                    V.D. = 
+                    <div class="math-frac">
+                        <span class="math-num">Weight of 1 molecule of gas</span>
+                        <span class="math-den">2 × Weight of 1 atom of H</span>
+                    </div>
+                    <span class="eq-label">--- (1)</span>
+                </div>
+
+                <div class="derivation-step">
+                    <span class="step-marker">⬥</span> 
+                    We know that <strong>Molecular Weight (M)</strong> is:
+                </div>
+
+                <div class="formula-card-orange">
+                    M (Molec. Wt) = 
+                    <div class="math-frac">
+                        <span class="math-num">Weight of 1 molecule of gas</span>
+                        <span class="math-den">Weight of 1 atom of H</span>
+                    </div>
+                    <span class="eq-label">--- (2)</span>
+                </div>
+                
+                <div class="derivation-step" style="background: #f0fdf4; padding: 25px; border-radius: 20px; font-weight: 800; color: #166534; justify-content: center; border: 2px solid #bcf0da;">
+                    Dividing Equation (2) by Equation (1), we get:
+                </div>
+
+                <div class="final-result-box">
+                    <div style="font-size: 1.5rem; color: #38bdf8; text-transform: uppercase; letter-spacing: 5px; margin-bottom: 20px; font-weight: 900;">Relationship Proved</div>
+                    <div class="formula">Molecular Weight = 2 × V.D.</div>
+                    <div style="margin-top: 25px; opacity: 0.9; font-size: 1.8rem; font-weight: 800; color: white;">अणुभार = 2 × वाष्प घनत्व</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRANSITION CARD -->
+        <div style="margin-top: 150px; padding: 100px 50px; background: var(--primary-dark); color: white; border-radius: 80px; text-align: center; box-shadow: 0 40px 100px rgba(0,0,0,0.4);">
+            <h3 style="margin-top: 0; font-size: clamp(2.5rem, 6vw, 4rem); color: white; border: none; font-weight: 950;">Weighing the Unseen! ⚖️</h3>
+            <p style="font-size: 2rem; opacity: 0.9; max-width: 900px; margin: 40px auto; font-weight: 700;">We've unlocked the ratio of density. Now, let's learn how to weigh these tiny fragments using <strong>Atomic Mass Units (amu)</strong>.</p>
+            <div style="margin-top: 50px; font-weight: 950; color: var(--secondary); text-transform: uppercase; letter-spacing: 5px; font-size: 1.5rem;">Upcoming: Part 8 (Atomic & Molecular Masses)</div>
+            
+            <div style="margin-top: 60px; display: flex; justify-content: center;">
+                <a href="ch1_part8.html" style="background: var(--secondary); color: var(--slate-900); padding: 30px 70px; border-radius: 100px; text-decoration: none; font-weight: 950; font-size: 1.8rem; box-shadow: 0 20px 40px rgba(56, 189, 248, 0.4); border: 4px solid var(--slate-900);">
+                    Start Part 8 (Atomic Masses) ➡️
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- NAVIGATION -->
     <div class="nav-buttons">
-        <a href="../index.html" class="nav-btn nav-home">🏠 Main Hub</a>
-        <div style="display: flex;">
-            <a href="ch1_part6.html" class="nav-btn">⬅️ Previous</a>
-            <a href="ch1_part8.html" class="nav-btn">Next Part ➡️</a>
+        <a href="../index.html" class="nav-btn nav-home">🏠 Hub</a>
+        <div style="display: flex; gap: 20px;">
+            <a href="ch1_part6.html" class="nav-btn" style="background: var(--slate-800);">⬅️ Previous</a>
+            <a href="ch1_part8.html" class="nav-btn">Next ➡️</a>
         </div>
     </div>
 

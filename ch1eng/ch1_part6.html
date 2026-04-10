@@ -6,113 +6,132 @@
     <title>Chapter 1: Some Basic Concepts of Chemistry - Part 6</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; padding-bottom: 100px; }
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; }
         .part-container { padding: 60px 40px; line-height: 1.8; font-size: 1.5rem; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.04); border-top: 5px solid #059669; }
-        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 10px; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; }
-        .header-banner h1 { font-size: 3.5rem; margin: 0; font-weight: 900; }
-        h2 { color: #064e3b; font-size: 3rem; border-left: 15px solid #059669; padding-left: 30px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 20px; padding-bottom: 20px; border-radius: 0 30px 30px 0; margin-bottom: 50px; margin-top: 0; }
+        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 5vw; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; box-shadow: 0 20px 40px rgba(6, 78, 59, 0.2); }
+        .header-banner h1 { font-size: 4rem; margin: 0 0 15px 0; font-weight: 900; }
+        .header-banner p { font-size: 1.8rem; margin: 0; color: #a7f3d0; font-weight: 600; }
+        h2 { color: #064e3b; font-size: 3.5rem; border-left: 20px solid #059669; padding-left: 40px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 30px; padding-bottom: 30px; border-radius: 0 50px 50px 0; margin-bottom: 60px; margin-top: 0; }
         h3 { color: #065f46; font-size: 2.3rem; border-bottom: 4px solid #d1fae5; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
-        .law-card { margin-bottom: 80px; padding: 40px; border-radius: 40px; box-shadow: 0 15px 30px rgba(0,0,0,0.03); border-left: 15px solid #059669; }
-        .law-def { background: white; padding: 30px; border-radius: 20px; border: 1px dashed #cbd5e1; font-style: italic; font-size: 1.6rem; margin-bottom: 30px; }
-        .law-ex { padding: 30px; border-radius: 25px; font-family: 'Courier New', monospace; }
-        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-top: 2px solid #e2e8f0; z-index: 1000; }
-        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: 0.3s; margin-left: 10px;}
+        
+        .law-card { margin-bottom: 80px; padding: 50px; border-radius: 40px; box-shadow: 0 15px 30px rgba(0,0,0,0.03); position: relative; }
+        .law-card h3 { border: none; font-size: 2.5rem; margin-top: 0; margin-bottom: 20px; }
+        .statement-box { background: white; padding: 30px; border-radius: 20px; border-style: dashed; border-width: 2px; font-style: italic; font-size: 1.6rem; margin-bottom: 30px; line-height: 1.6; }
+        .example-box { padding: 30px; border-radius: 25px; font-family: 'Courier New', monospace; line-height: 1.6; }
+
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 40px 5vw; width: 100%; box-sizing: border-box; background: #f8fafc; border-top: 2px solid #e2e8f0; margin-top: 50px; }
+        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3); display: flex; align-items: center; gap: 10px; }
+        .nav-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(5, 150, 105, 0.4); }
         .nav-home { background: #334155; }
         
         @media (max-width: 800px) {
-            .part-container { padding: 40px 20px; margin: 20px; }
-            .header-banner h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; border-left-width: 10px; }
+            html { font-size: 11px !important; }
+            .part-container { padding: 40px 20px !important; margin: 20px; border-radius: 20px; }
+            .header-banner h1 { font-size: 3rem !important; }
+            h2 { font-size: 2.2rem !important; border-left-width: 10px; padding-left: 20px; }
             .nav-btn { padding: 12px 20px; font-size: 1.1rem; }
+            .law-card { padding: 30px; border-radius: 30px; }
         }
     </style>
 </head>
 <body>
 
     <div class="header-banner">
-        <h1>Laws of Chemical Combinations</h1>
+        <h1>Chapter 1: Basic Concepts of Chemistry</h1>
+        <p>Premium English Edition</p>
     </div>
 
     <div class="part-container">
-        <h2>Part 6: Laws of Chemical Combinations</h2>
-        
+        <h2>Part 6: Laws of Chemical Combination (रासायनिक संयोजन के नियम)</h2>
+
         <p style="line-height: 2; text-indent: 40px; margin-bottom: 50px;">
-            The combination of elements to form compounds is governed by five basic laws of chemical combinations:
+            Various elements combine to form compounds. There are <strong>five fundamental laws</strong> that govern these combinations:
         </p>
 
-        <!-- LAW 1 -->
-        <div class="law-card" style="background: #f0fdf4; border-color: #059669;">
-            <h3 style="color: #065f46; border-bottom: none; margin-bottom: 10px;">1. Law of Conservation of Mass</h3>
-            <p>🔹 Proposed by <strong>Antoine Lavoisier</strong> (1789).</p>
-            <div class="law-def">
-                "Matter can neither be created nor destroyed. In a chemical reaction, the total mass of reactants is equal to the total mass of products."
+        <!-- LAW 1: Conservation of Mass -->
+        <div class="law-card" style="background: #f0fdf4; border-left: 15px solid #059669;">
+            <h3 style="color: #065f46;">1. Law of Conservation of Mass<br>(द्रव्यमान संरक्षण का नियम)</h3>
+            <p style="margin-bottom: 25px;">🔹 Proposed by <strong>Antoine Lavoisier (लेवोसिए)</strong>.</p>
+            <div class="statement-box" style="border-color: #059669;">
+                "Matter can neither be created nor destroyed. The total mass of reactants taking part in a chemical reaction is equal to the total mass of the products formed."
             </div>
-            <div class="law-ex" style="background: #064e3b; color: #10b981;">
-                <strong style="color: white;">Example: Combustion of Carbon</strong><br>
-                C + O₂ &rarr; CO₂<br>
-                12g + 32g &rarr; 44g<br>
-                (Mass of Reactants = 44g | Mass of Product = 44g)
-            </div>
-        </div>
-
-        <!-- LAW 2 -->
-        <div class="law-card" style="background: #fdf2f2; border-color: #ef4444;">
-            <h3 style="color: #991b1b; border-bottom: none; margin-bottom: 10px;">2. Law of Definite Proportions</h3>
-            <p>🔹 Proposed by <strong>Joseph Proust</strong>.</p>
-            <div class="law-def">
-                "A given compound always contains exactly the same proportion of elements by weight, regardless of its source."
-            </div>
-            <div class="law-ex" style="background: #991b1b; color: white; font-family: sans-serif;">
-                <strong>Example: Water (H₂O)</strong><br>
-                A sample of pure water, whether from a well or a river, always contains Hydrogen and Oxygen in the mass ratio of <strong>1:8</strong>.
+            <div class="example-box" style="background: #064e3b; color: #10b981;">
+                <strong style="color: white; display: block; margin-bottom: 10px;">Example: Combustion of Carbon (कार्बन का दहन)</strong>
+                C + O₂ &rarr; CO₂ <br>
+                12g + 32g &rarr; 44g <br>
+                <span style="font-size: 1rem; color: #6ee7b7;">(Total Reactants = 44g | Total Products = 44g)</span>
             </div>
         </div>
 
-        <!-- LAW 3 -->
-        <div class="law-card" style="background: #fffbeb; border-color: #f59e0b;">
-            <h3 style="color: #92400e; border-bottom: none; margin-bottom: 10px;">3. Law of Multiple Proportions</h3>
-            <p>🔹 Proposed by <strong>John Dalton</strong> (1803).</p>
-            <div class="law-def">
-                "If two elements can combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in the ratio of small whole numbers."
+        <!-- LAW 2: Definite Proportions -->
+        <div class="law-card" style="background: #fdf2f2; border-left: 15px solid #ef4444;">
+            <h3 style="color: #991b1b;">2. Law of Definite Proportions<br>(स्थिर अनुपात का नियम)</h3>
+            <p style="margin-bottom: 25px;">🔹 Proposed by French chemist <strong>Joseph Proust (प्राऊस्ट)</strong>.</p>
+            <div class="statement-box" style="border-color: #ef4444;">
+                "In a chemical compound, the elements are always present in a definite proportion by mass, regardless of the source from which it is obtained."
             </div>
-            <div class="law-ex" style="background: #fef3c7; color: #92400e; border: 2px solid #d97706; font-family: sans-serif;">
-                <strong>Example: Carbon and Oxygen</strong><br>
-                • In CO, 12g Carbon combines with 16g Oxygen.<br>
-                • In CO₂, 12g Carbon combines with 32g Oxygen.<br>
-                Ratio of Oxygen masses = 16:32 = <strong>1:2</strong>.
+            <div class="example-box" style="background: #991b1b; color: white;">
+                <strong>Example: Water (H₂O)</strong> <br>
+                In water, the ratio of the mass of hydrogen to the mass of oxygen is always <strong>2:16</strong> or <strong>1:8</strong>.
             </div>
         </div>
 
-        <!-- LAW 4 -->
-        <div class="law-card" style="background: #eff6ff; border-color: #3b82f6;">
-            <h3 style="color: #1e40af; border-bottom: none; margin-bottom: 10px;">4. Gay Lussac’s Law of Gaseous Volumes</h3>
-            <p>🔹 Proposed by <strong>Gay Lussac</strong> (1808).</p>
-            <div class="law-def">
-                "When gases combine or are produced in a chemical reaction, they do so in a simple ratio by volume, provided all gases are at the same temperature and pressure."
+        <!-- LAW 3: Multiple Proportions -->
+        <div class="law-card" style="background: #fffbeb; border-left: 15px solid #f59e0b;">
+            <h3 style="color: #92400e;">3. Law of Multiple Proportions<br>(गुणित अनुपात का नियम)</h3>
+            <p style="margin-bottom: 25px;">🔹 Proposed by <strong>John Dalton (डॉल्टन)</strong>.</p>
+            <div class="statement-box" style="border-color: #f59e0b;">
+                "When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in a simple whole-number ratio."
             </div>
-            <div class="law-ex" style="background: #1e40af; color: white;">
-                <strong>Example: Hydrogen + Oxygen → Steam</strong><br>
-                2H₂(g) + O₂(g) &rarr; 2H₂O(g)<br>
-                (2 vol) + (1 vol) &rarr; (2 vol)<br>
-                Ratio = <strong>2 : 1 : 2</strong>
+            <div class="example-box" style="background: #fef3c7; border: 2px solid #d97706; color: #92400e;">
+                <strong>Example: Carbon & Oxygen (CO and CO₂)</strong> <br>
+                • Ratio in CO: 12g C combines with 16g O <br>
+                • Ratio in CO₂: 12g C combines with 32g O <br>
+                <span style="color: #b45309; font-weight: 800;">Ratio of Oxygen combined with fixed Carbon: 16:32 = 1 : 2</span>
             </div>
         </div>
 
-        <!-- LAW 5 -->
-        <div class="law-card" style="background: #faf5ff; border-color: #a855f7; margin-bottom: 0;">
-            <h3 style="color: #6b21a8; border-bottom: none; margin-bottom: 10px;">5. Avogadro’s Law</h3>
-            <p>🔹 Proposed by <strong>Amedeo Avogadro</strong> (1811).</p>
-            <div class="law-def">
+        <!-- LAW 4: Gay-Lussac's Law -->
+        <div class="law-card" style="background: #eff6ff; border-left: 15px solid #3b82f6;">
+            <h3 style="color: #1e40af;">4. Gay-Lussac’s Law of Gaseous Volumes<br>(गे-लूसैक का गैसीय आयतनों का नियम)</h3>
+            <div class="statement-box" style="border-color: #3b82f6;">
+                "When gases react together or are produced in a chemical reaction at constant temperature and pressure, they do so in a simple whole-number ratio by volume."
+            </div>
+            <div class="example-box" style="background: #1e40af; color: white;">
+                <strong>Example: Formation of Water Vapor</strong> <br>
+                2H₂ (g) + O₂ (g) &rarr; 2H₂O (g) <br>
+                (2 vol.) + (1 vol.) &rarr; (2 vol.) <br>
+                200ml : 100ml : 200ml <br>
+                <span style="color: #bfdbfe; font-weight: 900; font-size: 1.8rem; letter-spacing: 5px;">RATIO = 2 : 1 : 2</span>
+            </div>
+        </div>
+
+        <!-- LAW 5: Avogadro's Law -->
+        <div class="law-card" style="background: #faf5ff; border-left: 15px solid #a855f7; margin-bottom: 120px;">
+            <h3 style="color: #6b21a8;">5. Avogadro’s Law<br>(आवोगाद्रो का नियम)</h3>
+            <div class="statement-box" style="border-color: #a855f7;">
                 "Equal volumes of all gases at the same temperature and pressure should contain equal number of molecules."
             </div>
         </div>
 
+        <!-- TRANSITION CARD -->
+        <div style="margin-top: 100px; padding: 71px; background: #064e3b; color: white; border-radius: 80px; text-align: center; box-shadow: 0 40px 80px rgba(0,0,0,0.3);">
+            <h3 style="margin-top: 0; font-size: 3rem; color: white; border: none;">The Atomic Theory! ⚛️</h3>
+            <p style="font-size: 1.5rem; opacity: 0.9; max-width: 800px; margin: 20px auto;">Now that we understand how elements combine, let's explore **Dalton's Atomic Theory** which first explained the nature of these fundamental particles.</p>
+            <div style="margin-top: 30px; font-weight: 900; color: #38bdf8; text-transform: uppercase; letter-spacing: 3px;">Upcoming: Part 7 (Dalton's Atomic Theory)</div>
+            
+            <div style="margin-top: 50px; display: flex; justify-content: center;">
+                <a href="ch1_part7.html" style="background: #38bdf8; color: #0f172a; padding: 20px 40px; border-radius: 30px; text-decoration: none; font-weight: 900; font-size: 1.5rem; box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4); border: 3px solid #0f172a; transition: all 0.3s;">
+                    Next Part (Part 7: Dalton's Theory) ➡️
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- NAVIGATION -->
     <div class="nav-buttons">
         <a href="../index.html" class="nav-btn nav-home">🏠 Main Hub</a>
-        <div style="display: flex;">
+        <div style="display: flex; gap: 15px;">
             <a href="ch1_part5.html" class="nav-btn">⬅️ Previous</a>
             <a href="ch1_part7.html" class="nav-btn">Next Part ➡️</a>
         </div>

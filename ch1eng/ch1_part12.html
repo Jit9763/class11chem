@@ -3,73 +3,367 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Chapter 1: Some Basic Concepts of Chemistry - Part 12</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <title>Chapter 1: Part 12 - Master Numericals & Chapter Finale (महत्वपूर्ण संख्यात्मक प्रश्न)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; padding-bottom: 100px; }
-        .part-container { padding: 60px 40px; line-height: 1.8; font-size: 1.5rem; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.04); border-top: 5px solid #059669; }
-        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 10px; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; }
-        .header-banner h1 { font-size: 3.5rem; margin: 0; font-weight: 900; }
-        h2 { color: #064e3b; font-size: 3rem; border-left: 15px solid #059669; padding-left: 30px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 20px; padding-bottom: 20px; border-radius: 0 30px 30px 0; margin-bottom: 50px; margin-top: 0; }
-        h3 { color: #065f46; font-size: 2.3rem; border-bottom: 4px solid #d1fae5; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
-        .conclusion-card { background: #064e3b; color: white; padding: 60px; border-radius: 50px; text-align: center; margin-top: 80px; box-shadow: 0 30px 60px rgba(0,0,0,0.2); }
-        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-top: 2px solid #e2e8f0; z-index: 1000; }
-        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: 0.3s; margin-left: 10px; }
-        .nav-home { background: #334155; }
-        .qa-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 20px; padding: 25px; margin-bottom: 20px; border-left: 8px solid #059669; }
+        :root {
+            --primary: #059669;
+            --primary-dark: #064e3b;
+            --secondary: #10b981;
+            --accent: #38bdf8;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-800: #1e293b;
+            --font-main: #000000;
+        }
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Outfit', sans-serif; 
+            background: var(--slate-50); 
+            color: var(--font-main); 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 600;
+        }
+
+        .header-banner { 
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #065f46 100%); 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-radius: 0 0 60px 60px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .premium-badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .header-banner h1 { 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            margin: 0; 
+            font-weight: 950; 
+            line-height: 1.1;
+        }
+
+        .part-container { 
+            width: 100%;
+            max-width: 100vw;
+            padding: 80px 6vw; 
+            box-sizing: border-box;
+            background: white; 
+            margin-top: -40px;
+            border-radius: 60px 60px 0 0;
+            box-shadow: 0 -20px 60px rgba(0,0,0,0.1);
+        }
+
+        h2 { 
+            color: var(--primary-dark); 
+            font-size: clamp(2rem, 5vw, 3.5rem); 
+            border-left: 20px solid var(--primary); 
+            padding: 25px 40px; 
+            background: linear-gradient(to right, #f0fdf4, transparent); 
+            border-radius: 0 40px 40px 0; 
+            margin: 0 0 60px 0;
+            font-weight: 900;
+        }
+
+        h3 { 
+            color: var(--primary); 
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem); 
+            border-bottom: 6px solid #d1fae5; 
+            display: inline-block; 
+            padding-bottom: 15px; 
+            margin: 80px 0 40px 0; 
+            font-weight: 900;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 50px;
+            padding: 50px;
+            border: 3px solid var(--slate-100);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        .law-box {
+            background: #f8fafc;
+            border-left: 15px solid var(--primary);
+            padding: 40px;
+            border-radius: 0 35px 35px 0;
+            margin-bottom: 40px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .problem-card {
+            background: white;
+            border: 3px solid #e2e8f0;
+            border-radius: 50px;
+            padding: 50px;
+            margin-bottom: 60px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .question-box {
+            background: #f0fdf4;
+            padding: 30px;
+            border-radius: 30px;
+            border-bottom: 5px solid var(--secondary);
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* --- MATH FRACTION SYSTEM --- */
+        .math-frac {
+            display: inline-flex;
+            flex-direction: column;
+            vertical-align: middle;
+            text-align: center;
+            font-weight: 850;
+            margin: 0 15px;
+            line-height: 1;
+        }
+        .math-num {
+            border-bottom: 3px solid currentColor;
+            padding: 0 15px 5px 15px;
+        }
+        .math-den {
+            padding: 5px 15px 0 15px;
+        }
+
+        .solution-step {
+            font-family: monospace;
+            font-size: 1.8rem;
+            color: #0f172a;
+            line-height: 2;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .final-ans {
+            background: var(--primary-dark);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 20px;
+            display: inline-block;
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-top: 30px;
+        }
+
+        .hindi-note {
+            color: #4b5563;
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-top: 15px;
+            display: block;
+            border-left: 5px solid #d1d5db;
+            padding-left: 20px;
+        }
+
+        .nav-buttons { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 60px 5vw; 
+            background: var(--slate-900); 
+            border-radius: 60px 60px 0 0;
+            margin-top: 100px;
+        }
+
+        .nav-btn { 
+            background: var(--primary); 
+            color: white; 
+            padding: 22px 50px; 
+            border-radius: 100px; 
+            text-decoration: none; 
+            font-weight: 900; 
+            font-size: 1.4rem; 
+        }
+
         @media (max-width: 800px) {
-            .part-container { padding: 40px 20px; margin: 20px; }
-            .header-banner h1 { font-size: 2.2rem; }
-            h2 { font-size: 2rem; }
-            .nav-btn { padding: 12px 20px; font-size: 1.1rem; }
+            .part-container { padding: 50px 25px; }
+            .content-card { padding: 30px; }
+            .problem-card { padding: 30px; }
+            .nav-buttons { flex-direction: column; gap: 20px; }
         }
     </style>
 </head>
 <body>
 
     <div class="header-banner">
-        <h1>Final Review & Important Q&A</h1>
+        <div class="premium-badge">Class 11 Chemistry - Final Part</div>
+        <h1>Master Numericals & Finale<br><span style="font-size: 0.5em; opacity: 0.8; font-weight: 800;">महत्वपूर्ण संख्यात्मक प्रश्न एवं अध्याय समापन</span></h1>
     </div>
 
     <div class="part-container">
-        <h2>Part 12: Final Review & Chapter Summary</h2>
-
-        <div style="margin-bottom: 60px;">
-            <h3>Summary of Key Concepts</h3>
-            <p>We have covered everything from the basic nature of matter to complex calculations of molarity and stoichiometry. Here is a quick wrap-up:</p>
-            <ul style="line-height: 2.5; padding-left: 20px;">
-                <li>✅ <strong>Law of Conservation of Mass:</strong> Mass remains constant in a reaction.</li>
-                <li>✅ <strong>Mole Concept:</strong> 1 mole = 6.022 × 10²³ particles = Molar Mass.</li>
-                <li>✅ <strong>Limiting Reagent:</strong> The reactant that runs out first.</li>
-                <li>✅ <strong>Molarity (M):</strong> Moles of solute per litre of solution.</li>
-                <li>✅ <strong>Molality (m):</strong> Moles of solute per kg of solvent.</li>
-            </ul>
-        </div>
-
-        <div style="margin-bottom: 80px;">
-            <h3>Practice Questions for Revision</h3>
+        
+        <!-- SECTION 12.1: LAWS RECAP -->
+        <h2>12.1 Laws of Chemical Combination</h2>
+        <div class="content-card">
             
-            <div class="qa-card">
-                <p><strong>Q1: Why is molality preferred over molarity for high-precision temperature experiments?</strong></p>
-                <p><em>Ans: Molarity depends on volume, which changes with temperature. Molality depends on mass, which remains constant regardless of temperature.</em></p>
-            </div>
+            <div style="display: flex; flex-direction: column; gap: 30px;">
+                
+                <div class="law-box" style="border-left-color: #3b82f6;">
+                    <h4 style="font-size: 2rem; color: #1e3a8a; margin-top: 0;">1. Law of Conservation of Mass</h4>
+                    <p style="font-size: 1.6rem; line-height: 1.8;">Matter can neither be created nor destroyed in a chemical reaction. (Lavoisier)</p>
+                    <span class="hindi-note">द्रव्यमान संरक्षण का नियम: द्रव्य को न तो बनाया जा सकता है और न ही नष्ट किया जा सकता है।</span>
+                </div>
 
-            <div class="qa-card">
-                <p><strong>Q2: Calculate the number of atoms in 52 moles of Argon.</strong></p>
-                <p><em>Ans: 52 × 6.022 × 10²³ = 3.131 × 10²⁵ atoms.</em></p>
-            </div>
+                <div class="law-box" style="border-left-color: #f59e0b;">
+                    <h4 style="font-size: 2rem; color: #92400e; margin-top: 0;">2. Law of Definite Proportions</h4>
+                    <p style="font-size: 1.6rem; line-height: 1.8;">A pure compound always contains the same elements combined in the same fixed ratio by mass. (Proust)</p>
+                    <span class="hindi-note">स्थिर अनुपात का नियम: किसी शुद्ध यौगिक में तत्वों के द्रव्यमानों का अनुपात सदैव स्थिर रहता है।</span>
+                </div>
 
-            <div class="qa-card">
-                <p><strong>Q3: What is the unit of Molarity?</strong></p>
-                <p><em>Ans: mol L⁻¹ (or M).</em></p>
+                <div class="law-box" style="border-left-color: #10b981;">
+                    <h4 style="font-size: 2rem; color: #064e3b; margin-top: 0;">3. Law of Multiple Proportions</h4>
+                    <p style="font-size: 1.6rem; line-height: 1.8;">When two elements form more than one compound, the masses of one element that combine with a fixed mass of the other are in a simple whole-number ratio. (Dalton)</p>
+                    <span class="hindi-note">गुणित अनुपात का नियम: एक तत्व का भिन्न द्रव्यमान जो दूसरे के निश्चित द्रव्यमान से सहयोग करता है, सरल अनुपात में होता है।</span>
+                </div>
+
+                <div class="law-box" style="border-left-color: #8b5cf6;">
+                    <h4 style="font-size: 2rem; color: #4c1d95; margin-top: 0;">4. Gay Lussac's Law of Gaseous Volumes</h4>
+                    <p style="font-size: 1.6rem; line-height: 1.8;">When gases react, they do so in volumes which bear a simple ratio to one another (at constant T and P).</p>
+                    <span class="hindi-note">गे-लुसैक का नियम: गैसों के आयतनों में एक सरल अनुपात होता है।</span>
+                </div>
+
+                <div class="law-box" style="border-left-color: #ef4444;">
+                    <h4 style="font-size: 2rem; color: #991b1b; margin-top: 0;">5. Avogadro's Law</h4>
+                    <p style="font-size: 1.6rem; line-height: 1.8;">Equal volumes of all gases at the same temperature and pressure contain the same number of molecules.</p>
+                    <span class="hindi-note">आवोगाद्रो का नियम: गैसों के समान आयतनों में अणुओं की संख्या समान होती है।</span>
+                </div>
+
             </div>
         </div>
 
-        <div class="conclusion-card">
-            <h2 style="color: white; border: none; background: none; text-align: center; margin-bottom: 20px;">Chapter 1 Completed!</h2>
-            <p style="font-size: 1.8rem; opacity: 0.9;">You have successfully completed all 12 parts of the English version of Chapter 1: Some Basic Concepts of Chemistry.</p>
-            <div style="margin-top: 40px;">
-                <a href="../index.html" style="background: white; color: #064e3b; padding: 20px 50px; border-radius: 40px; text-decoration: none; font-weight: 900; font-size: 1.5rem; display: inline-block;">🏠 Return to Chapter List</a>
+        <!-- SECTION 12.2: SOLVED NUMERICALS -->
+        <h2>12.2 Master Solved Numericals</h2>
+
+        <!-- Problem 1: Molarity -->
+        <div class="problem-card">
+            <div class="question-box">
+                📝 Question 1: Calculate the molarity of NaOH in the solution prepared by dissolving its 4g in enough water to form 250 mL of the solution.
+            </div>
+            
+            <div style="padding-left: 20px; border-left: 8px solid var(--primary); font-weight: 700;">
+                <p style="font-size: 1.8rem; color: var(--primary-dark);">Solution:</p>
+                
+                <div class="solution-step">
+                    1. Moles of NaOH = 
+                    <div class="math-frac">
+                        <span class="math-num">Given Mass (4g)</span>
+                        <span class="math-den">Molar Mass (40g/mol)</span>
+                    </div>
+                    = 0.1 mol
+                </div>
+
+                <div class="solution-step">
+                    2. Volume of solution = 250 mL = 0.250 Liters
+                </div>
+
+                <div class="solution-step">
+                    3. Molarity (M) = 
+                    <div class="math-frac">
+                        <span class="math-num">Moles of Solute</span>
+                        <span class="math-den">Volume of solution (L)</span>
+                    </div>
+                    = 
+                    <div class="math-frac">
+                        <span class="math-num">0.1 mol</span>
+                        <span class="math-den">0.250 L</span>
+                    </div>
+                </div>
+
+                <div class="final-ans">Final Answer = 0.4 mol/L (0.4 M)</div>
+            </div>
+        </div>
+
+        <!-- Problem 2: Molality and Density -->
+        <div class="problem-card">
+            <div class="question-box" style="background: #eff6ff; border-color: #3b82f6;">
+                📝 Question 2: The density of 3 M solution of NaCl is 1.25 g/mL. Calculate the molality of the solution.
+            </div>
+            
+            <div style="padding-left: 20px; border-left: 8px solid #3b82f6; font-weight: 700;">
+                <p style="font-size: 1.8rem; color: #1e3a8a;">Solution:</p>
+                
+                <div class="solution-step">
+                    1. Molarity = 3 mol/L. This means 3 moles of NaCl in 1L of solution.
+                </div>
+                <div class="solution-step">
+                    2. Mass of NaCl = 3 mol × 58.5 g/mol = 175.5 g
+                </div>
+                <div class="solution-step">
+                    3. Mass of Solution = Vol × Density = 1000 mL × 1.25 g/mL = 1250 g
+                </div>
+                <div class="solution-step" style="color: #e11d48;">
+                    4. Mass of Solvent (Water) = 1250g - 175.5g = 1074.5 g = 1.0745 kg
+                </div>
+                <div class="solution-step" style="margin-top: 30px;">
+                    5. Molality (m) = 
+                    <div class="math-frac">
+                        <span class="math-num">Moles of Solute</span>
+                        <span class="math-den">Mass of Solvent (kg)</span>
+                    </div>
+                    = 
+                    <div class="math-frac">
+                        <span class="math-num">3 mol</span>
+                        <span class="math-den">1.0745 kg</span>
+                    </div>
+                </div>
+
+                <div class="final-ans" style="background: #1e3a8a;">Final Answer = 2.79 m</div>
+            </div>
+        </div>
+
+        <!-- CHAPTER FINALE BANNER -->
+        <div style="margin-top: 150px; text-align: center; position: relative;">
+            <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 100px 50px; border-radius: 80px; box-shadow: 0 50px 100px rgba(0,0,0,0.4); border: 5px solid var(--accent); overflow: hidden;">
+                
+                <!-- Floating Decorative Icons -->
+                <div style="position: absolute; top: 40px; right: 60px; font-size: 8rem; opacity: 0.3; transform: rotate(15deg);">🧪</div>
+                <div style="position: absolute; bottom: 40px; left: 60px; font-size: 8rem; opacity: 0.3; transform: rotate(-15deg);">⚛️</div>
+                
+                <div style="background: var(--accent); color: var(--slate-900); display: inline-block; padding: 10px 40px; border-radius: 100px; font-weight: 950; font-size: 1.4rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 40px;">Mission Accomplished</div>
+                
+                <h1 style="font-size: clamp(2.5rem, 6vw, 4.5rem); margin: 0; font-weight: 950; color: white; line-height: 1.1;">Chapter 1 Successfully Completed!</h1>
+                
+                <p style="font-size: 2.2rem; margin: 40px auto; max-width: 900px; opacity: 0.9; font-weight: 700; line-height: 1.6;">
+                    You have mastered the "Basic Concepts of Chemistry". From Atomic Masses to Molarity, you are now ready for the next level!
+                </p>
+
+                <div style="margin-top: 60px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 25px 50px; border-radius: 30px; border: 2px dashed var(--accent);">
+                        <span style="font-weight: 950; font-size: 2.5rem; color: var(--accent);">✅ 12 Parts Completed</span>
+                    </div>
+                </div>
+
+                <div style="margin-top: 80px;">
+                    <a href="../index.html" style="background: white; color: var(--slate-900); padding: 30px 80px; border-radius: 100px; text-decoration: none; font-weight: 950; font-size: 2rem; box-shadow: 0 20px 40px rgba(255,255,255,0.2); transition: all 0.3s ease; display: inline-block;">
+                        Back to Home Hub 🏠
+                    </a>
+                </div>
+
+                <p style="margin-top: 60px; font-weight: 900; color: #94a3b8; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px;">Chapter 2: Structure of Atom (Coming Soon)</p>
             </div>
         </div>
 
@@ -77,10 +371,10 @@
 
     <!-- NAVIGATION -->
     <div class="nav-buttons">
-        <a href="../index.html" class="nav-btn nav-home">🏠 Main Hub</a>
-        <div style="display: flex;">
-            <a href="ch1_part11.html" class="nav-btn">⬅️ Previous (Part 11)</a>
-            <a href="../index.html" class="nav-btn" style="background: #38bdf8; color: #0f172a;">Finish Chapter ✅</a>
+        <a href="../index.html" class="nav-btn nav-home" style="background: var(--slate-800);">🏠 Main Hub</a>
+        <div style="display: flex; gap: 20px;">
+            <a href="ch1_part11.html" class="nav-btn" style="background: var(--slate-800);">⬅️ Previous (Part 11)</a>
+            <span class="nav-btn" style="background: #0f172a; cursor: default; border: 2px solid var(--accent);">🏁 Chapter End</span>
         </div>
     </div>
 

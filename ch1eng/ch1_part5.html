@@ -6,24 +6,28 @@
     <title>Chapter 1: Some Basic Concepts of Chemistry - Part 5</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; padding-bottom: 100px; }
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; }
         .part-container { padding: 60px 40px; line-height: 1.8; font-size: 1.5rem; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.04); border-top: 5px solid #059669; }
-        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 10px; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; }
-        .header-banner h1 { font-size: 3.5rem; margin: 0; font-weight: 900; }
-        h2 { color: #064e3b; font-size: 3rem; border-left: 15px solid #059669; padding-left: 30px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 20px; padding-bottom: 20px; border-radius: 0 30px 30px 0; margin-bottom: 50px; margin-top: 0; }
+        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 5vw; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; box-shadow: 0 20px 40px rgba(6, 78, 59, 0.2); }
+        .header-banner h1 { font-size: 4rem; margin: 0 0 15px 0; font-weight: 900; }
+        .header-banner p { font-size: 1.8rem; margin: 0; color: #a7f3d0; font-weight: 600; }
+        h2 { color: #064e3b; font-size: 3.5rem; border-left: 20px solid #059669; padding-left: 40px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 30px; padding-bottom: 30px; border-radius: 0 50px 50px 0; margin-bottom: 60px; margin-top: 0; }
         h3 { color: #065f46; font-size: 2.3rem; border-bottom: 4px solid #d1fae5; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
-        .factor-card { background: #f8fafc; padding: 25px; border-radius: 20px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .solved-ex { background: #f0fdf4; border: 2px solid #059669; border-radius: 40px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .factor-card { background: #f8fafc; padding: 25px; border-radius: 20px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.02); }
+        .factor-card span:nth-child(2) { color: #059669; font-weight: 950; font-size: 1.6rem; }
+        .solved-ex { background: #f0fdf4; border: 2px solid #059669; border-radius: 40px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); margin-bottom: 50px; }
         .solved-ex h4 { color: #065f46; margin-top: 0; font-size: 1.8rem; border-bottom: 2px solid #059669; padding-bottom: 10px; margin-bottom: 25px; }
         .ans-box { color: #059669; font-size: 1.8rem; border: 3px solid #059669; padding: 5px 20px; display: inline-block; margin-top: 15px; border-radius: 10px; font-weight: 900; background: white; }
-        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-top: 2px solid #e2e8f0; z-index: 1000; }
-        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: 0.3s; box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3); }
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 40px 5vw; width: 100%; box-sizing: border-box; background: #f8fafc; border-top: 2px solid #e2e8f0; margin-top: 50px; }
+        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3); display: flex; align-items: center; gap: 10px; }
+        .nav-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(5, 150, 105, 0.4); }
         .nav-home { background: #334155; }
         
         @media (max-width: 800px) {
-            .part-container { padding: 40px 20px; margin: 20px; }
-            .header-banner h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; border-left-width: 10px; }
+            html { font-size: 11px !important; }
+            .part-container { padding: 40px 20px !important; margin: 20px; border-radius: 20px; }
+            .header-banner h1 { font-size: 3rem !important; }
+            h2 { font-size: 2.2rem !important; border-left-width: 10px; padding-left: 20px; }
             .nav-btn { padding: 12px 20px; font-size: 1.1rem; }
             .factor-card { flex-direction: column; text-align: center; gap: 10px; }
         }
@@ -32,86 +36,106 @@
 <body>
 
     <div class="header-banner">
-        <h1>Dimensional Analysis</h1>
+        <h1>Chapter 1: Basic Concepts of Chemistry</h1>
+        <p>Premium English Edition</p>
     </div>
 
     <div class="part-container">
-        <h2>Part 5: Dimensional Analysis</h2>
+        <h2>Part 5: Dimensional Analysis (विमीय विश्लेषण)</h2>
 
         <div style="margin-bottom: 60px;">
-            <h3>Definition & Principle</h3>
+            <h3>Definition & Principle (परिभाषा एवं सिद्धांत)</h3>
             <p style="line-height: 2; text-indent: 40px;">
-                When calculating, often units must be converted from one system to another. The method used to accomplish this is called **Factor Label Method** or **Unit Factor Method** or **Dimensional Analysis**.
+                When a derived unit of a physical quantity is expressed in terms of exponents of base units, those exponents are called the <strong>Dimensions (विमा)</strong> of that quantity.
             </p>
             <div style="background: #f0fdf4; padding: 30px; border-radius: 30px; border-left: 12px solid #059669; margin-top: 30px;">
-                <strong>💡 Note:</strong> This method relies on multipying the given value by a 'Unit Factor' (a ratio that equals 1) so that the unwanted units cancel out.
+                <strong>💡 Use of Dimensional Analysis:</strong> With the help of dimensional analysis, one unit of a physical quantity is converted into another unit. This is also called the <strong>'Unit Factor Method' (इकाई गुणांक विधि)</strong>.
             </div>
         </div>
 
         <!-- CONVERSION FACTORS -->
         <div style="margin-bottom: 80px;">
-            <h3>Important Conversion Factors</h3>
-            <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
-                <div class="factor-card"><span>1 Calorie (Cal)</span><span style="color: #059669; font-weight: 900;">= 4.186 J</span></div>
-                <div class="factor-card"><span>1 Angstrom (Å)</span><span style="color: #059669; font-weight: 900;">= 10⁻¹⁰ m</span></div>
-                <div class="factor-card"><span>1 Dyne</span><span style="color: #059669; font-weight: 900;">= 10⁻⁵ N</span></div>
-                <div class="factor-card"><span>1 Micron (μm)</span><span style="color: #059669; font-weight: 900;">= 10⁻⁶ m</span></div>
-                <div class="factor-card"><span>1 Erg</span><span style="color: #059669; font-weight: 900;">= 10⁻⁷ J</span></div>
-                <div class="factor-card"><span>1 Nanometer (nm)</span><span style="color: #059669; font-weight: 900;">= 10⁻⁹ m</span></div>
+            <h3>Important Conversion Factors (रूपांतरण गुणांक)</h3>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
+                <div class="factor-card"><span>(i) 1 Calorie (Cal)</span><span>= 4.186 J</span></div>
+                <div class="factor-card"><span>(v) 1 Å (Angstrom)</span><span>= 10⁻¹⁰ m</span></div>
+                <div class="factor-card"><span>(ii) 1 Dyne</span><span>= 10⁻⁵ N</span></div>
+                <div class="factor-card"><span>(vi) 1 Micron (μm)</span><span>= 10⁻⁶ m</span></div>
+                <div class="factor-card"><span>(iii) 1 Erg</span><span>= 10⁻⁷ J</span></div>
+                <div class="factor-card"><span>(vii) 1 Nanometer (nm)</span><span>= 10⁻⁹ m</span></div>
+                <div class="factor-card"><span>(iv) 1 eV (Electron Volt)</span><span>= 1.602 × 10⁻¹⁹ J</span></div>
+                <div class="factor-card"><span>(viii) 1 bar</span><span>= 10⁵ Pa</span></div>
             </div>
         </div>
 
         <!-- SOLVED EXAMPLES -->
         <div style="margin-top: 50px;">
-            <h3>Solved Examples (Numerical)</h3>
+            <h3>Solved Examples (महत्वपूर्ण उदाहरण)</h3>
             
+            <!-- EXAMPLE 1 -->
             <div class="solved-ex">
                 <h4>Example 1: Å to pm conversion</h4>
-                <p><strong>Q: Convert 0.50 Å into picometers (pm).</strong></p>
-                <div style="background: white; padding: 25px; border-radius: 20px; font-family: 'Courier New', monospace;">
-                    1 Å = 10⁻¹⁰ m <br>
-                    1 pm = 10⁻¹² m <br>
-                    0.50 Å = (0.50 × 10⁻¹⁰ m) × (1 pm / 10⁻¹² m) <br>
-                    = 0.50 × 10² pm <br>
+                <p style="font-weight: bold; margin-bottom: 20px;">Q: Convert 0.50 Å into picometers (pm).</p>
+                <div style="background: white; padding: 25px; border-radius: 20px; line-height: 2; font-family: 'Courier New', monospace; font-size: 1.3rem; border-left: 5px solid #059669;">
+                    Step 1: 1 Å = 10⁻¹⁰ m <br>
+                    Step 2: 1 pm = 10⁻¹² m <br>
+                    Step 3: 0.50 Å = 0.50 × 10⁻¹⁰ m <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 0.50 × 10⁻¹⁰ × 10¹² pm <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 0.50 × 10² pm <br>
                     <div class="ans-box">Ans: 50 pm</div>
                 </div>
             </div>
 
+            <!-- EXAMPLE 2 -->
             <div class="solved-ex">
                 <h4>Example 2: Inch to cm conversion</h4>
-                <p><strong>Q: A piece of metal is 3 inches long. What is its length in cm?</strong></p>
-                <div style="background: white; padding: 25px; border-radius: 20px; font-family: 'Courier New', monospace;">
-                    1 inch = 2.54 cm <br>
-                    Unit Factor = (2.54 cm / 1 inch) <br>
-                    3 inches = 3 × 2.54 cm <br>
+                <p style="font-weight: bold; margin-bottom: 20px;">Q: A piece of metal is 3 inches long. What is its length in cm?</p>
+                <div style="background: white; padding: 25px; border-radius: 20px; line-height: 2; font-family: 'Courier New', monospace; font-size: 1.3rem; border-left: 5px solid #059669;">
+                    Step 1: 1 inch = 2.54 cm <br>
+                    Step 2: 3 inches = 3 × 2.54 cm <br>
                     <div class="ans-box">Ans: 7.62 cm</div>
                 </div>
             </div>
 
+            <!-- EXAMPLE 3 -->
             <div class="solved-ex">
                 <h4>Example 3: Litre to m³ conversion</h4>
-                <p><strong>Q: A jug contains 2L of milk. Calculate its volume in m³.</strong></p>
-                <div style="background: white; padding: 25px; border-radius: 20px; font-family: 'Courier New', monospace;">
-                    1 L = 1000 cm³ <br>
-                    1 m³ = 10⁶ cm³ <br>
-                    Unit Factor = (1 m³ / 10⁶ cm³) <br>
-                    2L = 2000 cm³ × (1 m³ / 10⁶ cm³) <br>
-                    = 2 × 10⁻³ m³ <br>
+                <p style="font-weight: bold; margin-bottom: 20px;">Q: A jug contains 2L of milk. Calculate its volume in m³.</p>
+                <div style="background: white; padding: 25px; border-radius: 20px; line-height: 2; font-family: 'Courier New', monospace; font-size: 1.3rem; border-left: 5px solid #059669;">
+                    Step 1: 1 L = 1000 cm³ <br>
+                    Step 2: 1000 L = 1 m³ <br>
+                    Step 3: 1 L = 1/1000 m³ <br>
+                    Step 4: 2 L = 2 × 10⁻³ m³ <br>
                     <div class="ans-box">Ans: 2 × 10⁻³ m³</div>
                 </div>
             </div>
 
+            <!-- EXAMPLE 4 -->
             <div class="solved-ex">
-                <h4>Example 4: Time conversion</h4>
-                <p><strong>Q: How many seconds are there in 2 days?</strong></p>
-                <div style="background: white; padding: 25px; border-radius: 20px; font-family: 'Courier New', monospace;">
-                    2 days × (24 h / 1 day) × (60 min / 1 h) × (60 s / 1 min) <br>
-                    = 2 × 24 × 60 × 60 seconds <br>
+                <h4>Example 4: Time Conversion</h4>
+                <p style="font-weight: bold; margin-bottom: 20px;">Q: How many seconds are there in 2 days?</p>
+                <div style="background: white; padding: 25px; border-radius: 20px; line-height: 2; font-family: 'Courier New', monospace; font-size: 1.3rem; border-left: 5px solid #059669;">
+                    Step 1: 1 day = 24 hours <br>
+                    Step 2: 1 hour = 60 minutes <br>
+                    Step 3: 1 minute = 60 seconds <br>
+                    Step 4: Total = 2 × 24 × 60 × 60 <br>
                     <div class="ans-box">Ans: 1,72,800 s</div>
                 </div>
             </div>
         </div>
 
+        <!-- TRANSITION CARD -->
+        <div style="margin-top: 100px; padding: 71px; background: #064e3b; color: white; border-radius: 80px; text-align: center; box-shadow: 0 40px 80px rgba(0,0,0,0.3);">
+            <h3 style="margin-top: 0; font-size: 3rem; color: white; border: none;">The Logic of Chemistry! 🧠</h3>
+            <p style="font-size: 1.5rem; opacity: 0.9; max-width: 800px; margin: 20px auto;">You've mastered unit conversions. Now, let's look at the pillar laws that govern how elements combine to form everything around us.</p>
+            <div style="margin-top: 30px; font-weight: 900; color: #38bdf8; text-transform: uppercase; letter-spacing: 3px;">Upcoming: Part 6 (Laws of Chemical Combination)</div>
+            
+            <div style="margin-top: 50px; display: flex; justify-content: center;">
+                <a href="ch1_part6.html" style="background: #38bdf8; color: #0f172a; padding: 20px 40px; border-radius: 30px; text-decoration: none; font-weight: 900; font-size: 1.5rem; box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4); border: 3px solid #0f172a; transition: all 0.3s;">
+                    Next Part (Part 6: Laws of Combination) ➡️
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- NAVIGATION -->

@@ -6,24 +6,26 @@
     <title>Chapter 1: Some Basic Concepts of Chemistry - Part 4</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; padding-bottom: 100px; }
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; }
         .part-container { padding: 60px 40px; line-height: 1.8; font-size: 1.5rem; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.04); border-top: 5px solid #059669; }
-        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 10px; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; }
-        .header-banner h1 { font-size: 3.5rem; margin: 0; font-weight: 900; }
-        h2 { color: #064e3b; font-size: 3rem; border-left: 15px solid #059669; padding-left: 30px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 20px; padding-bottom: 20px; border-radius: 0 30px 30px 0; margin-bottom: 50px; margin-top: 0; }
+        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 5vw; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; box-shadow: 0 20px 40px rgba(6, 78, 59, 0.2); }
+        .header-banner h1 { font-size: 4rem; margin: 0 0 15px 0; font-weight: 900; }
+        .header-banner p { font-size: 1.8rem; margin: 0; color: #a7f3d0; font-weight: 600; }
+        h2 { color: #064e3b; font-size: 3.5rem; border-left: 20px solid #059669; padding-left: 40px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 30px; padding-bottom: 30px; border-radius: 0 50px 50px 0; margin-bottom: 60px; margin-top: 0; }
         h3 { color: #065f46; font-size: 2.3rem; border-bottom: 4px solid #d1fae5; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
-        .rule-card { background: white; padding: 30px; border-radius: 30px; border: 1px solid #e2e8f0; position: relative; margin-bottom: 20px; }
+        .rule-card { background: white; padding: 30px; border-radius: 30px; border: 1px solid #e2e8f0; position: relative; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.02); }
         .rule-tag { position: absolute; top: -15px; left: 20px; background: #059669; color: white; padding: 5px 15px; border-radius: 10px; font-weight: 900; }
-        .example-box { background: #f8fafc; padding: 15px; border-radius: 15px; margin-top: 15px; font-family: monospace; }
-        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-top: 2px solid #e2e8f0; z-index: 1000; }
-        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: 0.3s; box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3); }
+        .example-box { background: #f8fafc; padding: 15px; border-radius: 15px; margin-top: 15px; font-family: 'Courier New', monospace; font-size: 1.3rem; border-left: 5px solid #059669; }
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 40px 5vw; width: 100%; box-sizing: border-box; background: #f8fafc; border-top: 2px solid #e2e8f0; margin-top: 50px; }
+        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3); display: flex; align-items: center; gap: 10px; }
+        .nav-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(5, 150, 105, 0.4); }
         .nav-home { background: #334155; }
         
-        /* Mobile adjustments */
         @media (max-width: 800px) {
-            .part-container { padding: 40px 20px; margin: 20px; }
-            .header-banner h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; border-left-width: 10px; }
+            html { font-size: 11px !important; }
+            .part-container { padding: 40px 20px !important; margin: 20px; border-radius: 20px; }
+            .header-banner h1 { font-size: 3rem !important; }
+            h2 { font-size: 2.2rem !important; border-left-width: 10px; padding-left: 20px; }
             .nav-btn { padding: 12px 20px; font-size: 1.1rem; }
         }
     </style>
@@ -31,17 +33,18 @@
 <body>
 
     <div class="header-banner">
-        <h1>Uncertainty in Measurement</h1>
+        <h1>Chapter 1: Basic Concepts of Chemistry</h1>
+        <p>Premium English Edition</p>
     </div>
 
     <div class="part-container">
-        <h2>Part 4: Uncertainty in Measurement</h2>
+        <h2>Part 4: Uncertainty in Measurement (मापन में अनिश्चितता)</h2>
 
         <!-- 4.1 SCIENTIFIC NOTATION -->
-        <div style="margin-bottom: 80px;">
-            <h3>4.1 Scientific Notation</h3>
-            <p style="margin-bottom: 30px;">
-                In chemistry, we deal with extremely large or tiny numbers. To make them readable, we use **Scientific Notation**, expressed as **N × 10ⁿ**.
+        <div id="sci-notation" style="margin-bottom: 80px;">
+            <h3>4.1 Scientific Notation (वैज्ञानिक संकेतन)</h3>
+            <p style="margin-bottom: 30px; text-indent: 40px;">
+                Expressing chemistry values in the form of <strong>N × 10ⁿ</strong> is called 'Scientific Notation'. (Where N = between 1.000... and 9.999... and n = exponent).
             </p>
             <div style="background: #f8fafc; padding: 40px; border-radius: 30px; display: grid; grid-template-columns: 1fr; gap: 30px;">
                 <div style="border-left: 8px solid #059669; padding-left: 25px;">
@@ -49,119 +52,214 @@
                     <div style="font-size: 2.2rem; font-weight: 950; color: #065f46;">6.022 × 10²³</div>
                 </div>
                 <div style="border-left: 8px solid #059669; padding-left: 25px;">
-                    <p style="color: #64748b; font-size: 0.9rem; text-transform: uppercase;">Example: Mass of H-atom</p>
+                    <p style="color: #64748b; font-size: 0.9rem; text-transform: uppercase;">Example: H-Atom Mass</p>
                     <div style="font-size: 2.2rem; font-weight: 950; color: #065f46;">1.66 × 10⁻²⁴ g</div>
                 </div>
             </div>
         </div>
 
         <!-- 4.2 SIGNIFICANT FIGURES -->
-        <div style="margin-bottom: 80px;">
-            <h3>4.2 Significant Figures</h3>
-            <p style="margin-top:20px; font-weight: 800; color: #059669;">"Significant figures are meaningful digits which are known with certainty plus one which is estimated or uncertain."</p>
+        <div id="sig-figs" style="margin-bottom: 80px;">
+            <h3>4.2 Significant Figures (सार्थक अंक)</h3>
+            <p style="margin-top:20px; font-weight: 800; color: #059669;">"When the result of a measurement is obtained accurately, the number of meaningful digits in that measurement is called 'Significant Figures'."</p>
 
-            <h4 style="margin-top: 50px; color: #065f46; font-size: 1.8rem;">📏 Rules for Determining Significant Figures:</h4>
+            <h4 style="margin-top: 50px; color: #065f46; font-size: 1.8rem; background: #ecfdf5; padding: 15px 30px; border-radius: 20px; display: inline-block;">📐 Rules for Finding Significant Figures:</h4>
             
             <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px;">
+                <!-- Rule 1 -->
                 <div class="rule-card">
                     <div class="rule-tag">Rule 1</div>
                     <p>All <strong>non-zero</strong> digits are significant.</p>
-                    <div class="example-box">2478 → <strong>4</strong> <br> 34125 → <strong>5</strong></div>
+                    <div class="example-box">
+                        (a) 2478 → <strong>4</strong> <br>
+                        (b) 34125 → <strong>5</strong>
+                    </div>
                 </div>
+                <!-- Rule 2 -->
                 <div class="rule-card">
                     <div class="rule-tag">Rule 2</div>
-                    <p>Zeros <strong>between</strong> two non-zero digits are significant.</p>
-                    <div class="example-box">2024 → <strong>4</strong> <br> 90205 → <strong>5</strong></div>
+                    <p><strong>All zeros</strong> appearing between two non-zero digits are significant.</p>
+                    <div class="example-box">
+                        (a) 2024 → <strong>4</strong> <br>
+                        (b) 90205 → <strong>5</strong>
+                    </div>
                 </div>
+                <!-- Rule 3 -->
                 <div class="rule-card">
                     <div class="rule-tag">Rule 3</div>
-                    <p>Zeros to the <strong>left</strong> of the first non-zero digit are NOT significant.</p>
-                    <div class="example-box">0.00486 → <strong>3</strong> <br> 0.01 → <strong>1</strong></div>
+                    <p>Zeros appearing <strong>to the left</strong> of the first non-zero digit are NOT significant.</p>
+                    <div class="example-box">
+                        (a) 0.00486 → <strong>3</strong> <br>
+                        (b) 0.01 → <strong>1</strong>
+                    </div>
                 </div>
+                <!-- Rule 4 -->
                 <div class="rule-card">
                     <div class="rule-tag">Rule 4</div>
-                    <p>In numbers without a decimal, trailing zeros are usually NOT significant.</p>
-                    <div class="example-box">4500 → <strong>2</strong> <br> 2050 → <strong>3</strong></div>
+                    <p>In a number without a decimal, zeros <strong>to the right</strong> of the last non-zero digit are NOT significant.</p>
+                    <div class="example-box">
+                        (a) 4500 → <strong>2</strong> <br>
+                        (b) 2050 → <strong>3</strong> (2, 0, 5)
+                    </div>
                 </div>
+                <!-- Rule 5 -->
                 <div class="rule-card">
                     <div class="rule-tag">Rule 5</div>
-                    <p>Trailing zeros in a number with a <strong>decimal</strong> are significant.</p>
-                    <div class="example-box">2.00 → <strong>3</strong> <br> 1230.0 → <strong>5</strong></div>
+                    <p>In a number <strong>with a decimal</strong>, zeros to the right of the last non-zero digit ARE significant.</p>
+                    <div class="example-box">
+                        (a) 2.00 → <strong>3</strong> <br>
+                        (b) 1230.0 → <strong>5</strong>
+                    </div>
                 </div>
+                <!-- Rule 6 -->
                 <div class="rule-card">
                     <div class="rule-tag">Rule 6</div>
-                    <p><strong>Counting</strong> numbers have infinite (∞) significant figures.</p>
-                    <div class="example-box">2 balls → <strong>∞</strong> <br> 50 eggs → <strong>∞</strong></div>
+                    <p>The number of significant figures in <strong>Counting</strong> of objects is <strong>Infinite (∞)</strong>.</p>
+                    <div class="example-box">
+                        (a) 2 balls → <strong>∞</strong> <br>
+                        (b) 50 eggs → <strong>∞</strong>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- 4.3 ROUNDING OFF -->
-        <div style="margin-bottom: 80px; padding: 50px; background: #fff7ed; border-radius: 40px; border: 3px solid #f59e0b;">
-            <h3 style="color: #92400e; font-size: 2.3rem; margin-top: 0; border-bottom: none;">➡️ Rounding Off</h3>
-            <div style="margin-top: 30px; display: flex; flex-direction: column; gap: 20px;">
-                <p><strong>1. If the last digit < 5:</strong> Preceding digit remains unchanged. (Ex: 12.862 → 12.86)</p>
-                <p><strong>2. If the last digit > 5:</strong> Preceding digit increases by 1. (Ex: 12.868 → 12.87)</p>
-                <p><strong>3. If the last digit is exactly 5:</strong> If preceding digit is <strong>Even</strong>, keep it same. If <strong>Odd</strong>, add 1. <br> (Ex: 4.25 → 4.2 | 27.75 → 27.8)</p>
+        <div id="rounding-off" style="margin-bottom: 80px; padding: 50px; background: #fffbeb; border-radius: 40px; border: 3px solid #f59e0b;">
+            <h3 style="color: #92400e; font-size: 2.3rem; margin-top: 0; border: none;">➡️ Rounding Off (सनिक्वटन करना)</h3>
+            
+            <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 25px;">
+                <div style="background: white; padding: 25px; border-radius: 20px; border-left: 10px solid #f59e0b;">
+                    <strong>1. If the digit to be removed is less than 5:</strong> No change is made to the preceding digit.<br>
+                    <span style="color: #b45309; font-weight: 800;">Ex: 12.862 → 12.86 | 4.324 → 4.32</span>
+                </div>
+                <div style="background: white; padding: 25px; border-radius: 20px; border-left: 10px solid #f59e0b;">
+                    <strong>2. If the digit to be removed is greater than 5:</strong> Add +1 to the preceding digit.<br>
+                    <span style="color: #b45309; font-weight: 800;">Ex: 12.868 → 12.87 | 4.329 → 4.33</span>
+                </div>
+                <div style="background: white; padding: 25px; border-radius: 20px; border-left: 10px solid #ef4444;">
+                    <strong>3. If the digit to be removed is "5":</strong> <br>
+                    (a) If preceding digit is <strong>Odd</strong>: Add +1 <br>
+                    (b) If preceding digit is <strong>Even</strong>: Keep it unchanged <br>
+                    <span style="color: #b45309; font-weight: 800;">Ex: 4.25 (Even) → 4.2 | 27.75 (Odd) → 27.8</span>
+                </div>
             </div>
         </div>
 
-        <!-- SIG FIG CALCULATOR LAB -->
-        <div style="margin-top: 60px; padding: 60px; background: linear-gradient(135deg, #064e3b 0%, #022c22 100%); border-radius: 50px; color: white; border: 6px solid #34d399; box-shadow: 0 40px 100px rgba(6, 78, 59, 0.4);">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h3 style="color: #34d399; font-size: 2.5rem; margin-bottom: 10px; border-bottom: none;">🧪 Live SigFig Calculator</h3>
-                <p style="opacity: 0.8;">Type any number to count its significant figures instantly.</p>
-            </div>
-
-            <div style="max-width: 600px; margin: auto; text-align: center;">
-                <input type="text" id="sf-input" placeholder="e.g., 0.00450" style="width: 100%; padding: 25px; background: rgba(255,255,255,0.05); border: 3px solid #34d399; border-radius: 20px; color: white; font-size: 2.5rem; text-align: center; outline: none;" oninput="calcSF()">
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
-                    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 30px;">
-                        <small>Significant Figures</small>
-                        <div id="sf-result" style="font-size: 4rem; font-weight: 900; color: #34d399;">0</div>
+        <!-- 4.4 MATH OPERATIONS -->
+        <div id="math-operations" style="margin-bottom: 80px;">
+            <h3>4.4 Significant Figures in Calculations</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 40px;">
+                <div style="padding: 40px; background: #f0f9ff; border-radius: 40px; border: 1px solid #0ea5e9;">
+                    <h5 style="color: #0369a1; font-size: 1.5rem; margin-top: 0;">➕ Addition & Subtraction:</h5>
+                    <p>The result should have as many digits <strong>after the decimal</strong> as the number with the least decimal places.</p>
+                    <div style="background: white; padding: 20px; border-radius: 15px; font-family: 'Courier New', monospace; margin-top: 15px; border-left: 5px solid #0ea5e9;">
+                        12.11 + 18.0 + 1.012 = 31.122 <br>
+                        <strong>Final → 31.1</strong> (w.r.t 18.0)
                     </div>
-                    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 30px;">
-                        <small>Scientific Notation</small>
-                        <div id="sf-sci" style="font-size: 1.4rem; font-weight: 800; color: #38bdf8; margin-top: 15px;">-</div>
+                </div>
+                <div style="padding: 40px; background: #fdf2f2; border-radius: 40px; border: 1px solid #f87171;">
+                    <h5 style="color: #991b1b; font-size: 1.5rem; margin-top: 0;">✖️ Multiplication & Division:</h5>
+                    <p>The result should have as many <strong>total significant figures</strong> as the number with the least significant figures.</p>
+                    <div style="background: white; padding: 20px; border-radius: 15px; font-family: 'Courier New', monospace; margin-top: 15px; border-left: 5px solid #f87171;">
+                        Density = 4.237 / 2.51 = 1.6880... <br>
+                        <strong>Final → 1.69</strong> (w.r.t 2.51: 3 SF)
                     </div>
                 </div>
             </div>
         </div>
 
-        <script>
-            function calcSF() {
-                const input = document.getElementById('sf-input').value.trim();
-                const res = document.getElementById('sf-result');
-                const sci = document.getElementById('sf-sci');
-                
-                if (!input || isNaN(input)) { res.innerText = '0'; sci.innerText = '-'; return; }
+        <!-- LIVE SIGNIFICANT FIGURE CALCULATOR SIMULATOR (SYNCED WITH MASTER) -->
+        <div id="sigfig-simulator" style="margin-top: 60px; padding: 60px; background: linear-gradient(135deg, #064e3b 0%, #022c22 100%); border-radius: 50px; color: white; border: 6px solid #34d399; box-shadow: 0 40px 100px rgba(6, 78, 59, 0.4);">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h3 style="color: #34d399; font-size: 2.5rem; margin-bottom: 10px; border: none;">🧪 सार्थक अंक लाइव लैब (Significant Figure Lab)</h3>
+                <p style="opacity: 0.8; font-size: 1.3rem;">किसी भी संख्या को यहाँ लिखें और उसके सार्थक अंक लाइव देखें (Count SF instantly)</p>
+            </div>
 
-                let s = input.replace(/^-/, '');
-                let count = 0;
-                
-                if (s.includes('.')) {
-                    let core = s.replace(/^0+\.?0*/, '');
-                    count = core === "" ? 0 : core.replace('.', '').length;
-                } else {
-                    let trimmed = s.replace(/^0+/, '');
-                    if (trimmed === "") count = 0;
-                    else {
-                        let lastNonZero = -1;
-                        for(let i=trimmed.length-1; i>=0; i--) if(trimmed[i] !== '0') { lastNonZero = i; break; }
-                        count = lastNonZero === -1 ? 0 : lastNonZero + 1;
+            <div style="max-width: 600px; margin: auto; text-align: center;">
+                <input type="text" id="sf-input" placeholder="जैसे: 0.00450" style="width: 100%; padding: 25px; background: rgba(255,255,255,0.05); border: 3px solid #34d399; border-radius: 20px; color: white; font-size: 2.5rem; text-align: center; outline: none;" oninput="labCalculateSF()">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 30px;">
+                        <div style="font-size: 0.9rem; text-transform: uppercase;">Significant Figures (सार्थक अंक)</div>
+                        <div id="sf-result" style="font-size: 4rem; font-weight: 900; color: #34d399;">0</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 30px;">
+                        <div style="font-size: 0.9rem; text-transform: uppercase;">Scientific Notation (वैज्ञानिक संकेतन)</div>
+                        <div id="sf-sci" style="font-size: 1.4rem; font-weight: 800; color: #38bdf8; margin-top: 15px;">-</div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                window.labCalculateSF = function() {
+                    const input = document.getElementById('sf-input');
+                    const res = document.getElementById('sf-result');
+                    const sci = document.getElementById('sf-sci');
+                    let val = input.value.trim();
+                    
+                    if (!val || isNaN(val)) { 
+                        res.innerText = '0'; 
+                        sci.innerHTML = '<span style="opacity:0.3">-</span>'; 
+                        return; 
                     }
-                }
-                res.innerText = count;
-                const num = parseFloat(input);
-                if (num === 0) sci.innerText = '0';
-                else {
-                    let n = Math.floor(Math.log10(Math.abs(num)));
-                    let sig = (num / Math.pow(10, n)).toFixed(count - 1 < 0 ? 0 : count - 1);
-                    sci.innerHTML = sig + ' × 10<sup>' + n + '</sup>';
-                }
-            }
-        </script>
 
+                    // Count Significant Figures
+                    let s = val.replace(/^-/, ''); // Remove sign
+                    let count = 0;
+                    
+                    if (s.includes('.')) {
+                        // DECIMAL CASE: Leading zeros ignore, trailing zeros count
+                        let core = s.replace(/^0+\.?0*/, '');
+                        if (core === "") {
+                            count = 0;
+                        } else {
+                            count = core.replace('.', '').length;
+                        }
+                    } else {
+                        // INTEGER CASE: Leading/Trailing zeros ignore (NCERT rule 4)
+                        let trimmed = s.replace(/^0+/, ''); // Leading 0s
+                        if (trimmed === "") {
+                            count = 0;
+                        } else {
+                            let lastNonZeroIdx = -1;
+                            for(let i=trimmed.length-1; i>=0; i--) {
+                                if(trimmed[i] !== '0') {
+                                    lastNonZeroIdx = i;
+                                    break;
+                                }
+                            }
+                            count = (lastNonZeroIdx === -1) ? 0 : (lastNonZeroIdx + 1);
+                        }
+                    }
+                    
+                    res.innerText = count;
+                    
+                    // Scientific Notation Display (Forced HTML Superscript)
+                    const num = parseFloat(val);
+                    if (num === 0) { 
+                        sci.innerHTML = '0'; 
+                    } else {
+                        let n = Math.floor(Math.log10(Math.abs(num)));
+                        let significand = (num / Math.pow(10, n)).toFixed(count - 1 < 0 ? 0 : count - 1);
+                        sci.innerHTML = significand + ' × 10<sup>' + n + '</sup>';
+                    }
+                };
+                // Initialize
+                window.labCalculateSF();
+            </script>
+        </div>
+
+        <!-- TRANSITION CARD -->
+        <div style="margin-top: 100px; padding: 71px; background: #064e3b; color: white; border-radius: 80px; text-align: center; box-shadow: 0 40px 80px rgba(0,0,0,0.3);">
+            <h3 style="margin-top: 0; font-size: 3rem; color: white; border: none;">Mastering Data! 📏</h3>
+            <p style="font-size: 1.5rem; opacity: 0.9; max-width: 800px; margin: 20px auto;">You've learned how to handle uncertainty in measurement. Now, let's learn how to convert between different units using **Dimensional Analysis**.</p>
+            <div style="margin-top: 30px; font-weight: 900; color: #38bdf8; text-transform: uppercase; letter-spacing: 3px;">Upcoming: Part 5 (Dimensional Analysis)</div>
+            <div style="margin-top: 50px; display: flex; justify-content: center;">
+                <a href="ch1_part5.html" style="background: #38bdf8; color: #0f172a; padding: 20px 40px; border-radius: 30px; text-decoration: none; font-weight: 900; font-size: 1.5rem; box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4); border: 3px solid #0f172a; transition: all 0.3s;">
+                    Next Part (Part 5: Dimensional Analysis) ➡️
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- NAVIGATION -->
