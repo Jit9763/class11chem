@@ -24,3 +24,17 @@ This document establishes the structural, design, and deployment standards for a
 ## 4. Edge-to-Edge Premium Design
 - **No Outer Constraints:** `notes_html_view.html` must always run **Edge-to-Edge** (`100vw`). The central viewer does NOT wrap content in a restricted `.container` with margins/paddings. This faithfully mimics the local `index.html` fullscreen rendering.
 - **Cache-Busting Logic:** `fetch` requests inside dynamic loaders must append `?v=${timestamp}` to guarantee the CDN always serves the freshest pushed HTML file.
+
+## 5. Multi-Part Development Strategy (Safety & Modularity)
+- **Manual GitHub Deployment:** ONLY push to GitHub when explicitly instructed by the user (e.g., "push to github"). Never push automatically.
+- **Preserve Existing Work:** Do not modify the original/completed chapters unless absolutely necessary. Once a part is finished, leave it untouched.
+- **Separate HTML Files per Part:** For the remaining parts (out of the 20 total parts), build each individual part in a separate HTML file within a dedicated folder structure. For example, `ch1_parts/ch1_part9.html`, `ch1_parts/ch1_part10.html`, etc.
+- **Sequential Navigation:** Every individual part's HTML MUST include navigation buttons at the very bottom:
+  - `Next Part (Next Part Name)`
+  - `Previous Part (Previous Part Name)`
+  This ensures seamless flow backwards and forwards without reloading the master file.
+
+## 6. Mathematical Formatting ("Bata/Fraction" Style)
+- **Fractions in Formulas:** NEVER use inline slashes (e.g., `n = 4 / 2 = 2`) for mathematical calculations or division expressions.
+- **Original Representation:** Always use a visual horizontal divider (numerator over denominator) using CSS structures like inline-flex or vertically stacked spans with a `border-bottom` on the numerator.
+- **Goal:** Ensure math equations look completely authentic to traditional handwritten "bata" (upon/divided by) formats.

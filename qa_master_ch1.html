@@ -3,27 +3,417 @@
 <head>
     <meta charset="UTF-8">
     <title>Chapter 1 Q&A MASTER - Premium Notes</title>
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #f8fafc; margin: 0; padding: 20px; }
+        #contentToCopy { line-height: 1.8; color: #1e1b4b; max-width: 1000px; margin: auto; }
+        .qa-container { background: white; padding: 50px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #ede9fe; }
+        .header-box { text-align: center; border-bottom: 4px solid #8b5cf6; padding-bottom: 30px; margin-bottom: 50px; background: #f5f3ff; margin: -50px -50px 50px -50px; padding-top: 50px; border-radius: 20px 20px 50px 50px; }
+        .section-title { color: #4c1d95; border-left: 8px solid #8b5cf6; padding-left: 20px; margin-top: 60px; margin-bottom: 30px; font-size: 2.2rem; background: linear-gradient(to right, #f5f3ff, transparent); padding: 15px 15px 15px 20px; border-radius: 0 30px 30px 0; }
+        .q-box { margin-bottom: 25px; padding: 20px; border: 1px solid #e5e7eb; border-radius: 15px; background: #ffffff; transition: all 0.2s; font-size: 1.2rem; }
+        .q-box:hover { box-shadow: 0 5px 15px rgba(139, 92, 246, 0.1); border-color: #c4b5fd; }
+        .q-num { font-weight: 900; color: #6d28d9; margin-right: 10px; font-size: 1.4rem; }
+        .mcq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+        .mcq-opt { padding: 10px 15px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1.1rem; color: #334155; }
+        details { margin-top: 15px; }
+        summary { cursor: pointer; color: #8b5cf6; font-weight: bold; outline: none; background: #f5f3ff; display: inline-block; padding: 5px 15px; border-radius: 20px; transition: 0.3s; }
+        summary:hover { background: #ede9fe; }
+        .ans-box { margin-top: 15px; padding: 15px 20px; background: #f0fdf4; border-left: 5px solid #22c55e; border-radius: 0 10px 10px 0; color: #166534; font-weight: 500; font-size: 1.15rem; }
+        .ans-box-long { background: #f8fafc; border-left-color: #3b82f6; color: #1e293b; }
+        .highlight { font-weight: bold; color: #b91c1c; }
+    </style>
 </head>
 <body>
     <div id="contentToCopy">
-        <div style="font-family: 'Outfit', sans-serif; line-height: 1.8; color: #1e1b4b; max-width: 900px; margin: auto;">
-            <div style="text-align: center; border-bottom: 4px solid #8b5cf6; padding-bottom: 30px; margin-bottom: 50px; background: #f5f3ff; padding-top: 40px; border-radius: 0 0 50px 50px;">
-                <h1 style="color: #4c1d95; font-size: 3rem; margin-bottom: 10px;">अध्याय 1: प्रश्न-उत्तर बैंक</h1>
-                <p style="font-size: 1.3rem; color: #6d28d9; font-weight: 600;">रसायन विज्ञान की कुछ मूल अवधारणाएँ - मास्टर Q&A</p>
-            </div>
-
-            <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #ede9fe;">
-                <h2 style="color: #1e1b4b; border-left: 8px solid #8b5cf6; padding-left: 20px; margin-bottom: 30px;">महत्वपूर्ण बोर्ड एवं प्रतियोगी परीक्षा प्रश्न</h2>
-                
-                <div style="margin-top: 50px; padding: 30px; background: #fdf2f8; border: 2px dashed #db2777; border-radius: 15px; text-align: center;">
-                    <p style="font-size: 1.5rem; color: #9d174d; font-weight: bold;">⚠️ Q&A अपडेट प्रक्रिया में है...</p>
-                    <p style="color: #be185d;">इस अध्याय के लिए महत्वपूर्ण प्रश्नों का चयन किया जा रहा है। जल्द ही यहाँ NCERT सॉल्यूशंस और पिछले वर्षों के प्रश्न अपलोड किए जाएंगे।</p>
+        <div class="qa-container">
+            
+            <!-- HEADER -->
+            <div class="header-box">
+                <h1 style="color: #4c1d95; font-size: 3.5rem; margin-bottom: 10px; margin-top: 0;">अध्याय 1: प्रश्न-उत्तर बैंक</h1>
+                <p style="font-size: 1.5rem; color: #6d28d9; font-weight: 600; margin: 0; letter-spacing: 1px;">रसायन विज्ञान की कुछ मूल अवधारणाएँ - Master Q&A Bank</p>
+                <div style="margin-top: 20px; display: flex; justify-content: center; gap: 15px;">
+                    <span style="background: #e0e7ff; color: #4338ca; padding: 5px 15px; border-radius: 20px; font-weight: bold;">20 MCQ</span>
+                    <span style="background: #fce7f3; color: #be185d; padding: 5px 15px; border-radius: 20px; font-weight: bold;">10 Short Answer</span>
+                    <span style="background: #fef08a; color: #854d0e; padding: 5px 15px; border-radius: 20px; font-weight: bold;">5 Long Answer</span>
+                    <span style="background: #dcfce7; color: #15803d; padding: 5px 15px; border-radius: 20px; font-weight: bold;">5 Numericals</span>
                 </div>
             </div>
 
-            <div style="margin-top: 60px; text-align: center; padding: 20px; color: #6b7280; font-style: italic; border-top: 1px solid #e5e7eb;">
-                © 2026 रसायन विज्ञान प्रीमियम पोर्टल
+            <!-- SECTION 1: MCQs -->
+            <h2 class="section-title">✅ बहुविकल्पीय प्रश्न (MCQs)</h2>
+
+            <div class="q-box"><span class="q-num">Q.1</span> आधुनिक रसायन विज्ञान का जनक किसे माना जाता है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) रदरफोर्ड</div><div class="mcq-opt">(B) लैवासिए (Lavoisier)</div>
+                    <div class="mcq-opt">(C) डाल्टन</div><div class="mcq-opt">(D) मेंडलीफ</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (B) लैवासिए (Lavoisier)</div></details>
             </div>
+
+            <div class="q-box"><span class="q-num">Q.2</span> S.T.P. (मानक ताप व दाब) पर 1 मोल किसी भी आदर्श गैस का आयतन कितना होता है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) 22.4 L</div><div class="mcq-opt">(B) 11.2 L</div>
+                    <div class="mcq-opt">(C) 22.4 mL</div><div class="mcq-opt">(D) 44.8 L</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (A) 22.4 L</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.3</span> जल (H₂O) में हाइड्रोजन और ऑक्सीजन के द्रव्यमानों का अनुपात क्या है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) 1:8</div><div class="mcq-opt">(B) 2:1</div>
+                    <div class="mcq-opt">(C) 1:16</div><div class="mcq-opt">(D) 8:1</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (A) 1:8</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.4</span> एक 'मोल' (Mole) में कणों की संख्या (Avogadro Number) कितनी होती है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) 6.022 × 10²²</div><div class="mcq-opt">(B) 6.022 × 10²³</div>
+                    <div class="mcq-opt">(C) 6.022 × 10²⁴</div><div class="mcq-opt">(D) 1.66 × 10⁻²⁴</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (B) 6.022 × 10²³</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.5</span> कौनसी सान्द्रता की इकाई तापमान (Temperature) पर निर्भर करती है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) मोललता (Molality)</div><div class="mcq-opt">(B) मोल भिन्न (Mole Fraction)</div>
+                    <div class="mcq-opt">(C) द्रव्यमान प्रतिशत</div><div class="mcq-opt">(D) मोलरता (Molarity)</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (D) मोलरता (Molarity) - क्योंकि यह आयतन पर निर्भर है।</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.6</span> शुद्ध जल की मोलरता (Molarity) क्या होती है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) 18 M</div><div class="mcq-opt">(B) 1 M</div>
+                    <div class="mcq-opt">(C) 55.5 M</div><div class="mcq-opt">(D) 100 M</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (C) 55.5 M (1000g / 18g/mol)</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.7</span> 'द्रव्यमान संरक्षण का नियम' (Law of Conservation of Mass) किसने प्रतिपादित किया था?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) प्राउस्ट</div><div class="mcq-opt">(B) लैवासिए</div>
+                    <div class="mcq-opt">(C) डाल्टन</div><div class="mcq-opt">(D) रदरफोर्ड</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (B) लैवासिए (Lavoisier)</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.8</span> 0.0025 में कितने सार्थक अंक (Significant Figures) हैं?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) 4</div><div class="mcq-opt">(B) 3</div>
+                    <div class="mcq-opt">(C) 2</div><div class="mcq-opt">(D) 5</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (C) 2 (अशून्य अंकों से पहले वाले शून्य सार्थक नहीं होते)</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.9</span> यदि यौगिक का मूलानुपाती सूत्र (Empirical formula) CH₂ है और उसका अणुभार 28 है, तो अणु सूत्र क्या होगा?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) CH₄</div><div class="mcq-opt">(B) C₂H₄</div>
+                    <div class="mcq-opt">(C) C₂H₆</div><div class="mcq-opt">(D) C₃H₆</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (B) C₂H₄ (n = 28 / 14 = 2; 2 × CH₂ = C₂H₄)</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.10</span> 18 ग्राम जल (H₂O) में मोलों की संख्या कितनी होती है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) 0.5 मोल</div><div class="mcq-opt">(B) 1 मोल</div>
+                    <div class="mcq-opt">(C) 2 मोल</div><div class="mcq-opt">(D) 10 मोल</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (B) 1 मोल (द्रव्यमान/अणुभार = 18/18 = 1)</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.11</span> SI पद्धति में 'पदार्थ की मात्रा' (Amount of substance) की मूल इकाई क्या है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) ग्राम</div><div class="mcq-opt">(B) लीटर</div>
+                    <div class="mcq-opt">(C) मोल (mole)</div><div class="mcq-opt">(D) किलोग्राम</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (C) मोल (mole)</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.12</span> किसी विलयन के सभी घटकों के मोल अंशों (Mole fractions) का योग कितना होता है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) 0</div><div class="mcq-opt">(B) 1</div>
+                    <div class="mcq-opt">(C) 100</div><div class="mcq-opt">(D) 0.5</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (B) 1 (हमेशा 1 होता है)</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.13</span> 1 amu (Atomic Mass Unit) का ग्राम में मान कितना होता है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) 1.66 × 10⁻²⁴ g</div><div class="mcq-opt">(B) 6.02 × 10²³ g</div>
+                    <div class="mcq-opt">(C) 1.66 × 10⁻²⁷ g</div><div class="mcq-opt">(D) 9.1 × 10⁻³¹ g</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (A) 1.66 × 10⁻²⁴ g</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.14</span> वह पदार्थ जो रासायनिक अभिक्रिया में सबसे पहले समाप्त हो जाता है और उत्पाद की मात्रा सीमित कर देता है, क्या कहलाता है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) उत्प्रेरक (Catalyst)</div><div class="mcq-opt">(B) आधिक्य अभिकर्मक</div>
+                    <div class="mcq-opt">(C) उत्पाद</div><div class="mcq-opt">(D) सीमान्त अभिकर्मक (Limiting Reagent)</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (D) सीमान्त अभिकर्मक (Limiting Reagent)</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.15</span> सल्फ्यूरिक अम्ल (H₂SO₄) का अणुभार (Molar mass) कितना होता है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) 49 u</div><div class="mcq-opt">(B) 98 u</div>
+                    <div class="mcq-opt">(C) 80 u</div><div class="mcq-opt">(D) 64 u</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (B) 98 u (2 + 32 + 64)</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.16</span> NaCl का तुल्यांकी भार (Equivalent Weight) उसके अणुभार के:
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) दोगुना होता है</div><div class="mcq-opt">(B) आधा होता है</div>
+                    <div class="mcq-opt">(C) बराबर होता है</div><div class="mcq-opt">(D) चार गुना होता है</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (C) बराबर होता है (क्योंकि NaCl पर आवेश 1 है, 58.5/1 = 58.5)</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.17</span> जब दो गैसें आपस में अभिक्रिया करती हैं तो उनके आयतनों में एक सरल अनुपात होता है। यह नियम है:
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) बॉयल का नियम</div><div class="mcq-opt">(B) चार्ल्स का नियम</div>
+                    <div class="mcq-opt">(C) गे-लुसैक का नियम</div><div class="mcq-opt">(D) आवोगाद्रो का नियम</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (C) गे-लुसैक का गैसीय आयतनों का नियम</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.18</span> निम्नलिखित में से कौन एक रासायनिक परिवर्तन (Chemical Change) है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) बर्फ का पिघलना</div><div class="mcq-opt">(B) पानी का उबलना</div>
+                    <div class="mcq-opt">(C) मोम का पिघलना</div><div class="mcq-opt">(D) कोयले का जलना (दहन)</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (D) कोयले का जलना</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.19</span> मोललता (m) की इकाई क्या है?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) मोल/लीटर</div><div class="mcq-opt">(B) ग्राम/लीटर</div>
+                    <div class="mcq-opt">(C) मोल/किलोग्राम (mol/kg)</div><div class="mcq-opt">(D) मोल/ग्राम</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (C) मोल/किलोग्राम (mol/kg)</div></details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.20</span> 25.045 में कितने सार्थक अंक हैं?
+                <div class="mcq-grid">
+                    <div class="mcq-opt">(A) 3</div><div class="mcq-opt">(B) 5</div>
+                    <div class="mcq-opt">(C) 4</div><div class="mcq-opt">(D) 2</div>
+                </div>
+                <details><summary>उत्तर देखें</summary><div class="ans-box">उत्तर: (B) 5 (अशून्य अंकों के बीच के सभी शून्य सार्थक होते हैं)</div></details>
+            </div>
+
+
+            <!-- SECTION 2: Short Answers -->
+            <h2 class="section-title">📝 लघु उत्तरीय प्रश्न (Short Answers)</h2>
+
+            <div class="q-box"><span class="q-num">Q.21</span> सार्थक अंक (Significant Figures) किसे कहते हैं?
+                <details><summary>उत्तर देखें</summary>
+                    <div class="ans-box ans-box-long">
+                        किसी मापन को सटीकता से दर्शाने के लिए अर्थपूर्ण अंकों की संख्या को सार्थक अंक कहते हैं। इसमें सभी निश्चित अंक और एक अंतिम अनिश्चित अंक शामिल होता है।
+                    </div>
+                </details>
+            </div>
+            
+            <div class="q-box"><span class="q-num">Q.22</span> सीमान्त अभिकर्मक (Limiting Reagent) को परिभाषित करें।
+                <details><summary>उत्तर देखें</summary>
+                    <div class="ans-box ans-box-long">
+                        रासायनिक अभिक्रिया में वह अभिकारक जो सबसे पहले पूर्ण रूप से समाप्त हो जाता है और अभिक्रिया को रोक देता है, सीमान्त अभिकर्मक कहलाता है। यही उत्पदों की मात्रा भी निर्धारित करता है।
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.23</span> मोल (Mole) की धारणा स्पष्ट करें।
+                <details><summary>उत्तर देखें</summary>
+                    <div class="ans-box ans-box-long">
+                        एक मोल किसी पदार्थ की वह मात्रा है जिसमें सूक्ष्म कणों (परमाणु, अणु या आयन) की संख्या 6.022 × 10²³ (एवोगाद्रो संख्या) होती है। उदाहरण: 1 मोल C = 12 ग्राम C = 6.022 × 10²³ कार्बन परमाणु।
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.24</span> मोलरता और मोललता में एक मुख्य अंतर क्या है?
+                <details><summary>उत्तर देखें</summary>
+                    <div class="ans-box ans-box-long">
+                        <strong style="color: #be123c;">मोलरता (M):</strong> 1 लीटर विलयन में घुले विलेय के मोल। यह आयतन पर आधारित है, इसलिए तापमान बदलने पर बदल जाती है।<br>
+                        <strong style="color: #be123c;">मोललता (m):</strong> 1 किग्रा विलायक में घुले विलेय के मोल। यह द्रव्यमान पर आधारित है, इसलिए तापमान बदलने पर <strong>अप्रभावित</strong> रहती है।
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.25</span> द्रव्यमान संरक्षण का नियम लिखिए।
+                <details><summary>उत्तर देखें</summary>
+                    <div class="ans-box ans-box-long">
+                        इस नियम के अनुसार, किसी भी भौतिक या रासायनिक परिवर्तन में द्रव्य को न तो उत्पन्न किया जा सकता है और न ही नष्ट किया जा सकता है। अर्थात्, अभिकारकों का कुल द्रव्यमान = उत्पादों का कुल द्रव्यमान।
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.26</span> स्थिर अनुपात का नियम (Law of Definite Proportions) किसने दिया और इसका क्या अर्थ है?
+                <details><summary>उत्तर देखें</summary>
+                    <div class="ans-box ans-box-long">
+                        यह नियम प्राउस्ट (Proust) ने दिया। इसके अनुसार, किसी भी शुद्ध रासायनिक यौगिक में उसके तत्व हमेशा द्रव्यमान के एक निश्चित अनुपात में ही विद्यमान होते हैं, चाहे वस्तु कहीं से भी प्राप्त की गई हो।
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.27</span> मोल अंश (Mole Fraction) की परिभाषा लिखिए।
+                <details><summary>उत्तर देखें</summary>
+                    <div class="ans-box ans-box-long">
+                        विलयन में किसी घटक विशेष के मोलों की संख्या तथा विलयन के सभी घटकों के कुल मोलों की संख्या का अनुपात, उस घटक का मोल अंश कहलाता है। सभी मोल अंशों का योग 1 होता है।
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.28</span> रसायन विज्ञान में स्टॉइकियोमीट्री (Stoichiometry) का क्या अर्थ है?
+                <details><summary>उत्तर देखें</summary>
+                    <div class="ans-box ans-box-long">
+                        रासायनिक अभिक्रियाओं में अभिकारकों (Reactants) और उत्पादों (Products) की मात्रा की गणना (द्रव्यमान या आयतन में) करने की विधि को स्टॉइकियोमीट्री कहते हैं। यह सन्तुलित समीकरण पर आधारित होती है।
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.29</span> अणु और परमाणु में एक प्रमुख अंतर बताएं।
+                <details><summary>उत्तर देखें</summary>
+                    <div class="ans-box ans-box-long">
+                        <strong style="color: #4338ca;">परमाणु (Atom):</strong> किसी तत्व का वह सूक्ष्मतम कण जो रासायनिक अभिक्रिया में भाग लेता है (स्वतंत्र अवस्था में रह भी सकता है और नहीं भी)।<br>
+                        <strong style="color: #4338ca;">अणु (Molecule):</strong> यौगिक का वह सूक्ष्मतम कण जो स्वतंत्र अवस्था में रह सकता है और जिसमें पदार्थ के सभी गुण विद्यमान होते हैं।
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.30</span> फॉर्मलता (Formality) क्या है?
+                <details><summary>उत्तर देखें</summary>
+                    <div class="ans-box ans-box-long">
+                        एक लीटर विलयन में घुले हुए विलेय के <strong>ग्राम सूत्र भारों (Gram Formula Weights)</strong> की संख्या को विलयन की फॉर्मलता कहते हैं। इसका उपयोग मुख्य रूप से आयनिक यौगिकों (जैसे NaCl) के विलयनों के लिए किया जाता है।
+                    </div>
+                </details>
+            </div>
+
+
+            <!-- SECTION 3: Long Answers -->
+            <h2 class="section-title">✍️ दीर्घ उत्तरीय प्रश्न (Long Answers)</h2>
+
+            <div class="q-box"><span class="q-num">Q.31</span> रासायनिक संयोग के प्रमुख नियमों का उदाहरण सहित विस्तार से वर्णन करें।
+                <details><summary>उत्तर का सारांश</summary>
+                    <div class="ans-box ans-box-long">
+                        छात्रों को निम्न नियमों की विस्तृत व्याख्या और उदाहरण लिखने होंगे:<br>
+                        1. <strong>द्रव्यमान संरक्षण नियम:</strong> (C + O₂ -> CO₂) द्रव्यमान बराबर रहता है।<br>
+                        2. <strong>स्थिर अनुपात नियम:</strong> (जल कहीं से भी लें, H:O का अनुपात 1:8 ही होगा)।<br>
+                        3. <strong>गुणित अनुपात का नियम:</strong> डाल्टन द्वारा। (CO और CO₂ में ऑक्सीजन का अनुपात 1:2)।<br>
+                        4. <strong>गे-लुसैक नियम:</strong> गैसों के आयतनों में सरल अनुपात।
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.32</span> डाल्टन का परमाणु सिद्धान्त क्या है? इसके मुख्य बिंदु और कमियाँ लिखिए।
+                <details><summary>उत्तर का सारांश</summary>
+                    <div class="ans-box ans-box-long">
+                        <strong>मुख्य बिंदु:</strong> पदार्थ अविभाज्य कणों (परमाणुओं) से बना है। एक तत्व के सभी परमाणु समान होते हैं। परमाणु नष्ट नहीं किए जा सकते। भिन्न तत्वों के परमाणु निश्चित अनुपात में मिलकर यौगिक बनाते हैं।<br>
+                        <strong>कमियाँ:</strong> परमाणु अब अविभाज्य नहीं रहा (इलेक्ट्रॉन, प्रोटॉन, न्यूट्रॉन की खोज)। समस्थानिकों (Isotopes) की खोज से यह तथ्य गलत हुआ कि एक तत्व के सभी परमाणु बिल्कुल समान होते हैं।
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.33</span> मूलानुपाती सूत्र (Empirical formula) और अणु सूत्र (Molecular formula) में क्या अंतर है? इसे ज्ञात करने की विधि समझाएं।
+                <details><summary>उत्तर का सारांश</summary>
+                    <div class="ans-box ans-box-long">
+                        <strong>मूलानुपाती सूत्र:</strong> परमाणुओं का सरलतम पूर्णांक अनुपात। (उदा: बेंजीन - CH)<br>
+                        <strong>अणु सूत्र:</strong> परमाणुओं की वास्तविक संख्या। (उदा: C₆H₆)<br>
+                        <strong>ज्ञात करने की विधि:</strong> <br>
+                        1. तत्व का % और परमाणु भार लिखें।<br>
+                        2. मोलो की संख्या (% / परमाणु भार) निकालें।<br>
+                        3. सबसे छोटी संख्या से भाग देकर सरल अनुपात (मूलानुपाती सूत्र) ज्ञात करें।<br>
+                        4. अणु सूत्र = n × मूलानुपाती सूत्र (जहाँ n = अणुभार / मूलानुपाती सूत्र का भार)।
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.34</span> विलयनों की सान्द्रता व्यक्त करने की विभिन्न विधियों (मोलरता, मोललता, नॉर्मलता, मोल अंश) को सूत्र सहित समझाइए।
+                <details><summary>उत्तर का सारांश</summary>
+                    <div class="ans-box ans-box-long">
+                        छात्रों को चारों की परिभाषा और गणितीय सूत्र (Formula) विस्तार से लिखने होंगे। यह भी स्पष्ट करना होगा कि मोलरता व नॉर्मलता ताप पर निर्भर हैं जबकि मोललता व मोल अंश ताप से स्वतंत्र हैं।
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.35</span> यथार्थता (Accuracy) और परिशुद्धता (Precision) में क्या अंतर है? उदाहरण देकर समझाएं।
+                <details><summary>उत्तर का सारांश</summary>
+                    <div class="ans-box ans-box-long">
+                        <strong style="color: #b45309;">यथार्थता (Accuracy):</strong> कोई मापन वास्तविक (True) या सही मान के कितना करीब है।<br>
+                        <strong style="color: #b45309;">परिशुद्धता (Precision):</strong> मापन को कितनी बार भी दोहराया जाए, उनके परिणाम आपस में कितने करीब हैं।<br>
+                        <strong>उदाहरण:</strong> यदि किसी वस्तु का असली भार 2.0g है, तो 1.99g यथार्थ भी है व परिशुद्ध भी। यदि लगातार 1.90g, 1.91g, 1.90g आए तो ये परिशुद्ध हैं लेकिन यथार्थ नहीं (क्योंकि सत्य मान 2.0 से दूर हैं)।
+                    </div>
+                </details>
+            </div>
+
+
+            <!-- SECTION 4: Numericals -->
+            <h2 class="section-title">🧮 आंकिक प्रश्न (Numericals)</h2>
+
+            <div class="q-box"><span class="q-num">Q.36</span> 16g मीथेन (CH₄) के दहन में प्राप्त जल का द्रव्यमान ज्ञात करें।
+                <details><summary>हल (Solution) देखें</summary>
+                    <div class="ans-box ans-box-long" style="font-family: monospace;">
+                        समीकरण: CH₄ + 2O₂ ⟶ CO₂ + 2H₂O<br>
+                        16g CH₄ (1 मोल) से 2 मोल जल (H₂O) प्राप्त होता है。<br>
+                        1 मोल H₂O = 18g<br>
+                        अतः 2 मोल H₂O = 2 × 18 = <strong style="color: #b91c1c; font-size: 1.5rem;">36g उत्तर</strong>
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.37</span> 3M NaCl विलयन का घनत्व 1.25 g/mL है, तो इस विलयन की मोललता (Molality) ज्ञात करें।
+                <details><summary>हल (Solution) देखें</summary>
+                    <div class="ans-box ans-box-long" style="font-family: monospace;">
+                        M = 3 mol/L (अर्थात् 3 मोल NaCl 1L विलयन में है)<br>
+                        NaCl का भार = 3 × 58.5 = 175.5 g<br>
+                        विलयन का द्रव्यमान = 1000 mL × 1.25 g/mL = 1250 g<br>
+                        विलायक (जल) का द्रव्यमान = 1250 - 175.5 = 1074.5 g = 1.0745 kg<br>
+                        मोललता (m) = 3 mol / 1.0745 kg = <strong style="color: #b91c1c; font-size: 1.5rem;">2.79 m उत्तर</strong>
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.38</span> किसी यौगिक का प्रतिशत संगठन: C = 40%, H = 6.67%, O = 53.33% है। यदि यौगिक का अणुभार 60 हो, तो उसका अणु-सूत्र ज्ञात करें।
+                <details><summary>हल (Solution) देखें</summary>
+                    <div class="ans-box ans-box-long" style="font-family: monospace;">
+                        मोल अनुपात: <br>C = 40/12 = 3.33<br>H = 6.67/1 = 6.67<br>O = 53.33/16 = 3.33<br>
+                        सरल अनुपात (3.33 से भाग): C=1, H=2, O=1 <br>
+                        <strong>मूलानुपाती सूत्र = CH₂O</strong> (भार = 12+2+16 = 30)<br>
+                        n = अणुभार / मूलानुपाती सूत्र भार = 60 / 30 = 2<br>
+                        अणु सूत्र = 2 × (CH₂O) = <strong style="color: #b91c1c; font-size: 1.5rem;">C₂H₄O₂ उत्तर</strong>
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.39</span> 4g NaOH को जल की इतनी मात्रा में घोला गया है कि विलयन का कुल आयतन 250mL हो जाए। विलयन की मोलरता क्या होगी?
+                <details><summary>हल (Solution) देखें</summary>
+                    <div class="ans-box ans-box-long" style="font-family: monospace;">
+                        M = (W × 1000) / (M.W. × V)<br>
+                        NaOH का द्रव्यमान (W) = 4g<br>
+                        NaOH का अणुभार (M.W.) = 40<br>
+                        M = (4 × 1000) / (40 × 250)<br>
+                        M = 4000 / 10000 = 0.4 mol/L<br>
+                        <strong style="color: #b91c1c; font-size: 1.5rem;">मोलरता = 0.4 M उत्तर</strong>
+                    </div>
+                </details>
+            </div>
+
+            <div class="q-box"><span class="q-num">Q.40</span> 2.0g हाइड्रोजन, 16.0g ऑक्सीजन के साथ जल बनाती है। इसमें सीमान्त अभिकर्मक (Limiting reagent) कौन है?
+                <details><summary>हल (Solution) देखें</summary>
+                    <div class="ans-box ans-box-long" style="font-family: monospace;">
+                        अभिक्रिया: 2H₂ + O₂ ⟶ 2H₂O<br>
+                        समीकरण अनुसार: 4g H₂ को 32g O₂ चाहिए।<br>
+                        अतः 2g H₂ के लिए (32/4)×2 = 16g O₂ चाहिए।<br>
+                        प्रश्नानुसार, हमारे पास 2g H₂ है और ठीक 16g O₂ ही दी गई है।<br>
+                        इस स्थिति में दोनों पूरी तरह इस्तेमाल हो जाऐंगे, इसलिए <strong>यहाँ कोई भी एक विशेष सीमान्त अभिकर्मक नहीं है (दोनों पूर्णतः खर्च हो रहे हैं)।</strong> 
+                        <br><br>*(नोट: यदि O₂ 10g दी होती, तो O₂ सीमान्त अभिकर्मक होता).*
+                    </div>
+                </details>
+            </div>
+
+            <!-- FOOTER -->
+            <div style="margin-top: 60px; text-align: center; padding: 20px; color: #6b7280; font-style: italic; border-top: 1px solid #e5e7eb;">
+                © 2026 रसायन विज्ञान प्रीमियम Q&A पोर्टल | अध्याय 1
+            </div>
+
         </div>
     </div>
 </body>
