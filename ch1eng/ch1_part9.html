@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: Some Basic Concepts of Chemistry - Part 9</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Outfit', sans-serif; background: #f8fafc; color: #1e293b; overflow-x: hidden; padding-bottom: 100px; }
+        .part-container { padding: 60px 40px; line-height: 1.8; font-size: 1.5rem; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 40px 80px rgba(0,0,0,0.04); border-top: 5px solid #059669; }
+        .header-banner { background: linear-gradient(135deg, #064e3b 0%, #065f46 100%); color: white; padding: 60px 10px; text-align: center; border-radius: 0 0 50px 50px; margin-bottom: 40px; }
+        .header-banner h1 { font-size: 3.5rem; margin: 0; font-weight: 900; }
+        h2 { color: #064e3b; font-size: 3rem; border-left: 15px solid #059669; padding-left: 30px; background: linear-gradient(to right, #f0fdf4, transparent); padding-top: 20px; padding-bottom: 20px; border-radius: 0 30px 30px 0; margin-bottom: 50px; margin-top: 0; }
+        h3 { color: #065f46; font-size: 2.3rem; border-bottom: 4px solid #d1fae5; display: inline-block; padding-bottom: 10px; margin-bottom: 30px; }
+        .def-card { padding: 30px; background: white; border-radius: 30px; border: 2px solid #10b981; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.1); margin-bottom: 20px; }
+        .formula-box { background: #020617; color: white; padding: 50px; border-radius: 50px; margin: 60px 0; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+        .example-card { background: white; border: 2px solid #e2e8f0; border-radius: 30px; padding: 30px; margin-bottom: 30px; }
+        .example-num { background: #0f172a; color: white; border-radius: 50%; width: 40px; height: 40px; display: inline-flex; justify-content: center; align-items: center; margin-right: 15px; }
+        .nav-buttons { display: flex; justify-content: space-between; align-items: center; padding: 20px 5vw; position: fixed; bottom: 0; width: 100%; box-sizing: border-box; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-top: 2px solid #e2e8f0; z-index: 1000; }
+        .nav-btn { background: #059669; color: white; padding: 15px 35px; border-radius: 30px; text-decoration: none; font-weight: 800; font-size: 1.3rem; transition: 0.3s; margin-left: 10px; }
+        .nav-home { background: #334155; }
+        @media (max-width: 800px) {
+            .part-container { padding: 40px 20px; margin: 20px; }
+            .header-banner h1 { font-size: 2.5rem; }
+            h2 { font-size: 2.2rem; border-left-width: 10px; }
+            .nav-btn { padding: 12px 20px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h1>Mole Concept & Molar Mass</h1>
+    </div>
+
+    <div class="part-container">
+        <h2>Part 9: Mole Concept & Molar Mass</h2>
+
+        <div style="margin-bottom: 60px;">
+            <h3>9.1 The Mole - A Basic Unit</h3>
+            <p><strong>Amount of substance</strong> is a base physical quantity in the S.I. system, and its unit is the **Mole (mol)**.</p>
+        </div>
+
+        <!-- DEFINITIONS -->
+        <div style="margin-bottom: 80px;">
+            <h3>Definitions of 1 Mole:</h3>
+            <div class="def-card" style="border-color: #10b981;">
+                <h4 style="color: #059669; margin-top: 0;">🔹 Based on Carbon-12:</h4>
+                <p>"The amount of a substance that contains as many particles (atoms, molecules, or ions) as there are atoms in exactly 12 g of the Carbon-12 isotope."</p>
+                <div style="background: #f0fdf4; padding: 15px; border-radius: 15px; font-weight: bold; color: #047857; margin-top: 15px;">
+                    Avogadro's Number (Nₐ) = 6.022 × 10²³
+                </div>
+            </div>
+            
+            <div class="def-card" style="border-color: #3b82f6;">
+                <h4 style="color: #2563eb; margin-top: 0;">🔹 Based on Mass:</h4>
+                <p>The amount of a substance whose mass in grams is equal to its atomic or molecular mass.</p>
+            </div>
+
+            <div class="def-card" style="border-color: #f43f5e;">
+                <h4 style="color: #e11d48; margin-top: 0;">🔹 Molar Volume (Gases):</h4>
+                <p>At STP (Standard Temperature and Pressure), 1 mole of any gas occupies a volume of **22.4 L**.</p>
+            </div>
+        </div>
+
+        <!-- FORMULA SUMMARY -->
+        <div class="formula-box">
+            <h3 style="color: #38bdf8; border-bottom: none; margin-top: 0;">📌 Key Formulas</h3>
+            <ul style="list-style: none; padding: 0; line-height: 2.5;">
+                <li>✅ <strong>1 Mole</strong> = Gram Atomic/Molecular Mass = 6.022 × 10²³ particles</li>
+                <li>✅ <strong>Number of Moles (n)</strong> = (Given Mass in grams) / (Molar Mass)</li>
+                <li>✅ <strong>Number of Particles</strong> = Moles (n) × Avogadro's Number (Nₐ)</li>
+                <li>✅ <strong>Number of Moles (for Gas)</strong> = (Volume at STP in Litres) / 22.4 L</li>
+            </ul>
+        </div>
+
+        <!-- SOLVED EXAMPLES -->
+        <h3>Solved Examples</h3>
+        
+        <div class="example-card">
+            <h4><span class="example-num">1</span> Mass of 1 Molecule of CO₂</h4>
+            <div style="font-family: 'Courier New', monospace; background: #f8fafc; padding: 20px; border-radius: 15px;">
+                Molar Mass of CO₂ = 44 g/mol <br>
+                Mass of 6.022 × 10²³ molecules = 44 g <br>
+                Mass of 1 molecule = 44 / (6.022 × 10²³) <br>
+                <strong style="color: #059669; font-size: 1.8rem;">= 7.306 × 10⁻²³ g</strong>
+            </div>
+        </div>
+
+        <div class="example-card">
+            <h4><span class="example-num">2</span> Moles in 36g of Water (H₂O)</h4>
+            <div style="font-family: 'Courier New', monospace; background: #f8fafc; padding: 20px; border-radius: 15px;">
+                Molar Mass of H₂O = 18 g/mol <br>
+                Moles (n) = Given Mass / Molar Mass <br>
+                Moles = 36 / 18 <br>
+                <strong style="color: #059669; font-size: 1.8rem;">= 2 mol</strong>
+            </div>
+        </div>
+
+        <div class="example-card">
+            <h4><span class="example-num">3</span> Molecules in 11.2 L of CO₂ at STP</h4>
+            <div style="font-family: 'Courier New', monospace; background: #f8fafc; padding: 20px; border-radius: 15px;">
+                Moles (n) = 11.2 / 22.4 = 0.5 mol <br>
+                Molecules = 0.5 × 6.022 × 10²³ <br>
+                <strong style="color: #059669; font-size: 1.8rem;">= 3.011 × 10²³ molecules</strong>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn nav-home">🏠 Main Hub</a>
+        <div style="display: flex;">
+            <a href="ch1_part8.html" class="nav-btn">⬅️ Previous</a>
+            <a href="ch1_part10.html" class="nav-btn">Next Part ➡️</a>
+        </div>
+    </div>
+
+</body>
+</html>
