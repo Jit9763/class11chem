@@ -279,7 +279,7 @@
                                 कैसे व्यवहार करते हैं</p>
                         </div>
 
-                        <div style="display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center;">
+                        <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center;">
                             <!-- Canvas Container -->
                             <div
                                 style="background: rgba(0,0,0,0.3); border-radius: 25px; border: 2px solid rgba(16, 185, 129, 0.4); height: 400px; position: relative; overflow: hidden;">
@@ -502,7 +502,7 @@
                                         <label
                                             style="display: block; margin-bottom: 15px; font-weight: bold; color: #10b981;">चरण
                                             1: विलेय (Solute) चुनें:</label>
-                                        <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+                                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                                             <button class="mix-opt-btn"
                                                 onclick="selectSolute('sugar', 'white', true, 'समांगी (Homogeneous)')">चीनी
                                                 (Sugar)</button>
@@ -937,7 +937,6 @@
                                     style="width: 100%; border-collapse: collapse; text-align: left; font-size: 1.1rem;">
                                     <thead style="background: #1e293b; color: white;">
                                         <tr>
-
                                             <th style="padding: 15px;">गुणांक (Multiple)</th>
                                             <th style="padding: 15px;">उपसर्ग (Prefix)</th>
                                             <th style="padding: 15px;">संकेत</th>
@@ -948,54 +947,68 @@
                                             <td style="padding:12px;">10⁻¹⁵</td>
                                             <td>फेम्टो (femto)</td>
                                             <td>f</td>
-                                            <td style="padding:12px;">10¹</td>
-                                            <td>डेका (deca)</td>
-                                            <td>da</td>
                                         </tr>
                                         <tr>
                                             <td style="padding:12px;">10⁻¹²</td>
                                             <td>पिको (pico)</td>
                                             <td>p</td>
-                                            <td style="padding:12px;">10²</td>
-                                            <td>हेक्टो (hecto)</td>
-                                            <td>h</td>
                                         </tr>
                                         <tr style="background: white;">
                                             <td style="padding:12px;">10⁻⁹</td>
                                             <td>नैनो (nano)</td>
                                             <td>n</td>
-                                            <td style="padding:12px;">10³</td>
-                                            <td>किलो (kilo)</td>
-                                            <td>k</td>
                                         </tr>
                                         <tr>
                                             <td style="padding:12px;">10⁻⁶</td>
                                             <td>माइक्रो (micro)</td>
                                             <td>μ</td>
-                                            <td style="padding:12px;">10⁶</td>
-                                            <td>मेगा (mega)</td>
-                                            <td>M</td>
                                         </tr>
                                         <tr style="background: white;">
                                             <td style="padding:12px;">10⁻³</td>
                                             <td>मिली (milli)</td>
                                             <td>m</td>
-                                            <td style="padding:12px;">10⁹</td>
-                                            <td>गीगा (giga)</td>
-                                            <td>G</td>
                                         </tr>
                                         <tr>
                                             <td style="padding:12px;">10⁻²</td>
                                             <td>सेन्टी (centi)</td>
                                             <td>c</td>
-                                            <td style="padding:12px;">10¹²</td>
-                                            <td>टेरा (tera)</td>
-                                            <td>T</td>
                                         </tr>
                                         <tr style="background: white;">
                                             <td style="padding:12px;">10⁻¹</td>
                                             <td>डेसी (deci)</td>
                                             <td>d</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:12px;">10¹</td>
+                                            <td>डेका (deca)</td>
+                                            <td>da</td>
+                                        </tr>
+                                        <tr style="background: white;">
+                                            <td style="padding:12px;">10²</td>
+                                            <td>हेक्टो (hecto)</td>
+                                            <td>h</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:12px;">10³</td>
+                                            <td>किलो (kilo)</td>
+                                            <td>k</td>
+                                        </tr>
+                                        <tr style="background: white;">
+                                            <td style="padding:12px;">10⁶</td>
+                                            <td>मेगा (mega)</td>
+                                            <td>M</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:12px;">10⁹</td>
+                                            <td>गीगा (giga)</td>
+                                            <td>G</td>
+                                        </tr>
+                                        <tr style="background: white;">
+                                            <td style="padding:12px;">10¹²</td>
+                                            <td>टेरा (tera)</td>
+                                            <td>T</td>
+                                        </tr>
+                                        <tr>
                                             <td style="padding:12px;">10¹⁵</td>
                                             <td>पेटा (peta)</td>
                                             <td>P</td>
@@ -1015,7 +1028,7 @@
                                 3.5 प्रयोगशाला मापन सिमुलेटर (Projector Mode Pro):</h3>
 
                             <div
-                                style="background: linear-gradient(135deg, #0f172a 0%, #020617 100%); padding: 80px; border-radius: 80px; border: 8px solid #38bdf8; box-shadow: 0 60px 120px rgba(0,0,0,0.6); display: grid; grid-template-columns: 1fr; gap: 80px; margin: 0 5vw;">
+                                style="background: linear-gradient(135deg, #0f172a 0%, #020617 100%); padding: 80px; border-radius: 80px; border: 8px solid #38bdf8; box-shadow: 0 60px 120px rgba(0,0,0,0.6); display: grid; grid-template-columns: 2fr 1fr; gap: 80px; margin: 0 5vw;">
 
                                 <!-- SIMULATOR VIEWPORT -->
                                 <div
@@ -1620,8 +1633,7 @@
 
                                     <div style="max-width: 600px; margin: auto; text-align: center;">
                                         <input type="text" id="sf-input" placeholder="जैसे: 0.00450" style="width: 100%; padding: 25px; background: rgba(255,255,255,0.05); border: 3px solid #34d399; border-radius: 20px; color: white; font-size: 2.5rem; text-align: center; outline: none;" oninput="labCalculateSF()">
-                                        
-                                        <div style="display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 40px;">
+                                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
                                             <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 30px;">
                                                 <div style="font-size: 0.9rem; text-transform: uppercase;">Significant Figures</div>
                                                 <div id="sf-result" style="font-size: 4rem; font-weight: 900; color: #34d399;">0</div>
@@ -2229,3 +2241,4 @@
 </body>
 
 </html>
+

@@ -134,11 +134,17 @@
                         document.getElementById('notes-content').innerHTML = content.innerHTML;
                         document.title = "Chapter " + id + " - Premium Notes";
                         
-                        // Execute internal scripts if any (for simulator logic)
+                        // Execute internal scripts globally using DOM injection
                         const scripts = document.getElementById('notes-content').getElementsByTagName('script');
+                        const oldScripts = [];
                         for (let n = 0; n < scripts.length; n++) {
-                            eval(scripts[n].innerText);
+                            const inlineScript = document.createElement('script');
+                            inlineScript.textContent = scripts[n].innerText;
+                            document.body.appendChild(inlineScript);
+                            oldScripts.push(scripts[n]);
                         }
+                        // Remove original inert script tags
+                        oldScripts.forEach(s => s.remove());
                     } else {
                         document.getElementById('notes-content').innerHTML = "<p>Content Master not found.</p>";
                     }
