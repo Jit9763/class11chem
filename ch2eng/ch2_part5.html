@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 2: Part 5 - Structure of Atom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #059669;
+            --primary-dark: #064e3b;
+            --secondary: #10b981;
+            --accent: #38bdf8;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --font-main: #000000;
+        }
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Outfit', sans-serif; 
+            background: var(--slate-50); 
+            color: var(--font-main); 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 600;
+        }
+
+        .header-banner { 
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #065f46 100%); 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-radius: 0 0 60px 60px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .premium-badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .header-banner h1 { 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            margin: 0; 
+            font-weight: 950; 
+            line-height: 1.1;
+        }
+
+        .part-container { 
+            width: 100%;
+            max-width: 100vw;
+            padding: 80px 6vw; 
+            box-sizing: border-box;
+            background: white; 
+            margin-top: -40px;
+            border-radius: 60px 60px 0 0;
+            box-shadow: 0 -20px 60px rgba(0,0,0,0.1);
+        }
+
+        h2 { 
+            color: var(--primary-dark); 
+            font-size: clamp(2rem, 5.5vw, 3.5rem); 
+            border-left: 20px solid var(--primary); 
+            padding: 25px 40px; 
+            background: linear-gradient(to right, #f0fdf4, transparent); 
+            border-radius: 0 40px 40px 0; 
+            margin: 100px 0 60px 0;
+            font-weight: 900;
+        }
+
+        h3 { 
+            color: var(--primary); 
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem); 
+            border-bottom: 6px solid #d1fae5; 
+            display: inline-block; 
+            padding-bottom: 15px; 
+            margin: 80px 0 40px 0; 
+            font-weight: 900;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 50px;
+            padding: 50px;
+            border: 3px solid var(--slate-100);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        .hindi-note {
+            color: #4b5563;
+            font-size: 1.4rem;
+            font-style: italic;
+            margin-top: 15px;
+            display: block;
+            border-left: 5px solid #d1d5db;
+            padding-left: 20px;
+        }
+
+        .info-box {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 30px;
+            border-left: 8px solid var(--primary);
+            margin: 40px 0;
+        }
+
+        .info-emoji {
+            font-size: 5rem;
+            background: white;
+            padding: 20px;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .sim-container {
+            background: #020617;
+            padding: 50px;
+            border-radius: 50px;
+            color: white;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+            margin: 80px 0;
+        }
+
+        .nav-buttons { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 60px 0vw 40px; 
+            background: transparent; 
+            margin-top: 50px;
+        }
+
+        .nav-btn { 
+            background: var(--primary); 
+            color: white; 
+            padding: 22px 50px; 
+            border-radius: 100px; 
+            text-decoration: none; 
+            font-weight: 900; 
+            font-size: 1.4rem; 
+        }
+
+        @media (max-width: 1000px) {
+            .header-banner { padding: 60px 20px; }
+            .nav-buttons { flex-direction: column; gap: 20px; }
+            .content-card { padding: 30px; border-radius: 30px; }
+            .info-box { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <div class="premium-badge">Premium Projector Edition</div>
+        <h1>Structure of Atom<br><span style="font-size: 0.5em; opacity: 0.8; font-weight: 800;">परमाणु की संरचना</span></h1>
+    </div>
+
+    <div class="part-container">
+        
+        <h2 style="margin-top: 0;">2.10 Rutherford's Atomic Model (रदरफोर्ड का परमाणु मॉडल)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8;">
+                Based on the brilliant conclusions of his alpha-particle scattering experiment, <b>Ernest Rutherford</b> proposed a nuclear model of the atom in 1911. It is often referred to as the <b>Planetary Model (ग्रहीय मॉडल)</b>. The main postulates are:
+            </p>
+            
+            <div style="background: #eff6ff; padding: 30px; border-radius: 20px; margin: 30px 0; border: 3px solid #bfdbfe;">
+                <ul style="font-size: 1.4rem; color: #1e293b; line-height: 1.8; list-style-type: decimal; padding-left: 20px;">
+                    <li style="margin-bottom: 20px;"><b>The Nucleus (नाभिक):</b> The entire positive charge and almost all the mass of the atom are densely concentrated in an incredibly small region at the center. Rutherford called it the "Nucleus".</li>
+                    <li style="margin-bottom: 20px;"><b>Electron Orbits (इलेक्ट्रॉन की कक्षाएँ):</b> The negatively charged electrons revolve around the nucleus with very high speeds in circular paths called orbits. This is exactly how <b>planets revolve around the sun.</b></li>
+                    <li style="margin-bottom: 15px;"><b>Electrical Attraction (विद्युत आकर्षण):</b> Electrons and the nucleus are held together by strong electrostatic forces of attraction, acting just like gravitational pull between planets.</li>
+                </ul>
+            </div>
+            <span class="hindi-note">रदरफोर्ड के अनुसार: सारा प्लस चार्ज और द्रव्यमान बीच में एक छोटे से 'नाभिक' में है, और इलेक्ट्रॉन इसके चारों ओर तेज़ी से गोल कक्षा में ঘুরते हैं (जैसे सूर्य के चारों ओर ग्रह)।</span>
+
+            <div class="info-box">
+                <div class="info-emoji">🏏</div>
+                <div>
+                    <h4 style="font-size: 1.6rem; color: var(--primary-dark); margin-top:0;">Size Comparison (आकार की तुलना): A Mind-Blowing Fact!</h4>
+                    <p style="font-size: 1.4rem; color: #475569; line-height: 1.8;">
+                        The radius of the atom is about <b>10<sup>-10</sup> m</b>, while the radius of the nucleus is only about <b>10<sup>-15</sup> m</b>! <br>
+                        This means the nucleus is <b style="color:red;">100,000 times (1 लाख गुना)</b> smaller than the atom! 
+                        <br><br><b>Analogy:</b> If you imagine the nucleus as a <b>cricket ball (क्रिकेट की गेंद)</b>, the entire atom would be the size of a <b>massive 5-kilometer radius stadium</b>! And 99.9% of that 5 km stadium would just be empty space!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ZOOM SIMULATOR -->
+        <h2 id="simulator_zoom" style="margin-top: 80px;">Interactive Lab: "The Deep Zoom" (Atom vs Nucleus)</h2>
+        <div class="sim-container" style="background: #020617; border: 4px solid #064e3b;">
+            <h3 style="color: #6ee7b7; margin-top: 0; border: none; padding: 0;">100,000x Zoom Challenge</h3>
+            <p style="color: #94a3b8; font-size: 1.4rem;">The huge sphere below represents the entire 'Atom' (परमाणु). Press <b>"Deep Zoom"</b> to dive in and find the Nucleus!</p>
+
+            <div style="background: #000; padding: 0; border-radius: 30px; position: relative; height: 400px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 50px rgba(0,0,0,0.8); overflow: hidden; border: 4px solid #059669; margin-top: 30px;">
+                
+                <!-- Atom Edge (Outer Stadium) -->
+                <div id="atomBoundary" style="position: absolute; width: 350px; height: 350px; border: 2px dashed rgba(16, 185, 129, 0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 3s ease-in;">
+                    <span id="atomText" style="position: absolute; top: 10px; color: #10b981; font-weight: bold; font-size: 1.2rem; transition: opacity 1s;">Edge of Atom (परमाणु की सीमा)</span>
+                </div>
+
+                <!-- Distance Markers (Space Dust) -->
+                <div id="spaceDust" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 1s;">
+                    <div style="position: absolute; top: 20%; left: 30%; width: 2px; height: 2px; background: white; border-radius: 50%; box-shadow: 0 0 10px white;"></div>
+                    <div style="position: absolute; bottom: 30%; right: 20%; width: 3px; height: 3px; background: #38bdf8; border-radius: 50%; box-shadow: 0 0 10px #38bdf8;"></div>
+                    <div style="position: absolute; top: 50%; right: 40%; width: 1px; height: 1px; background: #fde047; border-radius: 50%;"></div>
+                </div>
+
+                <!-- Nucleus (Starts tiny, grows huge) -->
+                <div id="nucleusDot" style="position: absolute; width: 3px; height: 3px; background:radial-gradient(circle, #ef4444 0%, #7f1d1d 100%); border-radius: 50%; box-shadow: 0 0 10px #ef4444; transition: all 5s cubic-bezier(0.5, 0, 0.2, 1); z-index: 5;">
+                    <!-- Inner content revealed on zoom -->
+                    <div id="nucleusDetail" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; display:flex; flex-direction: column; align-items: center; white-space: nowrap; opacity: 0; transition: opacity 1s ease 4s;">
+                        <span style="font-size: 1.5rem; font-weight: 900; text-shadow: 0 2px 5px black;">Nucleus (+ Charge)</span>
+                        <span style="font-size: 1.2rem; opacity: 0.9; margin-top: 5px; text-shadow: 0 2px 5px black;">(Cricket Ball)</span>
+                    </div>
+                </div>
+                
+                <!-- Final Alert Text -->
+                <div id="zoomAlert" style="position: absolute; top: 15%; left: 50%; transform: translate(-50%, 0); font-size: 2.2rem; font-weight: 900; color: #fde047; text-align: center; text-shadow: 0 5px 20px rgba(0,0,0,0.8); opacity: 0; transition: opacity 1s ease 4.5s; z-index: 10; width: 90%;">
+                    Wow! You reached the Nucleus!<br>
+                    <span style="font-size: 1.5rem; color: white;">(99.9% of the mass is concentrated here)</span>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 30px; border: 2px solid #059669; margin-top: 30px; text-align: center;">
+                <button id="zoomBtn" style="background: #10b981; color: #022c22; padding: 15px 40px; border-radius: 100px; text-decoration: none; font-weight: 900; font-size: 1.6rem; border: none; cursor: pointer; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4); transition: transform 0.2s;">
+                    🔭 Start Deep Zoom
+                </button>
+                <div id="zoom_msg" style="margin-top: 20px; font-weight: bold; font-size: 1.4rem; color: #a7f3d0; height: 30px;">
+                    Currently viewing from a distance of 5 kilometers.
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // ZOOM SIMULATOR LOGIC REVISED
+            const zoomBtn = document.getElementById('zoomBtn');
+            const atomBoundary = document.getElementById('atomBoundary');
+            const atomText = document.getElementById('atomText');
+            const nucleusDetail = document.getElementById('nucleusDetail');
+            const nucleusDot = document.getElementById('nucleusDot');
+            const zoomAlert = document.getElementById('zoomAlert');
+            const zoom_msg = document.getElementById('zoom_msg');
+            const spaceDust = document.getElementById('spaceDust');
+
+            let isZoomedIn = false;
+
+            zoomBtn.addEventListener('click', () => {
+                if(!isZoomedIn) {
+                    isZoomedIn = true;
+                    zoomBtn.innerHTML = "🔙 Reset Zoom";
+                    zoomBtn.style.background = "#fbbf24";
+                    zoomBtn.style.boxShadow = "0 10px 20px rgba(251, 191, 36, 0.4)";
+                    zoom_msg.innerHTML = "Zooming in... traversing the vast empty space...";
+                    
+                    // 1. Atom Edge expands and fades out
+                    atomBoundary.style.transform = "scale(8)";
+                    atomBoundary.style.opacity = "0";
+                    atomText.style.opacity = "0";
+
+                    // 2. Space dust appears to simulate travel
+                    spaceDust.style.opacity = "1";
+                    spaceDust.style.transform = "scale(5)";
+                    spaceDust.style.transition = "transform 4s ease-in, opacity 1s";
+
+                    // 3. Nucleus dot grows from 3px to 180px
+                    nucleusDot.style.width = "180px";
+                    nucleusDot.style.height = "180px";
+                    nucleusDot.style.boxShadow = "0 0 60px #ef4444";
+
+                    // 4. Texts fade in automatically because of transition delays set in CSS!
+                    nucleusDetail.style.opacity = "1";
+                    zoomAlert.style.opacity = "1";
+
+                    setTimeout(() => {
+                        zoom_msg.innerHTML = "<span style='color:#fde047'>Incredible! After a 100,000x zoom, we found the tiny heavy Nucleus.</span>";
+                    }, 4500);
+
+                } else {
+                    isZoomedIn = false;
+                    zoomBtn.innerHTML = "🔭 Start Deep Zoom";
+                    zoomBtn.style.background = "#10b981";
+                    zoomBtn.style.boxShadow = "0 10px 20px rgba(16, 185, 129, 0.4)";
+                    zoom_msg.innerHTML = "Zooming back out...";
+                    
+                    // Reset everything
+                    atomBoundary.style.transform = "scale(1)";
+                    atomBoundary.style.opacity = "1";
+                    atomText.style.opacity = "1";
+
+                    spaceDust.style.opacity = "0";
+                    spaceDust.style.transform = "scale(1)";
+                    spaceDust.style.transition = "opacity 0.5s";
+
+                    nucleusDot.style.width = "3px";
+                    nucleusDot.style.height = "3px";
+                    nucleusDot.style.boxShadow = "0 0 10px #ef4444";
+
+                    nucleusDetail.style.opacity = "0";
+                    zoomAlert.style.opacity = "0";
+
+                    setTimeout(() => {
+                        zoom_msg.innerHTML = "Currently viewing from a distance of 5 kilometers.";
+                    }, 4000);
+                }
+            });
+        </script>
+
+        <h2>2.11 Drawbacks of Rutherford's Model (रदरफोर्ड मॉडल की कमियां)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8;">
+                Rutherford’s model was the most sophisticated at the time, but soon, fundamental physical laws placed a massive question mark (?) on its validity!
+            </p>
+            
+            <div style="background: #fef2f2; padding: 30px; border-radius: 20px; margin: 30px 0; border-left: 8px solid #ef4444;">
+                <h4 style="font-size: 1.6rem; color: #b91c1c; margin-top:0;">What went wrong? (Maxwell's Theory):</h4>
+                <p style="font-size: 1.4rem; color: #7f1d1d; line-height: 1.8;">
+                    According to the Electromagnetic theory proposed by the great physicist <b>James Clark Maxwell</b>:
+                </p>
+                <div style="background: white; padding: 20px; border-radius: 15px; font-weight: 700; color: #991b1b; text-align: center; border: 2px dashed #f87171; font-size: 1.4rem; margin: 20px 0;">
+                    "Whenever a charged particle is subjected to acceleration, it continuously emits electromagnetic radiation (loses energy)."
+                </div>
+                <ul style="font-size: 1.4rem; color: #7f1d1d; line-height: 1.8;">
+                    <li style="margin-bottom: 10px;">We know an electron is a <b>charged particle (-)</b>.</li>
+                    <li style="margin-bottom: 10px;">And science states that whenever something moves in a circle, its direction continuously changes, meaning it is undergoing <b>acceleration (त्वरण)</b>!</li>
+                </ul>
+            </div>
+            <span class="hindi-note">मैक्सवेल के सिद्धांत के अनुसार: जब भी कोई आवेशित कण (इलेक्ट्रॉन) गोल घूमता है (त्वरण में होता है), तो वह लगातार अपनी ऊर्जा (Energy) बाहर निकालता है।</span>
+
+            <h4 style="font-size: 2rem; color: #b91c1c; margin-top: 50px;">The Spiral Collapse (परमाणु का पतन):</h4>
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8;">If Rutherford is strictly correct, the revolving electron will continuously radiate energy. As its energy decreases, its speed will drop, and the positively charged nucleus will drag it closer.</p>
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8;">The electron's orbit will shrink, becoming a <b>spiral path (सर्पिलाकार)</b>. Calculations showed that in just <b>10<sup>-8</sup> seconds</b>, the electron would crash straight into the nucleus! 💥 <b>BOOM!!</b> The atom would collapse entirely.</p>
+            
+            <p style="font-size: 1.6rem; font-weight: 800; color: #020617; background: #e2e8f0; padding: 20px; border-radius: 15px; text-align: center; margin-top: 30px;">Conclusion: Rutherford's model completely <span style="color:#ef4444;">failed to explain the Stability of the Atom (परमाणु का स्थायित्व)</span>! (Because atoms obviously do not collapse).</p>
+        </div>
+
+
+        <!-- SPIRAL COLLAPSE SIMULATOR -->
+        <h2 id="simulator_collapse" style="margin-top: 80px;">Interactive Lab: The Spiral Collapse Hazard</h2>
+        <div class="sim-container" style="background: #1e1b4b; border: 4px solid #4338ca;">
+            <h3 style="color: #a78bfa; margin-top: 0; border: none; padding: 0;">Maxwell Vs Rutherford</h3>
+            <p style="color: #c7d2fe; font-size: 1.4rem;">Press "Apply Maxwell Rule" to witness the electron radiating energy, spiraling inwards, and crashing disastrously into the nucleus!</p>
+
+            <div style="background: #0f172a; padding: 20px; border-radius: 30px; position: relative; height: 400px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 50px rgba(0,0,0,0.8); overflow: hidden; border: 4px solid #312e81; margin-top: 30px;">
+                
+                <!-- SVG Trajectory Canvas -->
+                <svg id="collapseCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></svg>
+
+                <!-- Nucleus -->
+                <div id="col_nucleus" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 30px; height: 30px; background:radial-gradient(circle, #fde047 0%, #ca8a04 100%); border-radius: 50%; box-shadow: 0 0 30px #facc15; z-index: 3; display: flex; align-items: center; justify-content: center; color: black; font-weight: 900; font-size: 20px; transition: transform 0.1s;">+</div>
+
+                <!-- Electron Container (for rotation) -->
+                <div id="electronOrbit" style="position: absolute; left: 50%; top: 50%; width: 0; height: 0; z-index: 4;">
+                    <!-- The Electron itself -->
+                    <div id="col_electron" style="position: absolute; left: 140px; top: -10px; width: 20px; height: 20px; background: #38bdf8; border-radius: 50%; box-shadow: 0 0 20px #0ea5e9, 0 0 40px #0ea5e9; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 14px;">-</div>
+                </div>
+
+                <!-- Energy Waves Container -->
+                <div id="energyWaves" style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none;"></div>
+
+                <!-- Explosion Text -->
+                <div id="boomText" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(0); font-family: 'Outfit'; font-weight: 950; font-size: 5rem; color: #ef4444; text-shadow: 0 0 20px #fca5a5, 2px 2px 0px #000; z-index: 5; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0;">BOOM!!<br><span style="font-size: 1.5rem; color: white; display:block; text-align:center;">Atom Collapsed (स्थायित्व समाप्त)</span></div>
+            </div>
+
+            <!-- Controls -->
+            <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 30px; border: 2px solid #312e81; margin-top: 30px; text-align: center;">
+                <button id="colBtn" style="background: #6366f1; color: white; padding: 15px 40px; border-radius: 100px; text-decoration: none; font-weight: 900; font-size: 1.6rem; border: none; cursor: pointer; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4); transition: transform 0.2s;">
+                    📉 Apply Maxwell Rule (Radiate Energy)
+                </button>
+                <div id="col_msg" style="margin-top: 20px; font-weight: bold; font-size: 1.4rem; color: #cbd5e1; height: 30px;">
+                    Electron is happily orbiting in a stable path without losing energy.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn nav-home" style="background: #1e293b;">🏠 Main Hub</a>
+        <div style="display: flex; gap: 20px;">
+            <a href="ch2_part4.html" class="nav-btn" style="background: #94a3b8;">⬅️ Previous</a>
+            <a href="ch2_part6.html" class="nav-btn" style="background: #059669;">Next Part ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        // SPIRAL COLLAPSE SIMULATOR LOGIC
+        const colBtn = document.getElementById('colBtn');
+        const electronOrbit = document.getElementById('electronOrbit');
+        const electron = document.getElementById('col_electron');
+        const nucleus = document.getElementById('col_nucleus');
+        const boomText = document.getElementById('boomText');
+        const svgCanvas = document.getElementById('collapseCanvas');
+        const energyFolder = document.getElementById('energyWaves');
+        const col_msg = document.getElementById('col_msg');
+
+        let angle = 0;
+        let radius = 140; 
+        let speed = 2; // initial spin speed (degrees per frame)
+        let isCollapsing = false;
+        let animFrame;
+        let pathPoints = [];
+
+        // Center variables
+        let cx = 0, cy = 0;
+
+        function updateScreenMetrics() {
+             cx = svgCanvas.clientWidth / 2;
+             cy = svgCanvas.clientHeight / 2;
+        }
+
+        function createEnergyWave(x, y) {
+            const wave = document.createElement('div');
+            wave.style.position = 'absolute';
+            wave.style.left = x + 'px';
+            wave.style.top = y + 'px';
+            wave.style.width = '10px';
+            wave.style.height = '10px';
+            wave.style.borderRadius = '50%';
+            wave.style.border = '2px solid rgba(239, 68, 68, 0.8)';
+            wave.style.transform = 'translate(-50%, -50%) scale(1)';
+            wave.style.transition = 'all 0.5s ease-out';
+            energyFolder.appendChild(wave);
+
+            setTimeout(() => {
+                wave.style.transform = `translate(-50%, -50%) scale(${Math.random()*2 + 3})`;
+                wave.style.opacity = '0';
+            }, 10);
+
+            setTimeout(() => {
+                wave.remove();
+            }, 550);
+        }
+
+        function drawPath() {
+            if(pathPoints.length < 2) return;
+            svgCanvas.innerHTML = '';
+            const poly = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+            const pointsStr = pathPoints.map(p => `${p.x},${p.y}`).join(' ');
+            poly.setAttribute("points", pointsStr);
+            poly.style.fill = "none";
+            poly.style.stroke = "rgba(56, 189, 248, 0.4)";
+            poly.style.strokeWidth = "2";
+            svgCanvas.appendChild(poly);
+        }
+
+        function loop() {
+            angle -= speed; // negative for anti-clockwise
+
+            if(isCollapsing) {
+                radius -= 0.5; // lose radius (spiral inwards)
+                speed += 0.05; // orbit faster as it gets closer (Conservation of angular momentum)
+
+                // Emit radiation! (not every frame to save memory)
+                if(Math.random() < 0.2) {
+                    // Calculate absolute position of electron for waves
+                    let rad = angle * Math.PI / 180;
+                    let ex = cx + radius * Math.cos(rad);
+                    let ey = cy + radius * Math.sin(rad);
+                    createEnergyWave(ex, ey);
+                }
+
+                if(radius <= 10) {
+                    // HIT THE NUCLEUS
+                    isCollapsing = false;
+                    nucleus.style.transform = "translate(-50%, -50%) scale(2)";
+                    nucleus.style.background = "radial-gradient(circle, #ef4444 0%, #7f1d1d 100%)";
+                    nucleus.style.boxShadow = "0 0 100px 50px #ef4444";
+                    electron.style.display = "none";
+                    
+                    boomText.style.opacity = '1';
+                    boomText.style.transform = "translate(-50%, -50%) scale(1)";
+                    
+                    col_msg.innerHTML = "Atom has collapsed! <span style='color:#ef4444'>This was the greatest failure of Rutherford's Model.</span>";
+
+                    // Auto Restart logic
+                    setTimeout(() => {
+                        resetSystem();
+                    }, 4000);
+                    return; // Stop animation loop
+                }
+            }
+
+            // Update electron position
+            electronOrbit.style.transform = `rotate(${angle}deg)`;
+            electron.style.left = radius + 'px';
+
+            // Record path for spiral drawing
+            let absRad = angle * Math.PI / 180;
+            let absEx = cx + radius * Math.cos(absRad);
+            let absEy = cy + radius * Math.sin(absRad);
+            
+            pathPoints.push({x: absEx, y: absEy});
+            if(pathPoints.length > 200) pathPoints.shift(); // Keep tail length
+
+            drawPath();
+
+            animFrame = requestAnimationFrame(loop);
+        }
+
+        function resetSystem() {
+            cancelAnimationFrame(animFrame);
+            isCollapsing = false;
+            radius = 140;
+            speed = 2;
+            angle = 0;
+            pathPoints = [];
+            svgCanvas.innerHTML = '';
+            
+            nucleus.style.transform = "translate(-50%, -50%) scale(1)";
+            nucleus.style.background = "radial-gradient(circle, #fde047 0%, #ca8a04 100%)";
+            nucleus.style.boxShadow = "0 0 30px #facc15";
+            
+            electron.style.display = "flex";
+            electron.style.left = radius + 'px';
+            electronOrbit.style.transform = `rotate(0deg)`;
+            
+            boomText.style.opacity = '0';
+            boomText.style.transform = "translate(-50%, -50%) scale(0)";
+
+            colBtn.disabled = false;
+            colBtn.style.opacity = '1';
+            col_msg.innerHTML = "Subatomic world reset. Electron is fully stable again.";
+            
+            updateScreenMetrics();
+            animFrame = requestAnimationFrame(loop); // Restart stable spin
+        }
+
+        // INIT
+        window.addEventListener('resize', updateScreenMetrics);
+        updateScreenMetrics();
+        animFrame = requestAnimationFrame(loop);
+
+        colBtn.addEventListener('click', () => {
+             if(isCollapsing) return;
+             isCollapsing = true;
+             colBtn.disabled = true;
+             colBtn.style.opacity = '0.5';
+             col_msg.innerHTML = "Maxwell's Rule Active! Electron is <span style='color:#f87171'>radiating energy</span> causing a fatal Spiral Collapse...";
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 2: Part 3 - Structure of Atom (परमाणु की संरचना)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #059669;
+            --primary-dark: #064e3b;
+            --secondary: #10b981;
+            --accent: #38bdf8;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --font-main: #000000;
+        }
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Outfit', sans-serif; 
+            background: var(--slate-50); 
+            color: var(--font-main); 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 600;
+        }
+
+        .header-banner { 
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #065f46 100%); 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-radius: 0 0 60px 60px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .premium-badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .header-banner h1 { 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            margin: 0; 
+            font-weight: 950; 
+            line-height: 1.1;
+        }
+
+        .part-container { 
+            width: 100%;
+            max-width: 100vw;
+            padding: 80px 6vw; 
+            box-sizing: border-box;
+            background: white; 
+            margin-top: -40px;
+            border-radius: 60px 60px 0 0;
+            box-shadow: 0 -20px 60px rgba(0,0,0,0.1);
+        }
+
+        h2 { 
+            color: var(--primary-dark); 
+            font-size: clamp(2rem, 5.5vw, 3.5rem); 
+            border-left: 20px solid var(--primary); 
+            padding: 25px 40px; 
+            background: linear-gradient(to right, #f0fdf4, transparent); 
+            border-radius: 0 40px 40px 0; 
+            margin: 100px 0 60px 0;
+            font-weight: 900;
+        }
+
+        h3 { 
+            color: var(--primary); 
+            font-size: clamp(1.8rem, 4.5vw, 2.8rem); 
+            border-bottom: 6px solid #d1fae5; 
+            display: inline-block; 
+            padding-bottom: 15px; 
+            margin: 80px 0 40px 0; 
+            font-weight: 900;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 50px;
+            padding: 50px;
+            border: 3px solid var(--slate-100);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        .property-box {
+            background: var(--slate-900);
+            color: white;
+            padding: 40px;
+            border-radius: 35px;
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            margin: 40px 0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border: 3px solid var(--primary);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .prop-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .sim-container {
+            background: #020617;
+            padding: 50px;
+            border-radius: 50px;
+            color: white;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+            margin: 80px 0;
+        }
+
+        .nav-buttons { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 60px 0vw 40px; 
+            background: transparent; 
+            margin-top: 50px;
+        }
+
+        .nav-btn { 
+            background: var(--primary); 
+            color: white; 
+            padding: 22px 50px; 
+            border-radius: 100px; 
+            text-decoration: none; 
+            font-weight: 900; 
+            font-size: 1.4rem; 
+        }
+
+        @media (max-width: 1000px) {
+            .header-banner { padding: 60px 20px; }
+            .nav-buttons { flex-direction: column; gap: 20px; }
+            .property-box { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <div class="premium-badge">प्रीमियम प्रोजेक्टर संस्करण (Premium Edition)</div>
+        <h1>परमाणु की संरचना<br><span style="font-size: 0.5em; opacity: 0.8; font-weight: 800;">(Structure of Atom)</span></h1>
+    </div>
+
+    <div class="part-container">
+        
+        <h2 style="margin-top: 0;">2.5 प्रोटॉन की खोज (Discovery of Protons)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8;">
+                इलेक्ट्रॉन की खोज के बाद यह पक्का हो गया था कि परमाणु के अंदर <b>माइनस (-) चार्ज</b> होता है। लेकिन परमाणु तो <b>विद्युत उदासीन (Neutral)</b> होता है! इसका मतलब पक्का था कि परमाणु के अंदर कोई न कोई <b>प्लस (+) चार्ज</b> भी होना चाहिए, ताकि वह माइनस को बैलेंस कर सके। 
+            </p>
+            
+            <div style="background: #eff6ff; padding: 30px; border-radius: 20px; margin: 30px 0; border-left: 8px solid #3b82f6;">
+                <h4 style="font-size: 1.6rem; color: #1e3a8a; margin-top:0;">गोल्डस्टीन का प्रयोग (Goldstein's Experiment - 1886):</h4>
+                <ul style="font-size: 1.4rem; color: #1e293b; line-height: 1.8;">
+                    <li style="margin-bottom: 10px;"><b>ई. गोल्डस्टीन (E. Goldstein)</b> ने थॉमसन की कैथोड किरण नलिका (Tube) में थोड़ा सा बदलाव किया। उन्होंने एक ऐसा कैथोड इस्तेमाल किया जिसमें <b>छेद (Holes)</b> थे!</li>
+                    <li style="margin-bottom: 10px;">जब उन्होंने बहुत हाई वोल्टेज (High Voltage) पास किया, तो उन्होंने देखा कि <b>किरणें उल्टी दिशा में भी जा रही थीं!</b> यानी एनोड से चलकर वे कैथोड के छेदों में से पार होकर पीछे की दीवार पर चमक पैदा कर रही थीं।</li>
+                    <li style="margin-bottom: 10px;">चूँकि यह किरणें छेदों (Canals) से होकर गुज़रीं, इसलिए गोल्डस्टीन ने इन्हें <b>कैनाल किरणें (Canal Rays)</b> या एनोड किरणें नाम दिया!</li>
+                </ul>
+            </div>
+
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8;">
+                प्रयोगों से पता चला कि इन किरणों के कण <b>धनावेशित (Positively charged)</b> होते हैं। हाइड्रोजन गैस का इस्तेमाल करने पर जो सबसे छोटा और हल्का धनावेशित कण मिला, उसे ही बाद में <b>प्रोटॉन (Proton)</b> कहा गया।
+            </p>
+        </div>
+
+        <div class="property-box" style="border-color: #3b82f6;">
+            <div class="prop-item" style="border-bottom: 4px solid #ef4444;">
+                <div style="color: #94a3b8; font-size: 1.2rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">प्रोटॉन पर आवेश (Charge)</div>
+                <div style="font-family: monospace; font-size: 2rem; font-weight: 900; color: #fca5a5;">+1.6022 × 10<sup>-19</sup> C</div>
+                <div style="font-size: 1rem; color: #cbd5e1; margin-top: 5px;">(इलेक्ट्रॉन के बिल्कुल बराबर, लेकिन प्लस में)</div>
+            </div>
+            <div class="prop-item" style="border-bottom: 4px solid #10b981;">
+                <div style="color: #94a3b8; font-size: 1.2rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">प्रोटॉन का द्रव्यमान (Mass)</div>
+                <div style="font-family: monospace; font-size: 2rem; font-weight: 900; color: #6ee7b7;">1.672 × 10<sup>-27</sup> kg</div>
+            </div>
+        </div>
+
+
+        <h2>2.6 न्यूट्रॉन की खोज (Discovery of Neutrons)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8;">
+                प्रोटॉन और इलेक्ट्रॉन मिलने के बाद एक नई समस्या खड़ी हो गई! जब वैज्ञानिकों ने पूरे परमाणु का वज़न (Mass) नापा, तो वह केवल प्रोटॉन और इलेक्ट्रॉन के कुल वज़न से काफी ज़्यादा था। इसका सीधा मतलब था कि <b>परमाणु के अंदर कोई ऐसा 'छिपा हुआ' भारी कण भी है जिस पर कोई चार्ज नहीं है!</b> (वरना वह न्यूट्रल नहीं होता)।
+            </p>
+            
+            <div style="background: #fdf4ff; padding: 30px; border-radius: 20px; margin: 30px 0; border-left: 8px solid #d946ef;">
+                <h4 style="font-size: 1.6rem; color: #701a75; margin-top:0;">चैडविक का प्रयोग (Chadwick's Experiment - 1932):</h4>
+                <ul style="font-size: 1.4rem; color: #1e293b; line-height: 1.8;">
+                    <li style="margin-bottom: 10px;"><b>जेम्स चैडविक (James Chadwick)</b> ने बेरिलियम (Beryllium) धातु की एक पतली चादर पर <b>अल्फा (α) कणों</b> (तेज़ गति वाले पॉज़िटिव कण) की बमबारी (Bombardment) करवाई।</li>
+                    <li style="margin-bottom: 10px;">टकराते ही बेरिलियम में से एक बहुत ही ताकतवर (Highly penetrating) किरण बाहर निकली!</li>
+                    <li style="margin-bottom: 10px;">सबसे खास बात: इन नई किरणों पर चुंबक या बिजली का <b>कोई प्रभाव नहीं पड़ा</b>! यानी इन पर कोई आवेश/चार्ज नहीं था!</li>
+                </ul>
+            </div>
+
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8;">
+                चैडविक ने साबित किया कि ये किरणें असल में उदासीन (Neutral) कणों से बनी हैं। इन उदासीन कणों को ही <b>न्यूट्रॉन (Neutron)</b> नाम दिया गया, जिनका द्रव्यमान लगभग प्रोटॉन के बराबर था।
+            </p>
+        </div>
+
+        <div class="property-box" style="border-color: #d946ef; background: #2e1065;">
+            <div class="prop-item" style="border-bottom: 4px solid #a855f7;">
+                <div style="color: #c4b5fd; font-size: 1.2rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">न्यूट्रॉन पर आवेश (Charge)</div>
+                <div style="font-family: monospace; font-size: 2rem; font-weight: 900; color: #e9d5ff;">0 (Neutral)</div>
+            </div>
+            <div class="prop-item" style="border-bottom: 4px solid #d946ef;">
+                <div style="color: #c4b5fd; font-size: 1.2rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">न्यूट्रॉन का द्रव्यमान (Mass)</div>
+                <div style="font-family: monospace; font-size: 2rem; font-weight: 900; color: #f0abfc;">1.674 × 10<sup>-27</sup> kg</div>
+                <div style="font-size: 1rem; color: #c4b5fd; margin-top: 5px;">(प्रोटॉन से हल्का सा भारी)</div>
+            </div>
+        </div>
+
+        <!-- CHADWICK SIMULATOR -->
+        <h2 id="simulator_chadwick" style="margin-top: 80px;">Interactive Lab: चैडविक का न्यूट्रॉन खोज प्रयोग</h2>
+        <div class="sim-container">
+            <h3 style="color: #e879f9; margin-top: 0; border: none; padding: 0;">Alpha Bombardment Simulator</h3>
+            <p style="color: #a5b4fc; font-size: 1.4rem;">अल्फा कणों की फायर करके देखें कि कैसे 'अदृश्य न्यूट्रॉन' पैराफिन वैक्स (Paraffin wax) से प्रोटॉन को बाहर निकाल फेंकता है!</p>
+
+            <div style="background: #0f172a; padding: 40px; border-radius: 30px; position: relative; height: 350px; display: flex; align-items: center; box-shadow: inset 0 0 50px rgba(0,0,0,0.8); overflow: hidden; border: 4px solid var(--slate-800); margin-top: 30px;">
+                
+                <!-- Polonium Source -->
+                <div style="position: absolute; left: 2%; width: 60px; height: 100px; background: #64748b; border-radius: 10px; display: flex; align-items: center; justify-content: center; z-index: 2; border: 4px solid #94a3b8; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+                    <span style="color: white; font-weight: 900; writing-mode: vertical-rl; text-orientation: mixed;">Polonium</span>
+                    <div style="position: absolute; right: -8px; width: 15px; height: 30px; background: #1e293b; border-radius: 0 20px 20px 0;"></div>
+                </div>
+
+                <!-- Beryllium Foil -->
+                <div style="position: absolute; left: 30%; width: 20px; height: 150px; background: #d1d5db; border-radius: 10px; display: flex; align-items: center; justify-content: center; z-index: 2; border: 2px solid #9ca3af;">
+                    <span style="color: #374151; font-weight: 900; writing-mode: vertical-rl; letter-spacing: 5px;">Be Foil</span>
+                </div>
+
+                <!-- Paraffin Wax Block -->
+                <div style="position: absolute; left: 65%; width: 50px; height: 150px; background: #fde047; border-radius: 5px; display: flex; align-items: center; justify-content: center; z-index: 2; border: 2px solid #eab308; opacity: 0.9;">
+                    <span style="color: #854d0e; font-weight: 900; writing-mode: vertical-rl; font-size: 1.1rem;">Paraffin Wax</span>
+                </div>
+
+                <!-- Detector -->
+                <div id="detector" style="position: absolute; right: 5%; width: 40px; height: 200px; background: #1e293b; border-radius: 10px; display: flex; align-items: center; justify-content: center; z-index: 2; border: 4px solid #334155; transition: 0.2s;">
+                    <span style="color: #94a3b8; font-weight: 900; writing-mode: vertical-rl;">Detector</span>
+                </div>
+
+                <!-- Particles Container -->
+                <div id="particleSpace" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1;"></div>
+            </div>
+
+            <!-- Controls -->
+            <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 30px; border: 2px solid var(--slate-800); margin-top: 30px; text-align: center;">
+                <button id="shootBtn" style="background: #e879f9; color: #4a044e; padding: 15px 40px; border-radius: 100px; text-decoration: none; font-weight: 900; font-size: 1.6rem; border: none; cursor: pointer; box-shadow: 0 10px 20px rgba(232, 121, 249, 0.4); transition: transform 0.2s;">
+                    🔫 Fire Alpha (α) Particle
+                </button>
+                <div id="chadwick_msg" style="margin-top: 20px; font-weight: bold; font-size: 1.4rem; color: #cbd5e1; height: 30px;">
+                    रेडी! फायर बटन दबाएं।
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn nav-home" style="background: #1e293b;">🏠 Main Hub</a>
+        <div style="display: flex; gap: 20px;">
+            <a href="ch2_part2.html" class="nav-btn" style="background: #94a3b8;">⬅️ Previous</a>
+            <a href="ch2_part4.html" class="nav-btn" style="background: #059669;">Next Part ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        // CHADWICK SIMULATOR LOGIC
+        const shootBtn = document.getElementById('shootBtn');
+        const particleSpace = document.getElementById('particleSpace');
+        const detector = document.getElementById('detector');
+        const c_msg = document.getElementById('chadwick_msg');
+
+        function createParticle(type, startX, startY) {
+            const p = document.createElement('div');
+            p.style.position = 'absolute';
+            p.style.top = startY + 'px';
+            p.style.left = startX + 'px';
+            p.style.borderRadius = '50%';
+            p.style.transition = 'left 0.5s linear';
+            
+            if (type === 'alpha') {
+                p.style.width = '20px';
+                p.style.height = '20px';
+                p.style.background = '#ef4444'; // Red for alpha
+                p.style.boxShadow = '0 0 15px #ef4444';
+                p.innerHTML = '<span style="color:white; font-size:12px; font-weight:bold; position:absolute; top:2px; left:6px;">α</span>';
+            } else if (type === 'neutron') {
+                p.style.width = '15px';
+                p.style.height = '15px';
+                p.style.background = '#475569'; // Grey/Invisible for neutron
+                p.style.boxShadow = '0 0 10px #94a3b8';
+                p.style.border = '2px dashed #94a3b8';
+                p.innerHTML = '<span style="color:#cbd5e1; font-size:10px; font-weight:bold; position:absolute; top:0px; left:4px;">n</span>';
+            } else if (type === 'proton') {
+                p.style.width = '15px';
+                p.style.height = '15px';
+                p.style.background = '#22c55e'; // Green for proton
+                p.style.boxShadow = '0 0 20px 5px #22c55e';
+                p.innerHTML = '<span style="color:white; font-size:10px; font-weight:bold; position:absolute; top:1px; left:4px;">p<sup>+</sup></span>';
+            }
+
+            particleSpace.appendChild(p);
+            return p;
+        }
+
+        function createFlash(x, y, color) {
+            const flash = document.createElement('div');
+            flash.style.position = 'absolute';
+            flash.style.top = y + 'px';
+            flash.style.left = x + 'px';
+            flash.style.width = '10px';
+            flash.style.height = '10px';
+            flash.style.background = color;
+            flash.style.borderRadius = '50%';
+            flash.style.boxShadow = `0 0 50px 20px ${color}`;
+            flash.style.transition = 'all 0.3s ease-out';
+            particleSpace.appendChild(flash);
+            
+            // Trigger animation
+            setTimeout(() => {
+                flash.style.transform = 'scale(5)';
+                flash.style.opacity = '0';
+            }, 10);
+
+            setTimeout(() => {
+                flash.remove();
+            }, 300);
+        }
+
+        shootBtn.addEventListener('click', () => {
+            shootBtn.disabled = true;
+            shootBtn.style.opacity = '0.5';
+            c_msg.innerHTML = "<span style='color:#ef4444'>अल्फा कण दागे गए...</span>";
+
+            const startY = 160 + (Math.random() * 20 - 10); // Randomize Y slightly aroud center
+
+            // 1. Alpha particle emitted
+            const alpha = createParticle('alpha', 40, startY);
+            
+            setTimeout(() => {
+                // Move alpha to Be foil (30%)
+                const containerWidth = particleSpace.offsetWidth;
+                const beX = containerWidth * 0.3;
+                alpha.style.left = beX + 'px';
+
+                setTimeout(() => {
+                    // Hit Be foil!
+                    alpha.remove();
+                    createFlash(beX, startY, 'white');
+                    c_msg.innerHTML = "<span style='color:#94a3b8'>बेरिलियम से टकराया! अदृश्य न्यूट्रॉन निकले...</span>";
+
+                    // 2. Neutron emitted
+                    const neutron = createParticle('neutron', beX + 20, startY);
+                    
+                    const waxX = containerWidth * 0.65;
+                    setTimeout(() => {
+                        neutron.style.left = waxX + 'px';
+
+                        setTimeout(() => {
+                            // Hit Wax block!
+                            neutron.remove();
+                            createFlash(waxX, startY, '#fde047');
+                            c_msg.innerHTML = "<span style='color:#22c55e'>न्यूट्रॉन वैक्स से टकराया! प्रोटॉन बाहर फेंका गया!</span>";
+
+                            // 3. Proton emitted
+                            const proton = createParticle('proton', waxX + 50, startY);
+                            const detectX = containerWidth * 0.95;
+                            
+                            setTimeout(() => {
+                                proton.style.left = detectX + 'px';
+
+                                setTimeout(() => {
+                                    // Hit Detector!
+                                    proton.remove();
+                                    detector.style.background = '#22c55e';
+                                    detector.style.boxShadow = '0 0 30px #22c55e';
+                                    createFlash(detectX, startY, '#22c55e');
+
+                                    c_msg.innerHTML = "<span style='color:#38bdf8'>डिटेक्टर ने प्रोटॉन (Mass = 1.67x10<sup>-27</sup> kg) को नाप लिया!</span>";
+
+                                    // Reset
+                                    setTimeout(() => {
+                                        detector.style.background = '#1e293b';
+                                        detector.style.boxShadow = 'none';
+                                        shootBtn.disabled = false;
+                                        shootBtn.style.opacity = '1';
+                                    }, 2000);
+
+                                }, 500); // Proton travel time
+
+                            }, 50); // Small delay to start proton travel
+
+                        }, 500); // Neutron travel time
+
+                    }, 50);
+
+                }, 500); // Alpha travel time
+
+            }, 50);
+        });
+
+    </script>
+</body>
+</html>

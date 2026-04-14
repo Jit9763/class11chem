@@ -43,17 +43,27 @@ function renderChapters(data) {
         <button class="btn-secondary" onclick="window.open('ch1_mobile.html', '_blank')" style="background: linear-gradient(135deg, #10b981, #059669); border-color: #34d399; color: white; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 5px;">📱 For Students (Mobile View)</button>
         <button class="btn-secondary" onclick="window.open('ch1eng/ch1_part1.html', '_blank')" style="background: linear-gradient(135deg, #3b82f6, #2563eb); border-color: #60a5fa; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">🇬🇧 English Version</button>
       `;
+    } else if (chapter.id === 2) {
+      mobileBtn = `
+        <button class="btn-secondary" onclick="window.open('ch2eng/ch2_part1.html', '_blank')" style="background: linear-gradient(135deg, #3b82f6, #2563eb); border-color: #60a5fa; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">🇬🇧 English Version</button>
+      `;
+    }
+
+    let hindiRoute = `notes_html_view.html?id=${chapter.id}`;
+    if (chapter.id === 2) {
+      hindiRoute = `ch2_parts/ch2_part1.html`;
     }
 
     card.innerHTML = `
       <div class="chapter-num">${String(chapter.id).padStart(2, '0')}</div>
       <h3 class="chapter-title">${chapter.title}</h3>
       <div class="chapter-actions" style="display:flex; gap:10px; flex-direction: column; margin-top:20px; position:relative; z-index:10;">
-        <button class="btn-primary" onclick="window.open('notes_html_view.html?id=${chapter.id}', '_blank')">🌍 संपूर्ण नोट्स देखें (Premium HTML)</button>
-        <button class="btn-secondary" onclick="window.open('qa_view.html?id=${chapter.id}', '_blank')" style="background: #8b5cf6; border-color: #7c3aed;">❓ प्रश्न-उत्तर (Master Q&A)</button>
+        <button class="btn-secondary" onclick="window.open('${hindiRoute}', '_blank')" style="background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #fcd34d; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">🇮🇳 Hindi Version (Premium)</button>
+        <button class="btn-secondary" onclick="window.open('qa_view.html?id=${chapter.id}', '_blank')" style="background: #8b5cf6; border-color: #7c3aed; color: white; display: flex; align-items: center; justify-content: center; gap: 8px;">❓ प्रश्न-उत्तर (Master Q&A)</button>
         ${mobileBtn}
       </div>
     `;
     grid.appendChild(card);
   });
 }
+

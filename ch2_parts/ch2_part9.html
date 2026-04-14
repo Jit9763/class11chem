@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 2: Part 9 - Structure of Atom (परमाणु की संरचना)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #059669;
+            --primary-dark: #064e3b;
+            --secondary: #10b981;
+            --accent: #38bdf8;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --font-main: #000000;
+        }
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Outfit', sans-serif; 
+            background: var(--slate-50); 
+            color: var(--font-main); 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 600;
+        }
+
+        .header-banner { 
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #065f46 100%); 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-radius: 0 0 60px 60px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .premium-badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .header-banner h1 { 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            margin: 0; 
+            font-weight: 950; 
+            line-height: 1.1;
+        }
+
+        .part-container { 
+            width: 100%;
+            max-width: 100vw;
+            padding: 80px 6vw; 
+            box-sizing: border-box;
+            background: white; 
+            margin-top: -40px;
+            border-radius: 60px 60px 0 0;
+            box-shadow: 0 -20px 60px rgba(0,0,0,0.1);
+        }
+
+        h2 { 
+            color: var(--primary-dark); 
+            font-size: clamp(2rem, 5.5vw, 3.5rem); 
+            border-left: 20px solid var(--primary); 
+            padding: 25px 40px; 
+            background: linear-gradient(to right, #f0fdf4, transparent); 
+            border-radius: 0 40px 40px 0; 
+            margin: 100px 0 60px 0;
+            font-weight: 900;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 50px;
+            padding: 50px;
+            border: 3px solid var(--slate-100);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        /* Custom Pure HTML Eq Box */
+        .eq-box {
+            background: #0f172a;
+            color: white;
+            padding: 30px 40px;
+            border-radius: 20px;
+            font-size: 3.5rem;
+            text-align: center;
+            font-weight: 900;
+            border: 4px solid #38bdf8;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            margin: 40px auto;
+            max-width: fit-content;
+            letter-spacing: 2px;
+        }
+
+        .sim-container {
+            background: #020617;
+            padding: 50px;
+            border-radius: 50px;
+            color: white;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+            margin: 80px 0;
+        }
+
+        /* Custom Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background: #10b981;
+            cursor: pointer;
+            margin-top: -15px;
+            box-shadow: 0 0 20px #10b981;
+            border: 4px solid white;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 10px;
+            cursor: pointer;
+            background: #334155;
+            border-radius: 10px;
+            border: 1px solid #475569;
+        }
+
+        /* Vertical Math Fraction */
+        .math-frac {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            vertical-align: middle;
+            margin: 0 5px;
+            font-family: inherit;
+            font-weight: 900;
+        }
+        .math-frac .num {
+            border-bottom: 4px solid currentColor;
+            padding: 0 5px;
+            line-height: 1.2;
+        }
+        .math-frac .den {
+            padding: 0 5px;
+            line-height: 1.2;
+        }
+
+        .nav-buttons { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 60px 0vw 40px; 
+            background: transparent; 
+            margin-top: 50px;
+        }
+
+        .nav-btn { 
+            background: var(--primary); 
+            color: white; 
+            padding: 22px 50px; 
+            border-radius: 100px; 
+            text-decoration: none; 
+            font-weight: 900; 
+            font-size: 1.4rem; 
+        }
+
+        @media (max-width: 1000px) {
+            .header-banner { padding: 60px 20px; }
+            .nav-buttons { flex-direction: column; gap: 20px; }
+            .content-card { padding: 30px; border-radius: 30px; }
+            .eq-box { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <div class="premium-badge">प्रीमियम प्रोजेक्टर संस्करण (Premium Edition)</div>
+        <h1>परमाणु की संरचना<br><span style="font-size: 0.5em; opacity: 0.8; font-weight: 800;">(Structure of Atom)</span></h1>
+    </div>
+
+    <div class="part-container">
+        
+        <h2 style="margin-top: 0;">2.17 विकिरण की कणीय प्रकृति (Particle Nature)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8;">
+                मैक्सवेल (Maxwell) का 'तरंग सिद्धांत' (Wave Theory) बहुत शानदार था, लेकिन वह कुछ घटनाओं जैसे <b>ब्लैक बॉडी रेडिएशन (Black Body Radiation)</b> और <b>फोटोइलेक्ट्रिक इफ़ेक्ट (Photoelectric Effect)</b> को समझाने में पूरी तरह फ़ेल (Fail) हो गया।
+            </p>
+            
+            <div style="background: #eff6ff; padding: 40px; border-radius: 30px; margin: 40px 0; border: 3px solid #bfdbfe;">
+                <h4 style="font-size: 1.8rem; color: #1e40af; margin-top:0;">प्लांक का क्वांटम सिद्धांत (Planck's Quantum Theory - 1900):</h4>
+                <p style="font-size: 1.5rem; color: #1e3a8a; line-height: 1.8; margin-top: 20px;">
+                    इन कमियों को दूर करने के लिए वर्ष 1900 में महान वैज्ञानिक <b>मैक्स प्लांक (Max Planck)</b> ने एक नया और क्रांतिकारी सिद्धांत दिया। उनके अनुसार:<br><br>
+                    "कोई भी वस्तु ऊर्जा (Energy) का उत्सर्जन (emission) या अवशोषण (absorption) लगातार (continuously) एक लहर की तरह नहीं करती, बल्कि ऊर्जा छोटे-छोटे <b>पैकेट (Packets)</b> या बंडलों के रूप में निकलती है।"
+                </p>
+                <div style="background: white; padding: 20px; border-radius: 20px; font-size: 1.4rem; color: #1e40af; font-weight: bold; margin-top: 20px; border-left: 8px solid #3b82f6;">
+                    🌟 ऊर्जा की इस सबसे छोटी इकाई या पैकेट को <b>"क्वांटम (Quantum)"</b> कहा जाता है। (और प्रकाश के मामले में इसे <b>"फोटोन (Photon)"</b> कहा जाता है!)
+                </div>
+            </div>
+        </div>
+
+        <h2>2.18 क्वांटम की ऊर्जा (Energy of a Quantum)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8;">
+                प्लांक ने बताया कि किसी भी विकिरण (Radiation) के एक क्वांटम की <b>ऊर्जा (E)</b> उसकी <b>आवृत्ति (&nu;)</b> के सीधे समानुपाती (directly proportional) होती है। <br><br>
+                मतलब जितनी ज़्यादा Frequency (आवृत्ति), उस पैकेट में उतनी ही ज़्यादा Energy (ऊर्जा) होगी!
+            </p>
+
+            <div class="eq-box" style="border-color: #f59e0b; color: #f59e0b; background: #fffbeb;">
+                E &prop; <span style="font-style: italic;">&nu;</span>
+            </div>
+
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8; text-align: center;">
+                समानुपाती (Proportional) का चिन्ह हटाने पर एक स्थिरांक (Constant) 'h' जुड़ता है:
+            </p>
+
+            <div class="eq-box" style="border-color: #10b981; background: #064e3b;">
+                E = h<span style="font-style: italic;">&nu;</span>
+            </div>
+
+            <div style="background: #f8fafc; padding: 30px; border-radius: 20px; border: 2px solid #e2e8f0; margin-top: 40px;">
+                <ul style="font-size: 1.4rem; color: #475569; line-height: 2;">
+                    <li><b>E</b> = एक क्वांटम/फोटोन की ऊर्जा (Energy)</li>
+                    <li><b><span style="font-style: italic;">&nu;</span></b> = विकिरण की आवृत्ति (Frequency)</li>
+                    <li><b>h</b> = प्लांक स्थिरांक (Planck's Constant)</li>
+                </ul>
+                <div style="background: white; padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 8px; margin-top: 20px;">
+                    <div style="font-size: 1.4rem; color: #0f172a;"><b style="opacity: 0.7;">Value of 'h':</b> <span style="font-weight: 900;">6.626 &times; 10<sup>-34</sup> J s</span></div>
+                </div>
+            </div>
+
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8; margin-top: 40px;">
+                पिछड़ी क्लास में हमने पढ़ा था कि (<span style="font-style: italic;">&nu;</span> = c / &lambda;), इसलिए हम इस फॉर्मूले को ऐसे भी लिख सकते हैं:
+            </p>
+
+            <div class="eq-box" style="border-color: #ef4444; background: #7f1d1d;">
+                E = 
+                <span class="math-frac" style="color: #fca5a5;">
+                    <span class="num">hc</span>
+                    <span class="den">&lambda;</span>
+                </span>
+            </div>
+
+        </div>
+
+        <!-- PHOTON ENERGY SHOOTER SIMULATOR -->
+        <h2 id="simulator_photon" style="margin-top: 80px;">Interactive Lab: Photon Energy Shooter</h2>
+        <div class="sim-container" style="background: #0f172a; border: 4px solid #1e293b;">
+            <h3 style="color: #fbbf24; margin-top: 0; border: none; padding: 0;">(Energy E = h&nu;)</h3>
+            <p style="color: #94a3b8; font-size: 1.4rem;">नीचे दिए गए स्लाइडर से <b>Frequency (आवृत्ति)</b> बदलें। ध्यान दें कि कैसे कम Frequency पर कम ऊर्जा वाले (लाल) फोटोन निकलते हैं, और उच्च Frequency पर ज़्यादा ऊर्जा वाले (नीले) शक्तिशाली फोटोन निकलते हैं!</p>
+
+            <div style="margin-top: 40px; background: rgba(0,0,0,0.4); padding: 30px; border-radius: 30px; border: 1px solid #334155;">
+                
+                <!-- Shooter Canvas -->
+                <div id="shooterBox" style="position: relative; height: 200px; width: 100%; background: #020617; border-radius: 20px; overflow: hidden; box-shadow: inset 0 0 30px rgba(0,0,0,0.8); border: 2px solid #334155;">
+                    <!-- Emitter Source -->
+                    <div style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 40px; height: 60px; background: #475569; border-radius: 10px; border-right: 5px solid #94a3b8; z-index: 10;">
+                        <div style="position: absolute; right: -5px; top: 15px; width: 10px; height: 30px; background: #cbd5e1; border-radius: 5px;"></div>
+                    </div>
+                    <!-- Photons will be appended here dynamically -->
+                </div>
+
+                <!-- Custom Slider -->
+                <div style="margin-top: 40px; padding: 0 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                        <span style="color: #ef4444; font-weight: bold; font-size: 1.2rem;">Low Freq (&nu;) -> Low Energy</span>
+                        <span style="color: #3b82f6; font-weight: bold; font-size: 1.2rem;">High Freq (&nu;) -> High Energy</span>
+                    </div>
+                    <input type="range" id="photonSlider" min="1" max="10" value="5" step="0.1">
+                </div>
+
+                <!-- Dynamic Data -->
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
+                    <div style="background: #1e293b; padding: 15px 30px; border-radius: 15px; border-left: 5px solid #fbbf24; min-width: 200px; display: flex; flex-direction: column; align-items: center;">
+                        <div style="color: #94a3b8; font-size: 1.1rem; font-weight: bold;">Planck's Constant (h)</div>
+                        <div style="color: #fbbf24; font-size: 1.6rem; font-weight: 900;">6.626 &times; 10<sup>-34</sup></div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #475569; font-weight: 900;">&times;</div>
+                    
+                    <div style="background: #1e293b; padding: 15px 30px; border-radius: 15px; border-left: 5px solid #38bdf8; min-width: 200px; display: flex; flex-direction: column; align-items: center;">
+                        <div style="color: #94a3b8; font-size: 1.1rem; font-weight: bold;">Frequency (&nu;)</div>
+                        <div id="disp_photon_freq" style="color: #38bdf8; font-size: 2rem; font-weight: 900;">5.0 &times; 10<sup>14</sup> Hz</div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #475569; font-weight: 900;">=</div>
+
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 15px 30px; border-radius: 15px; border: 2px solid #10b981; min-width: 200px; display: flex; flex-direction: column; align-items: center;">
+                        <div style="color: #10b981; font-size: 1.1rem; font-weight: bold;">Photon Energy (E)</div>
+                        <div id="disp_photon_energy" style="color: white; font-size: 2rem; font-weight: 900;">33.1 &times; 10<sup>-20</sup> J</div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn nav-home" style="background: #1e293b;">🏠 Main Hub</a>
+        <div style="display: flex; gap: 20px;">
+            <a href="ch2_part8.html" class="nav-btn" style="background: #94a3b8;">⬅️ Previous</a>
+            <!-- Placeholder for next part (Photoelectric effect) -->
+            <a href="#" class="nav-btn" style="background: #059669; opacity: 0.5; pointer-events: none;">Next Part ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        // PHOTON SHOOTER SIMULATION LOGIC
+        const slider = document.getElementById('photonSlider');
+        const shooterBox = document.getElementById('shooterBox');
+        const disp_freq = document.getElementById('disp_photon_freq');
+        const disp_energy = document.getElementById('disp_photon_energy');
+
+        let lastFireTime = 0;
+        let activePhotons = [];
+
+        function getColorForFreq(val) {
+            // value 1 to 10 mapped to colors from Red to Blue/Violet
+            if (val <= 3) return '#ef4444'; // Red
+            if (val <= 5) return '#f59e0b'; // Yellow/Orange
+            if (val <= 7) return '#10b981'; // Green
+            if (val <= 9) return '#38bdf8'; // Blue
+            return '#8b5cf6'; // Violet/Purple
+        }
+
+        function getEnergy(val) {
+            // Simulated calculation
+            // Let's pretend base v is (val * 10^14 Hz)
+            // E = h * v = 6.626 * 10^-34 * val * 10^14 = (6.626 * val) * 10^-20
+            return (6.626 * val).toFixed(1);
+        }
+
+        function updateSim(timestamp) {
+            let freqVal = parseFloat(slider.value);
+            let simColor = getColorForFreq(freqVal);
+
+            // Update displays
+            disp_freq.innerHTML = `${freqVal.toFixed(1)} &times; 10<sup>14</sup> Hz`;
+            disp_freq.style.color = simColor;
+            disp_energy.innerHTML = `${getEnergy(freqVal)} &times; 10<sup>-20</sup> J`;
+            slider.style.boxShadow = `0 0 20px ${simColor}`;
+
+            // Fire rate logic (Higher frequency = faster firing rate)
+            // Fire interval ranges from ~800ms (low) to ~100ms (high)
+            let fireInterval = 900 - (freqVal * 80); 
+
+            if (timestamp - lastFireTime > fireInterval) {
+                firePhoton(simColor, freqVal);
+                lastFireTime = timestamp;
+            }
+
+            // Move existing photons
+            for (let i = activePhotons.length - 1; i >= 0; i--) {
+                let p = activePhotons[i];
+                p.x += p.speed;
+                p.el.style.left = p.x + 'px';
+                
+                // Add a slight sine wave wobble to the photon visually based on freq!
+                p.wobblePhase += 0.2 * freqVal;
+                let wobbleY = Math.sin(p.wobblePhase) * (freqVal * 2);
+                p.el.style.transform = `translateY(calc(-50% + ${wobbleY}px))`;
+
+                // Remove if off screen
+                if (p.x > shooterBox.clientWidth + 50) {
+                    shooterBox.removeChild(p.el);
+                    activePhotons.splice(i, 1);
+                }
+            }
+
+            requestAnimationFrame(updateSim);
+        }
+
+        function firePhoton(color, freqVal) {
+            let el = document.createElement('div');
+            el.style.position = 'absolute';
+            el.style.left = '40px';
+            el.style.top = '50%';
+            el.style.width = `${10 + freqVal*2}px`; // Higher energy = bigger visually here or just denser
+            el.style.height = '10px';
+            el.style.background = color;
+            el.style.borderRadius = '50%';
+            el.style.boxShadow = `0 0 15px 5px ${color}`;
+            el.style.transform = 'translateY(-50%)';
+            el.style.zIndex = '5';
+            shooterBox.appendChild(el);
+
+            activePhotons.push({
+                el: el,
+                x: 40,
+                speed: 4 + (freqVal * 0.5), // Faster speed too for visual effect
+                wobblePhase: 0
+            });
+        }
+
+        requestAnimationFrame(updateSim);
+    </script>
+</body>
+</html>

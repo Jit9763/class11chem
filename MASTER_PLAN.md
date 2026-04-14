@@ -45,22 +45,48 @@ All stoichiometric and concentration formulas must use the `.math-frac` flexbox 
 - **Visual Feedback**: Simulators must include a visual representation (e.g., Beaker with intensity-shifting liquid) that reacts to user input in real-time.
 - **Backgrounds**: Use dark blocks (`#020617` or `rgba(255,255,255,0.05)`) for simulator containers to make them pop.
 
-## 🧭 5. Navigation & Utility Suite
-Every page MUST contain the following navigation components at the bottom:
-1. **Previous Button**: Link to the preceding part.
-2. **Next Button**: Link to the subsequent part.
-3. **Home/Main Hub**: Link to `../index.html`.
-4. **Action Suite**: Buttons for `Print to PDF` and `Copy Content` (as implemented in Part 11).
+## 🧭 5. Navigation & Utility Suite (Floating Pills UI)
+Every page MUST contain the following navigation components at the bottom using the transparent floating pill design (NO dark wrapper blocks):
+1. **Container**: `.nav-buttons { background: transparent; padding: 60px 0vw 40px; margin-top: 50px; }`
+2. **Main Hub Button**: Pill with dark slate background (`style="background: #1e293b;"`).
+3. **Previous Button**: Pill with silver/grey background (`style="background: #94a3b8;"`).
+4. **Next Button**: Pill with Emerald green background (`style="background: #059669;"`).
+5. **Action Suite**: Buttons for `Print to PDF` and `Copy Content` (if added).
 
 ## 🔄 6. Workflow: Parallel Creation & Multi-File Architecture
 For Chapter 2 and all future chapters, the following workflow is mandatory:
-- **Parallel Translation**: As soon as a Part is finalized in Hindi, the English version must be generated immediately.
-- **Atomic File Structure**: Every part must be saved as a unique HTML file (e.g., `ch2_part1.html`). 
-- **Directory Logic**: English files will be clustered in a dedicated chapter directory (e.g., `ch2eng/`) mirroring the `ch1eng/` structure.
-- **Reference Integrity**: All new files must inherit the CSS, Simulator UI, and Formula logic from the Chapter 1 Reference File (`ch1_part11.html`).
+- **Hindi Medium Primary**: Hindi files (`chX_parts/`) MUST be purely Hindi-medium. All boilerplate, headings, and placeholder text must be strictly in Hindi, using English ONLY in brackets for technical terms (e.g., `परमाणु की संरचना (Structure of Atom)`).
+- **Parallel Translation**: As soon as a Part is finalized in Hindi, the English version (`chXeng/`) must be generated immediately.
+- **Index Dashboard Routing**: The `index.html` (via `main.js`) MUST feature a direct "🇮🇳 Hindi Version (Premium)" button with an Orange Gradient (`linear-gradient(135deg, #f59e0b, #d97706)`). For all new chapters, this button MUST link directly to the standalone `chX_parts/chX_part1.html` files, bypassing the old `notes_html_view.html` master compiler.
+- **Atomic File Structure**: Every part must be saved as a unique HTML file.
+- **Reference Integrity**: All new files must inherit the CSS, Simulator UI, and Formula logic.
 
 ## 🔒 7. Authorization Policy
-Any request to revert to grids, reduce font sizes, or change the Emerald Earth color palette must be accompanied by the verification code **1520**. Without this code, the assistant will prioritize this Master Plan over session-specific requests.
+Any request to revert to grids, reduce font sizes, use old inline CSS wrappers for navigation, or change the Emerald Earth color palette must be accompanied by the verification code **1520**. Without this code, the assistant will prioritize this Master Plan over session-specific requests.
+
+---
+## 📊 8. Chapter 2 Tracking (Structure of Atom)
+**20-Part Syllabus Breakdown (NCERT):**
+- [x] 1. Introduction & Discovery of Electron (Cathode Rays)
+- [x] 2. Charge to Mass ratio & Millikan's Oil Drop Experiment
+- [x] 3. Discovery of Proton (Canal Rays) and Neutron
+- [x] 4. Thomson's Model of Atom
+- [x] 5. Rutherford's Alpha Particle Scattering Experiment
+- [x] 6. Rutherford's Nuclear Model of Atom & Observations
+- [x] 7. Atomic Number, Mass Number, Isotopes & Isobars
+- [x] 8. Drawbacks of Rutherford's Model
+- [x] 9. Wave Nature of Electromagnetic Radiation
+- [x] 10. Particle Nature of Light (Planck's Quantum Theory)
+- [ ] 11. Photoelectric Effect
+- [ ] 12. Atomic Spectra (Emission & Absorption)
+- [ ] 13. Line Spectrum of Hydrogen
+- [ ] 14. Bohr's Model for Hydrogen Atom (Postulates)
+- [ ] 15. Energy States & Limitations of Bohr's Model
+- [ ] 16. Dual Behaviour of Matter (de Broglie's Equation)
+- [ ] 17. Heisenberg's Uncertainty Principle
+- [ ] 18. Quantum Mechanical Model & Orbitals
+- [ ] 19. Quantum Numbers (n, l, m, s)
+- [ ] 20. Rules of Electronic Configuration (Aufbau, Pauli, Hund)
 
 ---
 *Plan established after Chapter 1 completion. Updated for Chapter 2 Workflow.*

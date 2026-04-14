@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 2: Part 8 - Structure of Atom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #059669;
+            --primary-dark: #064e3b;
+            --secondary: #10b981;
+            --accent: #38bdf8;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --font-main: #000000;
+        }
+
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Outfit', sans-serif; 
+            background: var(--slate-50); 
+            color: var(--font-main); 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 600;
+        }
+
+        .header-banner { 
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #065f46 100%); 
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-radius: 0 0 60px 60px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .premium-badge {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .header-banner h1 { 
+            font-size: clamp(2.5rem, 8vw, 4.5rem); 
+            margin: 0; 
+            font-weight: 950; 
+            line-height: 1.1;
+        }
+
+        .part-container { 
+            width: 100%;
+            max-width: 100vw;
+            padding: 80px 6vw; 
+            box-sizing: border-box;
+            background: white; 
+            margin-top: -40px;
+            border-radius: 60px 60px 0 0;
+            box-shadow: 0 -20px 60px rgba(0,0,0,0.1);
+        }
+
+        h2 { 
+            color: var(--primary-dark); 
+            font-size: clamp(2rem, 5.5vw, 3.5rem); 
+            border-left: 20px solid var(--primary); 
+            padding: 25px 40px; 
+            background: linear-gradient(to right, #f0fdf4, transparent); 
+            border-radius: 0 40px 40px 0; 
+            margin: 100px 0 60px 0;
+            font-weight: 900;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 50px;
+            padding: 50px;
+            border: 3px solid var(--slate-100);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        /* Symbol badges */
+        .sym-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            color: #ef4444;
+            font-family: serif;
+            font-style: italic;
+            font-size: 1.8rem;
+            font-weight: 900;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid #cbd5e1;
+            margin: 0 8px;
+        }
+
+        /* Custom Pure HTML Eq Box */
+        .eq-box {
+            background: #0f172a;
+            color: white;
+            padding: 30px 40px;
+            border-radius: 20px;
+            font-size: 3.5rem;
+            text-align: center;
+            font-weight: 900;
+            border: 4px solid #38bdf8;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            margin: 40px auto;
+            max-width: 400px;
+            letter-spacing: 2px;
+        }
+
+        .sim-container {
+            background: #020617;
+            padding: 50px;
+            border-radius: 50px;
+            color: white;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+            margin: 80px 0;
+        }
+
+        /* Custom Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            background: #10b981;
+            cursor: pointer;
+            margin-top: -15px;
+            box-shadow: 0 0 20px #10b981;
+            border: 4px solid white;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 10px;
+            cursor: pointer;
+            background: #334155;
+            border-radius: 10px;
+            border: 1px solid #475569;
+        }
+
+        /* Vertical Math Fraction */
+        .math-frac {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            vertical-align: middle;
+            margin: 0 5px;
+            font-family: inherit;
+            font-weight: 900;
+        }
+        .math-frac .num {
+            border-bottom: 3px solid currentColor;
+            padding: 0 5px;
+            line-height: 1.2;
+        }
+        .math-frac .den {
+            padding: 0 5px;
+            line-height: 1.2;
+        }
+
+        .nav-buttons { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 60px 0vw 40px; 
+            background: transparent; 
+            margin-top: 50px;
+        }
+
+        .nav-btn { 
+            background: var(--primary); 
+            color: white; 
+            padding: 22px 50px; 
+            border-radius: 100px; 
+            text-decoration: none; 
+            font-weight: 900; 
+            font-size: 1.4rem; 
+        }
+
+        @media (max-width: 1000px) {
+            .header-banner { padding: 60px 20px; }
+            .nav-buttons { flex-direction: column; gap: 20px; }
+            .content-card { padding: 30px; border-radius: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <div class="premium-badge">Premium Projector Edition</div>
+        <h1>Structure of Atom<br><span style="font-size: 0.5em; opacity: 0.8; font-weight: 800;">परमाणु की संरचना</span></h1>
+    </div>
+
+    <div class="part-container">
+        
+        <h2 style="margin-top: 0;">2.16 Properties of Waves (तरंगों के गुण)</h2>
+        <div class="content-card">
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8;">
+                Since light and other Electromagnetic Radiations travel as <b>waves (तरंगें)</b>, we must familiarize ourselves with some fundamental characteristics used to describe them:
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 30px; margin-top: 40px;">
+                
+                <!-- Prop 1: Wavelength -->
+                <div style="background: #fdf2f8; padding: 30px; border-radius: 20px; border: 3px solid #fbcfe8;">
+                    <h4 style="font-size: 2rem; color: #be185d; margin-top:0;">1. Wavelength (तरंगदैर्ध्य) <span class="sym-badge">&lambda;</span></h4>
+                    <p style="font-size: 1.4rem; color: #4c1d95; line-height: 1.8;">
+                        It is defined as the distance between any two consecutive <b>Crests (शिखर)</b> or any two consecutive <b>Troughs (गर्त)</b> of a wave.
+                    </p>
+                    <div style="background: white; padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 8px;">
+                        <div style="font-size: 1.4rem; color: #831843;"><b style="opacity: 0.7;">Symbol:</b> <span style="font-weight: 900;">Lambda (&lambda;)</span></div>
+                        <div style="font-size: 1.4rem; color: #831843;"><b style="opacity: 0.7;">Unit:</b> <span style="font-weight: 900;">Metre (m) or Angstrom (&Aring;)</span></div>
+                        <div style="font-size: 1.2rem; color: #9ca3af; font-weight: 600; margin-top: -3px;">(1 &Aring; = 10<sup>-10</sup> m)</div>
+                    </div>
+                </div>
+
+                <!-- Prop 2: Frequency -->
+                <div style="background: #f0fdfa; padding: 30px; border-radius: 20px; border: 3px solid #a7f3d0;">
+                    <h4 style="font-size: 2rem; color: #0f766e; margin-top:0;">2. Frequency (आवृत्ति) <span class="sym-badge">&nu;</span></h4>
+                    <p style="font-size: 1.4rem; color: #115e59; line-height: 1.8;">
+                        It is defined as the total number of waves that pass through a given point in <b>one second</b>.
+                    </p>
+                    <div style="background: white; padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 8px;">
+                        <div style="font-size: 1.4rem; color: #134e4a;"><b style="opacity: 0.7;">Symbol:</b> <span style="font-weight: 900;">Nu (&nu;)</span></div>
+                        <div style="font-size: 1.4rem; color: #134e4a;"><b style="opacity: 0.7;">Unit:</b> <span style="font-weight: 900;">Hertz (Hz) or s<sup>-1</sup></span></div>
+                    </div>
+                </div>
+
+                <!-- Prop 3: Velocity -->
+                <div style="background: #eff6ff; padding: 30px; border-radius: 20px; border: 3px solid #bfdbfe;">
+                    <h4 style="font-size: 2rem; color: #1d4ed8; margin-top:0;">3. Velocity (वेग) <span class="sym-badge" style="color: #3b82f6;">c</span></h4>
+                    <p style="font-size: 1.4rem; color: #1e3a8a; line-height: 1.8;">
+                        It is defined as the distance travelled by a wave in one second. All electromagnetic waves travel at the speed of light.
+                    </p>
+                    <div style="background: white; padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 8px;">
+                        <div style="font-size: 1.4rem; color: #1e3a8a;"><b style="opacity: 0.7;">Symbol:</b> <span style="font-weight: 900;">c</span></div>
+                        <div style="font-size: 1.4rem; color: #1e3a8a;"><b style="opacity: 0.7;">Value:</b> <span style="font-weight: 900;">3 &times; 10<sup>8</sup> m s<sup>-1</sup></span></div>
+                    </div>
+                </div>
+
+                <!-- Prop 4: Wavenumber -->
+                <div style="background: #fefce8; padding: 30px; border-radius: 20px; border: 3px solid #fde047;">
+                    <h4 style="font-size: 2rem; color: #a16207; margin-top:0;">4. Wavenumber (तरंग संख्या) <span class="sym-badge" style="color: #ca8a04; text-decoration: overline;">&nu;</span></h4>
+                    <p style="font-size: 1.4rem; color: #713f12; line-height: 1.8;">
+                        It is defined as the number of wavelengths per unit length. Mathematically, it is the exact <b>reciprocal (उल्टा)</b> of wavelength.
+                    </p>
+                    <div style="background: white; padding: 15px 20px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 8px;">
+                        <div style="font-size: 1.4rem; color: #713f12; display: flex; align-items: center; gap: 8px;">
+                            <b style="opacity: 0.7;">Formula:</b> 
+                            <span style="font-weight: 900; text-decoration: overline; font-size: 1.6rem;">&nu;</span> 
+                            <span style="font-weight: 900;">=</span>
+                            <span class="math-frac" style="color: #854d0e;">
+                                <span class="num">1</span>
+                                <span class="den">&lambda;</span>
+                            </span>
+                        </div>
+                        <div style="font-size: 1.4rem; color: #713f12;"><b style="opacity: 0.7;">Unit:</b> <span style="font-weight: 900;">m<sup>-1</sup> or cm<sup>-1</sup></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <h4 style="font-size: 2rem; color: var(--primary-dark); margin-top: 60px; text-align: center;">The Grand Relation (इनके बीच का महा-संबंध)</h4>
+            <p style="font-size: 1.4rem; color: #334155; line-height: 1.8; text-align: center;">
+                Since the velocity ($c$) of all EM waves is fixed, as the Frequency ($\nu$) increases, the Wavelength ($\lambda$) has to decrease. They are completely <b>inversely proportional</b> to each other!
+            </p>
+            
+            <div class="eq-box">
+                c = &nu; &times; &lambda;
+            </div>
+            
+        </div>
+
+        <!-- FREQUENCY-WAVELENGTH SIMULATOR -->
+        <h2 id="simulator_wave" style="margin-top: 80px;">Interactive Lab: Frequency vs Wavelength Slider</h2>
+        <div class="sim-container" style="background: #0f172a; border: 4px solid #1e293b;">
+            <h3 style="color: #10b981; margin-top: 0; border: none; padding: 0;">Try it yourself!</h3>
+            <p style="color: #94a3b8; font-size: 1.4rem;">Drag the slider below to increase the <b>Frequency (आवृत्ति)</b>. You will notice that the distance between the crests, i.e., <b>Wavelength (तरंगदैर्ध्य)</b>, shrinks immediately!</p>
+
+            <div style="margin-top: 40px; background: rgba(0,0,0,0.4); padding: 30px; border-radius: 30px; border: 1px solid #334155;">
+                
+                <!-- Main SVG Wave Area -->
+                <div style="position: relative; height: 180px; width: 100%; border-bottom: 2px dashed #475569; overflow: hidden;">
+                    <!-- Visual ruler/marker for wavelength -->
+                    <div id="wavelengthRule" style="position: absolute; top: 35px; height: 2px; background: #fbbf24; transition: width 0.1s linear;">
+                        <span style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); color: #fbbf24; font-weight: bold; background: #0f172a; padding: 5px 15px; border-radius: 10px; white-space: nowrap; border: 1px solid #334155; z-index: 10;">&lambda; (Wavelength)</span>
+                        <div style="position: absolute; left: 0; top: -5px; width: 2px; height: 12px; background: #fbbf24;"></div>
+                        <div style="position: absolute; right: 0; top: -5px; width: 2px; height: 12px; background: #fbbf24;"></div>
+                    </div>
+
+                    <svg id="liveWave" style="position: absolute; top: 60px; left: 0; width: 100%; height: 120px;" preserveAspectRatio="none">
+                        <path id="waveLine" fill="none" stroke="#10b981" stroke-width="4" stroke-linecap="round"></path>
+                    </svg>
+                </div>
+
+                <!-- Custom Slider -->
+                <div style="margin-top: 40px; padding: 0 20px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                        <span style="color: #fca5a5; font-weight: bold; font-size: 1.2rem;">Low Frequency (कम आवृत्ति)</span>
+                        <span style="color: #6ee7b7; font-weight: bold; font-size: 1.2rem;">High Frequency (उच्च आवृत्ति)</span>
+                    </div>
+                    <input type="range" id="freqSlider" min="1" max="10" value="3" step="0.1">
+                </div>
+
+                <!-- Dynamic Data -->
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
+                    <div style="background: #1e293b; padding: 15px 30px; border-radius: 15px; border-left: 5px solid #38bdf8; min-width: 200px;">
+                        <div style="color: #94a3b8; font-size: 1.1rem; font-weight: bold;">Frequency (&nu;)</div>
+                        <div id="disp_freq" style="color: #38bdf8; font-size: 2rem; font-weight: 900;">3.0 Hz</div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #475569; font-weight: 900;">&times;</div>
+                    
+                    <div style="background: #1e293b; padding: 15px 30px; border-radius: 15px; border-left: 5px solid #fbbf24; min-width: 200px;">
+                        <div style="color: #94a3b8; font-size: 1.1rem; font-weight: bold;">Wavelength (&lambda;)</div>
+                        <div id="disp_wave" style="color: #fbbf24; font-size: 2rem; font-weight: 900;">10.0 m</div>
+                    </div>
+                    
+                    <div style="display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #475569; font-weight: 900;">=</div>
+
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 15px 30px; border-radius: 15px; border: 2px solid #10b981; min-width: 200px;">
+                        <div style="color: #10b981; font-size: 1.1rem; font-weight: bold;">Speed of Light (c)</div>
+                        <div style="color: white; font-size: 2rem; font-weight: 900;">Constant</div>
+                    </div>
+                </div>
+
+                <!-- Alert message -->
+                <div id="dynamicMsg" style="text-align: center; margin-top: 30px; font-size: 1.6rem; color: #e2e8f0; font-weight: 800; background: #020617; padding: 15px; border-radius: 15px; border: 1px dashed #475569;">
+                    Normal Frequency.
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="nav-buttons">
+        <a href="../index.html" class="nav-btn nav-home" style="background: #1e293b;">🏠 Main Hub</a>
+        <div style="display: flex; gap: 20px;">
+            <a href="ch2_part7.html" class="nav-btn" style="background: #94a3b8;">⬅️ Previous</a>
+            <!-- Link to Part 9: Particle Nature -->
+            <a href="ch2_part9.html" class="nav-btn" style="background: #059669;">Next Part ➡️</a>
+        </div>
+    </div>
+
+    <script>
+        // SLIDER CONTROLLED WAVE SIMULATION
+        const waveSvg = document.getElementById('liveWave');
+        const waveLine = document.getElementById('waveLine');
+        const freqSlider = document.getElementById('freqSlider');
+        const wavelengthRule = document.getElementById('wavelengthRule');
+        
+        const disp_freq = document.getElementById('disp_freq');
+        const disp_wave = document.getElementById('disp_wave');
+        const dynamicMsg = document.getElementById('dynamicMsg');
+
+        let timeOffset = 0;
+        let c_constant = 30.0; // Simulated constant constraint (c = v * lambda)
+
+        function updateSimulation() {
+            let svgWidth = waveSvg.clientWidth || 800;
+            let svgHeight = waveSvg.clientHeight || 120;
+            let cy = svgHeight / 2;
+            let amplitude = (svgHeight / 2) - 10;
+
+            // Frequency from slider (1 to 10)
+            let freqVal = parseFloat(freqSlider.value);
+            
+            // Calculate pseudo Wavelength keeping their product constant
+            // If v = 3, lambda = 10. If v = 10, lambda = 3.
+            let lambdaVal = c_constant / freqVal;
+
+            // Visual multiplier for wave tightness on canvas
+            let k = (Math.PI * 2) / (lambdaVal * 20); 
+            // Wave Speed (Higher freq means it visually propagates faster through time)
+            let wSpeed = freqVal * 0.05;
+
+            // Generate Path
+            let pathD = `M 0 ${cy}`;
+            for (let x = 0; x <= svgWidth; x += 3) {
+                // sin(kx - wt)
+                let y = cy - amplitude * Math.sin(k * x - timeOffset);
+                pathD += ` L ${x} ${y}`;
+            }
+            waveLine.setAttribute('d', pathD);
+
+            // Update ruler width visually based on lambda
+            // Wavelength visual pixel distance = (2 * PI) / k = (lambdaVal * 20)
+            let visualWavelength = lambdaVal * 20;
+            
+            // To make it look dynamic, we shift the ruler to start at the first peak mathematically
+            // Phase = k*x - t = pi/2 -> x = (pi/2 + t)/k
+            let firstPeakX = ((Math.PI / 2) + timeOffset) / k;
+            
+            // Modulo it so rule doesn't run off screen
+            while(firstPeakX < 0) firstPeakX += visualWavelength;
+            firstPeakX = firstPeakX % visualWavelength;
+
+            wavelengthRule.style.left = `${firstPeakX}px`;
+            wavelengthRule.style.width = `${visualWavelength}px`;
+
+            // Update UI Numbers
+            disp_freq.innerText = freqVal.toFixed(1) + " Hz";
+            disp_wave.innerText = lambdaVal.toFixed(1) + " m";
+
+            // Update Colors & Messages dynamically!
+            if(freqVal > 7) {
+                dynamicMsg.innerHTML = '<span style="color:#ef4444">High Frequency (तेज़ आवृत्ति) = Short Wavelength (छोटी तरंगदैर्ध्य)</span>';
+                waveLine.setAttribute('stroke', '#ef4444');
+                freqSlider.style.boxShadow = "0 0 20px #ef4444";
+            } else if (freqVal < 4) {
+                dynamicMsg.innerHTML = '<span style="color:#fca5a5">Low Frequency (कम आवृत्ति) = Long Wavelength (लंबी तरंगदैर्ध्य)</span>';
+                waveLine.setAttribute('stroke', '#fca5a5');
+                freqSlider.style.boxShadow = "0 0 20px #fca5a5";
+            } else {
+                dynamicMsg.innerHTML = '<span style="color:#10b981">As you increase the slider, the wavelength shrinks!</span>';
+                waveLine.setAttribute('stroke', '#10b981');
+                freqSlider.style.boxShadow = "0 0 20px #10b981";
+            }
+
+            timeOffset += wSpeed;
+            requestAnimationFrame(updateSimulation);
+        }
+
+        // Handle resize properly
+        window.addEventListener('resize', () => {
+            // Re-render handled inherently by loop
+        });
+
+        // Init
+        requestAnimationFrame(updateSimulation);
+
+    </script>
+</body>
+</html>
